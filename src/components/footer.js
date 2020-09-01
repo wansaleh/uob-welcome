@@ -86,10 +86,9 @@ const Footer = ({ ...props }) => {
       as="footer"
       className="site-footer"
       {...props}
-      bg="white"
-      color="gray.800"
+      bg="#000"
+      color="gray.200"
       minH="5rem"
-      borderTopWidth="1px"
       position="relative"
       py={[10, , 16]}
     >

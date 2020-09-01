@@ -29,8 +29,9 @@ const Mighty = () => {
       minH="100vh"
       // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[800]})`}
       // color="#fff"
-      bg={`linear-gradient(to bottom, #fff 60%, ${theme.colors.brand[600]} 60%, ${theme.colors.brand[500]} 100%)`}
-      py="12rem"
+      // bg={`linear-gradient(to bottom, #fff 60%, ${theme.colors.brand[600]} 60%, ${theme.colors.brand[500]} 100%)`}
+      pt="12rem"
+      pb="5rem"
       pos="relative"
       zIndex="10"
       overflow="hidden"
@@ -146,6 +147,76 @@ const Mighty = () => {
           ))}
         </SimpleGrid>
       </Container>
+
+      <Box
+        bg="brand.500"
+        pos="absolute"
+        left="0"
+        right="0"
+        bottom="0"
+        h="30rem"
+      >
+        <svg
+          className="waves"
+          viewBox="0 24 150 28"
+          preserveAspectRatio="none"
+          css={{ transform: 'scaleY(-1)', width: '100%', height: '10rem' }}
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"
+            />
+          </defs>
+          <g className="parallax">
+            <use xlinkHref="#gentle-wave" x="48" fill="rgba(255,255,255,0.7" />
+            <use
+              xlinkHref="#gentle-wave"
+              x="48"
+              y="3"
+              fill="rgba(255,255,255,0.5)"
+            />
+            <use
+              xlinkHref="#gentle-wave"
+              x="48"
+              y="5"
+              fill="rgba(255,255,255,0.3)"
+            />
+            <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
+
+          <style jsx>{`
+            .parallax > use {
+              animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5)
+                infinite;
+            }
+            .parallax > use:nth-child(1) {
+              animation-delay: -2s;
+              animation-duration: 7s;
+            }
+            .parallax > use:nth-child(2) {
+              animation-delay: -3s;
+              animation-duration: 10s;
+            }
+            .parallax > use:nth-child(3) {
+              animation-delay: -4s;
+              animation-duration: 13s;
+            }
+            .parallax > use:nth-child(4) {
+              animation-delay: -5s;
+              animation-duration: 20s;
+            }
+            @keyframes move-forever {
+              0% {
+                transform: translate3d(-90px, 0, 0);
+              }
+              100% {
+                transform: translate3d(85px, 0, 0);
+              }
+            }
+          `}</style>
+        </svg>
+      </Box>
     </Box>
   );
 };

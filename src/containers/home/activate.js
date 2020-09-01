@@ -37,8 +37,8 @@ const Activate = () => {
       id="activate"
       // borderTopWidth="1px"
       minH="100vh"
-      bg="brand.500"
-      // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[800]})`}
+      // bg="brand.500"
+      bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, #000)`}
       color="#fff"
       py="12rem"
       pos="relative"
