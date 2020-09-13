@@ -1,26 +1,34 @@
-import { Heading, Text, Flex } from '@chakra-ui/core';
+/* eslint-disable no-new */
+import { Heading, Text, Flex, Box } from '@chakra-ui/core';
+import { view } from '@risingstack/react-easy-state';
+import { useEffect } from 'react';
+import Rellax from 'rellax';
 
 import Head from '../components/head';
-import Nav from '../components/nav';
+import Header from '../components/header';
+import Explore from '../containers/home/explore';
+import Hero from '../containers/home/hero';
+// import Nav from '../components/nav';
+import SmoothScroll from '../smoothscroll';
 
-const Home = () => (
-  <>
-    <Head title="Home" />
+const Home = () => {
+  useEffect(() => {
+    // SmoothScroll();
+    new Rellax('.rellax');
+  }, []);
 
-    <Nav />
+  return (
+    <>
+      <Head title="UOB Cardmembers Welcome" />
 
-    <Flex
-      flexDirection="column"
-      justifyContent="center"
-      alignItems="center"
-      minH="20rem"
-    >
-      <Heading>Welcome to Next!</Heading>
-      <Text>
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </Text>
-    </Flex>
-  </>
-);
+      <Header />
 
-export default Home;
+      <Box>
+        <Hero />
+        <Explore />
+      </Box>
+    </>
+  );
+};
+
+export default view(Home);

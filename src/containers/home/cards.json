@@ -1,0 +1,37 @@
+[
+  {
+    "name": "UOB Basic Card",
+    "image": "UOBBasicCard300.png",
+    "link": "https://www.uob.com.my/personal/cards/credit-cards/uob-basic-card.page"
+  },
+  {
+    "name": "UOB Lady's Card",
+    "image": "UOBLadysCard300.png",
+    "link": "http://www.uob.com.my/personal/cards/credit/ladys/"
+  },
+  {
+    "name": "UOB VISA Infinite Card",
+    "image": "UOBVisaInfinite300.png",
+    "link": "http://www.uob.com.my/personal/cards/credit/uob_infinite_card.html"
+  },
+  {
+    "name": "UOB PRVI Miles Card",
+    "image": "UOBCardPrvimiles300.png",
+    "link": "http://www.uob.com.my/personal/cards/credit/uob_prvi_card.html"
+  },
+  {
+    "name": "UOB One Card",
+    "image": "UOBOneCard300.png",
+    "link": "https://www.uob.com.my/personal/cards/credit-cards/uob-one-card.page"
+  },
+  {
+    "name": "UOB Preferred Platinum",
+    "image": "UOBPreferredCard300.png",
+    "link": "http://www.uob.com.my/personal/cards/credit/uob_preferred_platinum.html"
+  },
+  {
+    "name": "UOB YOLO Card",
+    "image": "UOBYOLOCard300.png",
+    "link": "http://www.uob.com.my/personal/cards/credit/yolo/index.html"
+  }
+]

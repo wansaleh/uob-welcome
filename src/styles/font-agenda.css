@@ -1,0 +1,87 @@
+/* @font-face {
+  font-family: 'Agenda';
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Black.eot');
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Black.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Black.woff') format('woff'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Black.ttf') format('truetype');
+
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agenda';
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Bold.eot');
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Bold.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Bold.woff') format('woff'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Bold.ttf') format('truetype');
+
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+} */
+@font-face {
+  font-family: 'Agenda';
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Semibold.eot');
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Semibold.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Semibold.woff') format('woff'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Semibold.ttf')
+      format('truetype');
+
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+/* @font-face {
+  font-family: 'Agenda';
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Medium.eot');
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Medium.woff') format('woff'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Medium.ttf')
+      format('truetype');
+
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+} */
+@font-face {
+  font-family: 'Agenda';
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Regular.eot');
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Regular.woff') format('woff'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Regular.ttf')
+      format('truetype');
+
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agenda';
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Light.eot');
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Light.woff') format('woff'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Light.ttf') format('truetype');
+
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Agenda';
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Thin.eot');
+  src: url('https://uobassets.b-cdn.net/fonts/Agenda-Thin.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Thin.woff') format('woff'),
+    url('https://uobassets.b-cdn.net/fonts/Agenda-Thin.ttf') format('truetype');
+
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+}
