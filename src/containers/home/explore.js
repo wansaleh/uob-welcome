@@ -46,6 +46,7 @@ const Explore = () => {
             fontSize={['2xl', , '4xl']}
             fontWeight="200"
             lineHeight="1.2"
+            letterSpacing="tight"
             mb="16"
           >
             Be it shopping, travelling, dining – we’ve got you covered. Click on
@@ -72,7 +73,52 @@ const Explore = () => {
                   transition="all 0.2s ease"
                   textDecoration="none !important"
                   display="block"
+                  _hover={{
+                    '.card-title': {
+                      transform: 'translateY(0)'
+                    }
+                  }}
                 >
+                  <Flex
+                    mb="4"
+                    px="6"
+                    lineHeight="1"
+                    justify="space-between"
+                    align="center"
+                    fontSize="xl"
+                    pos="relative"
+                    zIndex="0"
+                  >
+                    <Text
+                      fontWeight="300"
+                      color="inherit"
+                      pos="relative"
+                      zIndex="100"
+                      transform="translateY(100px)"
+                      transition="all 0.5s var(--ease-in-out-expo)"
+                      className="card-title"
+                    >
+                      <Text as="span" fontWeight="800">
+                        UOB
+                      </Text>{' '}
+                      {card.name}
+                    </Text>
+
+                    <Box
+                      className="card-title"
+                      transform="translateY(100px)"
+                      transition="all 0.5s var(--ease-in-out-expo) 0.1s"
+                      dangerouslySetInnerHTML={{
+                        __html: require(`../../images/${card.type}.svg?include`)
+                      }}
+                      opacity="0.25"
+                      css={{
+                        svg: {
+                          height: '1.5rem'
+                        }
+                      }}
+                    />
+                  </Flex>
                   <TiltCard
                     glareEnable
                     glareMaxOpacity={0.2}
@@ -82,7 +128,9 @@ const Explore = () => {
                         mix(0.9, '#000', card.color),
                         0.35
                       )}, 0 0 30px ${rgba(card.color, 0.25)}`,
-                      overflow: 'hidden'
+                      overflow: 'hidden',
+                      position: 'relative',
+                      zIndex: 10
                     }}
                   >
                     <AspectRatio ratio={86 / 54}>
@@ -96,39 +144,6 @@ const Explore = () => {
                       />
                     </AspectRatio>
                   </TiltCard>
-                  <Flex
-                    mt="4"
-                    px="6"
-                    lineHeight="1"
-                    justify="space-between"
-                    align="center"
-                    fontSize="xl"
-                  >
-                    <Text
-                      fontWeight="300"
-                      color="inherit"
-                      pos="relative"
-                      zIndex="100"
-                      transition="all 0.2s ease"
-                    >
-                      <Text as="span" fontWeight="800">
-                        UOB
-                      </Text>{' '}
-                      {card.name}
-                    </Text>
-
-                    <Box
-                      dangerouslySetInnerHTML={{
-                        __html: require(`../../images/${card.type}.svg?include`)
-                      }}
-                      opacity="0.25"
-                      css={{
-                        svg: {
-                          height: '1.5rem'
-                        }
-                      }}
-                    />
-                  </Flex>
                 </Link>
               </ScrollIn>
             </Box>

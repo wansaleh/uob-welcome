@@ -57,11 +57,16 @@ const Hero = () => {
             w={['full', , 1 / 2]}
             p={8}
             textAlign={['center', , 'left']}
-            // className="rellax"
-            // data-rellax-percentage="0.5"
-            // data-rellax-speed="-7"
+            className="rellax"
+            data-rellax-percentage="0.5"
+            data-rellax-speed="-5"
           >
-            <Heading fontSize={['4xl', '5xl', '6xl']} lineHeight="0.95" mb="12">
+            <Heading
+              fontSize={['4xl', '5xl', '6xl']}
+              lineHeight="0.95"
+              mb="12"
+              letterSpacing="-0.02em"
+            >
               Congratulations on getting your new UOB Credit&nbsp;Card
             </Heading>
 
@@ -115,9 +120,9 @@ const Hero = () => {
             px="12"
             py="16"
             textAlign="center"
-            // className="rellax"
-            // data-rellax-percentage="0.5"
-            // data-rellax-speed="-7"
+            className="rellax"
+            data-rellax-percentage="0.5"
+            data-rellax-speed="-6"
           >
             <TiltCard
               tiltMaxAngleX={5}
@@ -170,7 +175,7 @@ const Hero = () => {
         opacity="0.5"
       />
 
-      <Flex pos="absolute" left="0" right="0" bottom="0" h="0">
+      {/* <Flex pos="absolute" left="0" right="0" bottom="0" h="0">
         {[...Array(16)].map((val, i) => (
           <Box
             key={i}
@@ -190,7 +195,7 @@ const Hero = () => {
             />
           </Box>
         ))}
-      </Flex>
+      </Flex> */}
     </Flex>
   );
 };

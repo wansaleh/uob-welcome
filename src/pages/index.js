@@ -8,6 +8,7 @@ import Head from '../components/head';
 import Header from '../components/header';
 import Explore from '../containers/home/explore';
 import Hero from '../containers/home/hero';
+import Mighty from '../containers/home/mighty';
 // import Nav from '../components/nav';
 import SmoothScroll from '../smoothscroll';
 import Butter from '../butter';
@@ -28,6 +29,7 @@ const Home = () => {
       <Box id="butter">
         <Hero />
         <Explore />
+        <Mighty />
       </Box>
     </div>
   );
