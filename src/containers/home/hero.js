@@ -18,7 +18,7 @@ import TiltCard from '../../components/tilt-card';
 import cards from './cards.json';
 import store from '../../store';
 
-const cardImages = cards.map((card) => card.imagehires);
+const cardImages = cards.map((card) => card.image);
 const cardColors = cards.map((card) => card.color);
 
 const Hero = () => {
