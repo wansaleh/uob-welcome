@@ -12,16 +12,17 @@ const Header = ({ basic = false, ...props }) => {
     <Box
       as="header"
       // pos={['relative', , 'absolute']}
-      pos="fixed"
+      pos="absolute"
       w="100%"
       h={['4rem', '5rem', '6rem']}
-      px="4"
       py={[5, 6, 8]}
       zIndex="1000"
       // bg={['white', , 'transparent']}
+      // className="rellax"
+      // data-rellax-speed="-10"
       {...props}
     >
-      <Container h="100%" px="0">
+      <Container h="100%">
         <Flex alignItems="center" position="relative" zIndex="10" h="100%">
           <Box h="100%">
             <span className="invisible">UOB</span>

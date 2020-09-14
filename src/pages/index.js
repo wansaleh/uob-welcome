@@ -10,24 +10,26 @@ import Explore from '../containers/home/explore';
 import Hero from '../containers/home/hero';
 // import Nav from '../components/nav';
 import SmoothScroll from '../smoothscroll';
+import Butter from '../butter';
 
 const Home = () => {
   useEffect(() => {
     // SmoothScroll();
+    // new Butter().init();
     new Rellax('.rellax');
   }, []);
 
   return (
-    <>
+    <div>
       <Head title="UOB Cardmembers Welcome" />
 
       <Header />
 
-      <Box>
+      <Box id="butter">
         <Hero />
         <Explore />
       </Box>
-    </>
+    </div>
   );
 };
 

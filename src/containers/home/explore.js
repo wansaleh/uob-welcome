@@ -11,7 +11,7 @@ import {
   useTheme
 } from '@chakra-ui/core';
 
-import { rgba } from 'polished';
+import { mix, rgba } from 'polished';
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 import cards from './cards.json';
@@ -22,8 +22,9 @@ const Explore = () => {
 
   return (
     <Box
+      id="explore"
       minH="100vh"
-      bg="brand.500"
+      bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[800]})`}
       color="#fff"
       py="12rem"
       pos="relative"
@@ -92,18 +93,21 @@ const Explore = () => {
                     glareEnable
                     glareMaxOpacity={0.2}
                     css={{
-                      borderRadius: 'clamp(0.75rem, 1vw, 1.5rem)',
+                      borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
+                      boxShadow: `0 3px 0 0 ${rgba(
+                        mix(0.9, '#000', card.color),
+                        0.35
+                      )}, 0 2px 50px ${rgba(card.color, 0.5)}`,
                       overflow: 'hidden'
                     }}
                   >
-                    <AspectRatio ratio={30 / 19}>
+                    <AspectRatio ratio={86 / 54}>
                       <Box
                         className="uobcard"
                         {...theme.insetProps}
                         zIndex="-1"
                         background={`url(${require(`../../images/cards/${card.image}`)}) no-repeat center/cover`}
                         w="100%"
-                        borderRadius="clamp(0.75rem, 1vw, 1.5rem)"
                         overflow="hidden"
                         transition="all 0.2s ease"
                         boxShadow={`0 5px 12px ${rgba(
