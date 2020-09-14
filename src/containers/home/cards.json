@@ -1,51 +1,58 @@
 [
   {
-    "name": "UOB Basic Card",
+    "name": "Basic Card",
     "image": "UOBBasicCard500.png",
     "imagehires": "UOBBasicCard1000.png",
     "color": "#3DABF1",
+    "type": "visa1",
     "link": "https://www.uob.com.my/personal/cards/credit-cards/uob-basic-card.page"
   },
   {
-    "name": "UOB Lady's Card",
+    "name": "Lady's Card",
     "image": "UOBLadysCard500.png",
     "imagehires": "UOBLadysCard1000.png",
     "color": "#EA565B",
+    "type": "mastercard1",
     "link": "http://www.uob.com.my/personal/cards/credit/ladys/"
   },
   {
-    "name": "UOB VISA Infinite Card",
+    "name": "VISA Infinite Card",
     "image": "UOBVisaInfinite500.png",
     "imagehires": "UOBVisaInfinite1000.png",
     "color": "#ccc",
+    "type": "visa1",
     "link": "http://www.uob.com.my/personal/cards/credit/uob_infinite_card.html"
   },
   {
-    "name": "UOB PRVI Miles Card",
+    "name": "PRVI Miles Card",
     "image": "UOBCardPrvimiles500.png",
     "imagehires": "UOBCardPrvimiles1000.png",
     "color": "#ccc",
+    "type": "visa1",
     "link": "http://www.uob.com.my/personal/cards/credit/uob_prvi_card.html"
   },
   {
-    "name": "UOB One Card",
+    "name": "One Card",
     "image": "UOBOneCard500.png",
     "imagehires": "UOBOneCard1000.png",
     "color": "#CEC087",
+    "type": "visa1",
     "link": "https://www.uob.com.my/personal/cards/credit-cards/uob-one-card.page"
   },
   {
-    "name": "UOB Preferred Platinum",
+    "name": "Preferred Platinum",
     "image": "UOBPreferredCard500.png",
     "imagehires": "UOBPreferredCard1000.png",
     "color": "#ccc",
+    "type": "mastercard1",
     "link": "http://www.uob.com.my/personal/cards/credit/uob_preferred_platinum.html"
   },
   {
-    "name": "UOB YOLO Card",
+    "name": "YOLO Card",
     "image": "UOBYOLOCard500.png",
     "imagehires": "UOBYOLOCard1000.png",
     "color": "#22AEF1",
+    "type": "visa1",
     "link": "http://www.uob.com.my/personal/cards/credit/yolo/index.html"
   }
 ]

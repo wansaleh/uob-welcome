@@ -72,22 +72,6 @@ const Explore = () => {
                   transition="all 0.2s ease"
                   textDecoration="none !important"
                   display="block"
-                  css={{
-                    p: { opacity: 0.5 },
-                    ':hover': {
-                      p: { opacity: 1 },
-                      '.uobcard': {
-                        // transform: 'translateY(-2px)',
-                        boxShadow: `0 8px 20px ${rgba(
-                          '#000',
-                          0.4
-                        )}, 0 2px 1px ${rgba('#000', 0.25)}, 0 5px 10px ${rgba(
-                          '#000',
-                          0.15
-                        )}`
-                      }
-                    }
-                  }}
                 >
                   <TiltCard
                     glareEnable
@@ -97,7 +81,7 @@ const Explore = () => {
                       boxShadow: `0 3px 0 0 ${rgba(
                         mix(0.9, '#000', card.color),
                         0.35
-                      )}, 0 2px 50px ${rgba(card.color, 0.5)}`,
+                      )}, 0 0 30px ${rgba(card.color, 0.25)}`,
                       overflow: 'hidden'
                     }}
                   >
@@ -108,24 +92,43 @@ const Explore = () => {
                         zIndex="-1"
                         background={`url(${require(`../../images/cards/${card.image}`)}) no-repeat center/cover`}
                         w="100%"
-                        overflow="hidden"
                         transition="all 0.2s ease"
-                        boxShadow={`0 5px 12px ${rgba(
-                          '#000',
-                          0.2
-                        )}, 0 2px 1px ${rgba('#000', 0.15)}`}
                       />
                     </AspectRatio>
                   </TiltCard>
-                  <Text
-                    mt="3"
-                    fontSize="2xl"
-                    fontWeight="600"
-                    color="inherit"
-                    transition="all 0.2s ease"
+                  <Flex
+                    mt="4"
+                    px="6"
+                    lineHeight="1"
+                    justify="space-between"
+                    align="center"
+                    fontSize="xl"
                   >
-                    {card.name}
-                  </Text>
+                    <Text
+                      fontWeight="300"
+                      color="inherit"
+                      pos="relative"
+                      zIndex="100"
+                      transition="all 0.2s ease"
+                    >
+                      <Text as="span" fontWeight="800">
+                        UOB
+                      </Text>{' '}
+                      {card.name}
+                    </Text>
+
+                    <Box
+                      dangerouslySetInnerHTML={{
+                        __html: require(`../../images/${card.type}.svg?include`)
+                      }}
+                      opacity="0.25"
+                      css={{
+                        svg: {
+                          height: '1.5rem'
+                        }
+                      }}
+                    />
+                  </Flex>
                 </Link>
               </ScrollIn>
             </Box>
