@@ -100,6 +100,15 @@ const Mighty = () => {
               css={{ svg: { height: '4rem' } }}
               mx="2"
             />
+            <Link
+              href="https://appgallery.huawei.com/#/app/C101978121"
+              dangerouslySetInnerHTML={{
+                // eslint-disable-next-line import/no-unresolved
+                __html: require('../../images/mighty/appgallery.svg?include')
+              }}
+              css={{ svg: { height: '4rem' } }}
+              mx="2"
+            />
           </Flex>
         </ScrollIn>
       </Container>
