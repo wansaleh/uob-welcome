@@ -11,6 +11,7 @@ import Explore from '../containers/home/explore';
 import Hero from '../containers/home/hero';
 import Mighty from '../containers/home/mighty';
 import Activate from '../containers/home/activate';
+import Footer from '../components/footer';
 // import Nav from '../components/nav';
 // import SmoothScroll from '../smoothscroll';
 // import Butter from '../butter';
@@ -30,16 +31,16 @@ const Home = () => {
 
       <Header />
 
-      <Box id="butter">
-        <Hero toggleExplore={toggleExplore} />
-        {true && (
-          <>
-            <Explore />
-            <Mighty />
-            <Activate />
-          </>
-        )}
-      </Box>
+      <Hero toggleExplore={toggleExplore} />
+      {true && (
+        <>
+          <Explore />
+          <Mighty />
+          <Activate />
+        </>
+      )}
+
+      <Footer />
     </div>
   );
 };

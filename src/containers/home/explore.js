@@ -107,7 +107,7 @@ const Explore = () => {
                     <Box
                       className="card-title"
                       transform="translateY(100px)"
-                      transition="all 0.5s var(--ease-in-out-expo) 0.1s"
+                      transition="all 0.5s var(--ease-in-out-expo)"
                       dangerouslySetInnerHTML={{
                         __html: require(`../../images/${card.type}.svg?include`)
                       }}

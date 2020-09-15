@@ -25,10 +25,11 @@ const Mighty = () => {
 
   return (
     <Box
-      id="explore"
+      id="mighty"
       minH="100vh"
       // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[800]})`}
       // color="#fff"
+      bg="linear-gradient(to bottom, #fff 70%, #111 70%)"
       py="12rem"
       pos="relative"
       zIndex="10"

@@ -27,8 +27,9 @@ const Activate = () => {
       id="activate"
       // borderTopWidth="1px"
       minH="100vh"
+      bg="#111"
       // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[800]})`}
-      // color="#fff"
+      color="#fff"
       py="12rem"
       pos="relative"
       zIndex="10"
