@@ -101,7 +101,7 @@ const Footer = ({ ...props }) => {
           card(s) and mutually exclusive.
         </Text>
 
-        <Text fontSize="sm" fontWeight="700" mt="4" lineHeight="1.3">
+        <Text fontSize="md" fontWeight="700" mt="4" lineHeight="1.3">
           Copyright &copy; 2020 United Overseas Bank (Malaysia) Bhd
           (199301017069 (271809-K)). All rights reserved.
         </Text>
@@ -110,7 +110,7 @@ const Footer = ({ ...props }) => {
           <Flex
             as="ul"
             flexWrap="wrap"
-            fontSize="sm"
+            fontSize="md"
             lineHeight="1.2"
             mt="4"
             mx="-0.5rem"
@@ -127,7 +127,7 @@ const Footer = ({ ...props }) => {
           <Flex
             as="ul"
             flexWrap="wrap"
-            fontSize="sm"
+            fontSize="md"
             lineHeight="1.2"
             mt="4"
             mx="-0.5rem"

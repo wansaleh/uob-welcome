@@ -58,9 +58,9 @@ const Hero = ({ toggleExplore }) => {
             w={['full', , 1 / 2]}
             p={8}
             textAlign={['center', , 'left']}
-            className="rellax"
-            data-rellax-percentage="0.5"
-            data-rellax-speed="-5"
+            // className="rellax"
+            // data-rellax-percentage="0.5"
+            // data-rellax-speed="-5"
           >
             <Heading
               fontSize={['4xl', '5xl', '6xl']}
@@ -105,20 +105,12 @@ const Hero = ({ toggleExplore }) => {
                   backgroundImage:
                     'linear-gradient(#000,#000),linear-gradient(to left,#ec6192 4.44%,#ec4c34 21.45%,#ffbd2b 37.21%,#ebde56 54.63%,#57c754 70.8%,#53a1eb 84.07%)'
                 }}
-                isLoading={fauxLoading}
                 onClick={() => {
-                  setFauxLoading(true);
-                  toggleExplore();
-
                   setTimeout(() => {
                     document
                       .getElementById('explore')
                       .scrollIntoView({ behavior: 'smooth' });
-                  }, 500);
-
-                  setTimeout(() => {
-                    setFauxLoading(false);
-                  }, 1000);
+                  }, 10);
                 }}
               >
                 <Box p="0.6em 1em 0.4em">Explore Your Card</Box>
@@ -131,9 +123,9 @@ const Hero = ({ toggleExplore }) => {
             px="12"
             py="16"
             textAlign="center"
-            className="rellax"
-            data-rellax-percentage="0.5"
-            data-rellax-speed="-6"
+            // className="rellax"
+            // data-rellax-percentage="0.5"
+            // data-rellax-speed="-6"
           >
             <TiltCard
               tiltMaxAngleX={5}
@@ -180,10 +172,22 @@ const Hero = ({ toggleExplore }) => {
         top="0"
         left="0"
         bottom="0"
-        right="75%"
+        right="0"
         overflow="hidden"
         zIndex="-1"
         opacity="0.5"
+        css={{
+          ':after': {
+            content: '""',
+            position: 'absolute',
+            height: '30%',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 10,
+            background: 'linear-gradient(to top, #000, rgba(0,0,0,0))'
+          }
+        }}
       />
 
       {/* <Flex pos="absolute" left="0" right="0" bottom="0" h="0">

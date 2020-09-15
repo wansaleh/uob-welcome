@@ -29,7 +29,7 @@ const Mighty = () => {
       minH="100vh"
       // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[800]})`}
       // color="#fff"
-      bg="linear-gradient(to bottom, #fff 70%, #111 70%)"
+      bg={`linear-gradient(to bottom, #fff 60%, ${theme.colors.brand[600]} 60%, ${theme.colors.brand[500]} 100%)`}
       py="12rem"
       pos="relative"
       zIndex="10"
@@ -44,6 +44,7 @@ const Mighty = () => {
             lineHeight="0.95"
             mb="12"
             letterSpacing="tight"
+            color="brand.800"
           >
             Bring home the bank,
             <br />
@@ -68,84 +69,80 @@ const Mighty = () => {
           </Heading>
         </ScrollIn>
 
-        <ScrollIn>
-          <Flex mb="20" justify="center" align="center">
-            <Box
-              mx={[1, , 2]}
-              borderRadius="22.5%"
-              overflow="hidden"
-              borderColor="gray.400"
-              borderWidth="2px"
-            >
-              <Image
-                pos="relative"
-                src={require('../../images/mighty/icon.png')}
-                alt=""
-                w={['3rem', '4rem', '6rem']}
-                h={['3rem', '4rem', '6rem']}
-              />
-            </Box>
-            <Link
-              href="https://apps.apple.com/my/app/uob-mighty-malaysia/id1239716055"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line import/no-unresolved
-                __html: require('../../images/mighty/appstore.svg?include')
-              }}
-              h={['2rem', , '3rem']}
-              css={{ svg: { height: '100%' } }}
-              mx={[1, , 2]}
+        <Flex mb="20" justify="center" align="center">
+          <Box
+            mx={[1, , 2]}
+            borderRadius="22.5%"
+            overflow="hidden"
+            borderColor="gray.400"
+            borderWidth="2px"
+          >
+            <Image
+              pos="relative"
+              src={require('../../images/mighty/icon.png')}
+              alt=""
+              w={['3rem', '4rem', '6rem']}
+              h={['3rem', '4rem', '6rem']}
             />
-            <Link
-              href="https://play.google.com/store/apps/details?id=com.uob.mightymy&hl=en"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line import/no-unresolved
-                __html: require('../../images/mighty/googleplay.svg?include')
-              }}
-              h={['2rem', , '3rem']}
-              css={{ svg: { height: '100%' } }}
-              mx={[1, , 2]}
-            />
-            <Link
-              href="https://appgallery.huawei.com/#/app/C101978121"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line import/no-unresolved
-                __html: require('../../images/mighty/appgallery.svg?include')
-              }}
-              h={['2rem', , '3rem']}
-              css={{ svg: { height: '100%' } }}
-              mx={[1, , 2]}
-            />
-          </Flex>
-        </ScrollIn>
+          </Box>
+          <Link
+            href="https://apps.apple.com/my/app/uob-mighty-malaysia/id1239716055"
+            dangerouslySetInnerHTML={{
+              // eslint-disable-next-line import/no-unresolved
+              __html: require('../../images/mighty/appstore.svg?include')
+            }}
+            h={['2rem', , '3rem']}
+            css={{ svg: { height: '100%' } }}
+            mx={[1, , 2]}
+          />
+          <Link
+            href="https://play.google.com/store/apps/details?id=com.uob.mightymy&hl=en"
+            dangerouslySetInnerHTML={{
+              // eslint-disable-next-line import/no-unresolved
+              __html: require('../../images/mighty/googleplay.svg?include')
+            }}
+            h={['2rem', , '3rem']}
+            css={{ svg: { height: '100%' } }}
+            mx={[1, , 2]}
+          />
+          <Link
+            href="https://appgallery.huawei.com/#/app/C101978121"
+            dangerouslySetInnerHTML={{
+              // eslint-disable-next-line import/no-unresolved
+              __html: require('../../images/mighty/appgallery.svg?include')
+            }}
+            h={['2rem', , '3rem']}
+            css={{ svg: { height: '100%' } }}
+            mx={[1, , 2]}
+          />
+        </Flex>
       </Container>
 
-      <Container maxW="6xl">
+      <Container maxW="5xl">
         <SimpleGrid columns={[1, , 3]} spacing="8">
           {[1, 2, 3].map((num) => (
-            <ScrollIn offset={num * 100} key={num}>
-              <TiltCard
-                tiltMaxAngleX={0}
-                tiltMaxAngleY={3}
-                // glareEnable
-                // glareMaxOpacity={0.2}
-                css={{
-                  borderRadius: 'clamp(2rem, 4vw, 3rem)',
-                  boxShadow: `0 0 20px ${rgba('#000', 0.1)}, 0 3px 10px ${rgba(
-                    '#000',
-                    0.075
-                  )}`,
-                  overflow: 'hidden',
-                  position: 'relative',
-                  zIndex: 10
-                }}
-              >
-                <Image
-                  src={require(`../../images/mighty/${num}.png`)}
-                  alt=""
-                  w="full"
-                />
-              </TiltCard>
-            </ScrollIn>
+            <TiltCard
+              tiltMaxAngleX={0}
+              tiltMaxAngleY={3}
+              // glareEnable
+              // glareMaxOpacity={0.2}
+              css={{
+                borderRadius: 'clamp(2rem, 4vw, 3rem)',
+                boxShadow: `0 0 20px ${rgba('#000', 0.1)}, 0 3px 10px ${rgba(
+                  '#000',
+                  0.075
+                )}`,
+                overflow: 'hidden',
+                position: 'relative',
+                zIndex: 10
+              }}
+            >
+              <Image
+                src={require(`../../images/mighty/${num}.png`)}
+                alt=""
+                w="full"
+              />
+            </TiltCard>
           ))}
         </SimpleGrid>
       </Container>

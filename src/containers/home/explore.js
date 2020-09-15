@@ -24,7 +24,7 @@ const Explore = () => {
     <Box
       id="explore"
       minH="100vh"
-      bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[800]})`}
+      bg={`linear-gradient(to bottom, ${theme.colors.black}, ${theme.colors.brand[700]})`}
       color="#fff"
       py="12rem"
       pos="relative"
@@ -33,7 +33,12 @@ const Explore = () => {
     >
       <Container textAlign="center">
         <ScrollIn>
-          <Heading fontSize={['5xl', , '7xl']} lineHeight="0.95" mb="12">
+          <Heading
+            fontSize={['5xl', , '7xl']}
+            lineHeight="0.95"
+            mb="12"
+            color="brand.200"
+          >
             Explore your UOB Card
           </Heading>
         </ScrollIn>
@@ -69,7 +74,6 @@ const Explore = () => {
               <ScrollIn key={i}>
                 <Link
                   href={card.link}
-                  color="white"
                   transition="all 0.2s ease"
                   textDecoration="none !important"
                   display="block"
@@ -81,7 +85,7 @@ const Explore = () => {
                 >
                   <Flex
                     mb="4"
-                    px="6"
+                    px="4"
                     lineHeight="1"
                     justify="space-between"
                     align="center"
