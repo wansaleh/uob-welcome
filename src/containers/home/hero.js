@@ -21,9 +21,10 @@ import store from '../../store';
 const cardImages = cards.map((card) => card.image);
 const cardColors = cards.map((card) => card.color);
 
-const Hero = () => {
+const Hero = ({ toggleExplore }) => {
   const theme = useTheme();
   const [cardIndex, setCardIndex] = useState(0);
+  const [fauxLoading, setFauxLoading] = useState(false);
 
   useEffect(() => {
     confettiInit();
@@ -104,10 +105,20 @@ const Hero = () => {
                   backgroundImage:
                     'linear-gradient(#000,#000),linear-gradient(to left,#ec6192 4.44%,#ec4c34 21.45%,#ffbd2b 37.21%,#ebde56 54.63%,#57c754 70.8%,#53a1eb 84.07%)'
                 }}
+                isLoading={fauxLoading}
                 onClick={() => {
-                  document
-                    .getElementById('explore')
-                    .scrollIntoView({ behavior: 'smooth' });
+                  setFauxLoading(true);
+                  toggleExplore();
+
+                  setTimeout(() => {
+                    document
+                      .getElementById('explore')
+                      .scrollIntoView({ behavior: 'smooth' });
+                  }, 500);
+
+                  setTimeout(() => {
+                    setFauxLoading(false);
+                  }, 1000);
                 }}
               >
                 <Box p="0.6em 1em 0.4em">Explore Your Card</Box>

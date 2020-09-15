@@ -23,8 +23,8 @@ const TiltCard = ({ children, ...props }) => {
         tiltReverse
         scale={1.03}
         perspective={1000}
-        tiltMaxAngleX={4}
-        tiltMaxAngleY={4}
+        tiltMaxAngleX={3}
+        tiltMaxAngleY={3}
         transitionSpeed={1000}
         // glareEnable
         // glareMaxOpacity={0.1}

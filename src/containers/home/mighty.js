@@ -18,6 +18,7 @@ import Container from '../../components/container';
 // import TiltCard from '../../components/tilt-card';
 // import cards from './cards.json';
 import ScrollIn from '../../components/scroll-in';
+import TiltCard from '../../components/tilt-card';
 
 const Mighty = () => {
   const theme = useTheme();
@@ -45,7 +46,7 @@ const Mighty = () => {
           >
             Bring home the bank,
             <br />
-            bring home UOB Mighty
+            bring home Mighty
           </Heading>
         </ScrollIn>
 
@@ -69,7 +70,7 @@ const Mighty = () => {
         <ScrollIn>
           <Flex mb="20" justify="center" align="center">
             <Box
-              mx="2"
+              mx={[1, , 2]}
               borderRadius="22.5%"
               overflow="hidden"
               borderColor="gray.400"
@@ -79,7 +80,8 @@ const Mighty = () => {
                 pos="relative"
                 src={require('../../images/mighty/icon.png')}
                 alt=""
-                h="6rem"
+                w={['3rem', '4rem', '6rem']}
+                h={['3rem', '4rem', '6rem']}
               />
             </Box>
             <Link
@@ -88,8 +90,9 @@ const Mighty = () => {
                 // eslint-disable-next-line import/no-unresolved
                 __html: require('../../images/mighty/appstore.svg?include')
               }}
-              css={{ svg: { height: '4rem' } }}
-              mx="2"
+              h={['2rem', , '3rem']}
+              css={{ svg: { height: '100%' } }}
+              mx={[1, , 2]}
             />
             <Link
               href="https://play.google.com/store/apps/details?id=com.uob.mightymy&hl=en"
@@ -97,8 +100,9 @@ const Mighty = () => {
                 // eslint-disable-next-line import/no-unresolved
                 __html: require('../../images/mighty/googleplay.svg?include')
               }}
-              css={{ svg: { height: '4rem' } }}
-              mx="2"
+              h={['2rem', , '3rem']}
+              css={{ svg: { height: '100%' } }}
+              mx={[1, , 2]}
             />
             <Link
               href="https://appgallery.huawei.com/#/app/C101978121"
@@ -106,8 +110,9 @@ const Mighty = () => {
                 // eslint-disable-next-line import/no-unresolved
                 __html: require('../../images/mighty/appgallery.svg?include')
               }}
-              css={{ svg: { height: '4rem' } }}
-              mx="2"
+              h={['2rem', , '3rem']}
+              css={{ svg: { height: '100%' } }}
+              mx={[1, , 2]}
             />
           </Flex>
         </ScrollIn>
@@ -116,22 +121,29 @@ const Mighty = () => {
       <Container maxW="6xl">
         <SimpleGrid columns={[1, , 3]} spacing="8">
           {[1, 2, 3].map((num) => (
-            <ScrollIn offset={num * 100}>
-              <Box
-                jey={num}
-                borderRadius="clamp(2rem, 4vw, 3rem)"
-                overflow="hidden"
-                boxShadow={`0 0 20px ${rgba('#000', 0.1)}, 0 3px 10px ${rgba(
-                  '#000',
-                  0.075
-                )}`}
+            <ScrollIn offset={num * 100} key={num}>
+              <TiltCard
+                tiltMaxAngleX={0}
+                tiltMaxAngleY={3}
+                // glareEnable
+                // glareMaxOpacity={0.2}
+                css={{
+                  borderRadius: 'clamp(2rem, 4vw, 3rem)',
+                  boxShadow: `0 0 20px ${rgba('#000', 0.1)}, 0 3px 10px ${rgba(
+                    '#000',
+                    0.075
+                  )}`,
+                  overflow: 'hidden',
+                  position: 'relative',
+                  zIndex: 10
+                }}
               >
                 <Image
                   src={require(`../../images/mighty/${num}.png`)}
                   alt=""
                   w="full"
                 />
-              </Box>
+              </TiltCard>
             </ScrollIn>
           ))}
         </SimpleGrid>
