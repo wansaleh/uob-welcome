@@ -117,7 +117,7 @@ const Hero = ({ toggleExplore }) => {
                     }, 10);
                   }}
                 >
-                  <Box p="0.6em 1em 0.4em">Explore Your Card</Box>
+                  <Box p="0.6em 1em 0.4em">Explore your Card</Box>
                 </Button>
               </Box>
             </Fade>
