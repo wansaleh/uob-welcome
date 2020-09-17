@@ -85,8 +85,8 @@ const Mighty = () => {
               mx={[1, , 2]}
               borderRadius="22.5%"
               overflow="hidden"
-              borderColor="gray.400"
-              borderWidth="2px"
+              borderColor="brand.800"
+              borderWidth="1px"
               mb={[4, , 0]}
             >
               <Image

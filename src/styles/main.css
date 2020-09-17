@@ -93,3 +93,13 @@
   height: 2rem;
   animation: confettiRain2 7.5s infinite;
 }
+
+@keyframes glossy {
+  0% {
+    transform: translateX(-100%) rotate(-70deg);
+  }
+
+  100% {
+    transform: translateX(100%) rotate(-70deg);
+  }
+}

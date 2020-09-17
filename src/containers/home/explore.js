@@ -134,6 +134,7 @@ const Explore = () => {
                       }}
                     />
                   </Flex>
+
                   <TiltCard
                     glareEnable
                     glareMaxOpacity={0.2}
@@ -149,14 +150,28 @@ const Explore = () => {
                     }}
                   >
                     <AspectRatio ratio={86 / 54}>
-                      <Box
-                        className="uobcard"
-                        {...theme.insetProps}
-                        zIndex="-1"
-                        background={`url(${require(`../../images/cards/${card.image}`)}) no-repeat center/cover`}
-                        w="100%"
-                        transition="all 0.2s ease"
-                      />
+                      <Box>
+                        <Box
+                          className="uobcard"
+                          {...theme.insetProps}
+                          zIndex="-1"
+                          background={`url(${require(`../../images/cards/${card.image}`)}) no-repeat center/cover`}
+                          w="100%"
+                          transition="all 0.2s ease"
+                        />
+
+                        <Box
+                          w="300%"
+                          h="30%"
+                          bg="linear-gradient(to bottom, #fff, #fff 50%)"
+                          position="absolute"
+                          top="0"
+                          left="0"
+                          opacity="0.02"
+                          animation="glossy 10s infinite"
+                          // animationDelay={i * 500}
+                        />
+                      </Box>
                     </AspectRatio>
                   </TiltCard>
                 </Link>

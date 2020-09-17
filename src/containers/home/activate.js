@@ -14,8 +14,8 @@ import {
 import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
 import SlideIn from '../../components/slide-in';
-import Safety from './safety';
-import ContactTerms from './contact-terms';
+// import Safety from './safety';
+// import ContactTerms from './contact-terms';
 
 const Activate = () => {
   const theme = useTheme();
@@ -111,9 +111,9 @@ const Activate = () => {
               >
                 <Flex justify="center" align="center">
                   <Fade
-                    direction="up"
-                    delay={num * 200}
-                    duration={500}
+                    // direction="up"
+                    delay={num * 250}
+                    duration={100}
                     css={{
                       width: '100%',
                       height: '100%',

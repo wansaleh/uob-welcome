@@ -20,7 +20,7 @@ const TiltCard = ({ children, ...props }) => {
       <Tilt
         className="tilt-card"
         // onMove={onMove}
-        tiltReverse
+        // tiltReverse
         scale={1.03}
         perspective={1000}
         tiltMaxAngleX={3}
