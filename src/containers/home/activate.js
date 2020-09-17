@@ -29,7 +29,7 @@ const Activate = () => {
       bg="#fff"
       // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, #000)`}
       // color="#fff"
-      pt="20rem"
+      pt={['6rem', , '12rem']}
       pos="relative"
       zIndex="10"
       overflow="hidden"
@@ -94,14 +94,19 @@ const Activate = () => {
       </Container>
 
       <Container maxW="2xl">
-        <SimpleGrid columns="6" spacing="4" fontSize="5xl" textAlign="center">
+        <SimpleGrid
+          columns="6"
+          spacing={[3, , 4]}
+          fontSize={['2xl', '3xl', '5xl']}
+          textAlign="center"
+        >
           {[1, 2, 3, 4, 5, 6].map((num) => (
             <Box key={num}>
               <AspectRatio
                 ratio={1}
                 borderWidth="2px"
                 borderColor="gray.300"
-                borderRadius="1.5rem"
+                borderRadius={['0.75rem', , '1.5rem']}
                 color="brand.500"
               >
                 <Flex justify="center" align="center">

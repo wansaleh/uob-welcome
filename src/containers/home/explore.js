@@ -27,7 +27,7 @@ const Explore = () => {
       minH="100vh"
       bg={`linear-gradient(to bottom, ${theme.colors.black}, ${theme.colors.brand[700]})`}
       color="#fff"
-      py="12rem"
+      py={['6rem', , '12rem']}
       pos="relative"
       zIndex="10"
       overflow="hidden"
@@ -94,12 +94,12 @@ const Explore = () => {
                   }}
                 >
                   <Flex
-                    mb="4"
+                    mb={[2, , 4]}
                     px="4"
                     lineHeight="1"
                     justify="space-between"
                     align="center"
-                    fontSize="xl"
+                    fontSize={['md', 'xl']}
                     pos="relative"
                     zIndex="0"
                   >
@@ -108,7 +108,7 @@ const Explore = () => {
                       color="inherit"
                       pos="relative"
                       zIndex="100"
-                      transform="translateY(100px)"
+                      transform={['translateY(0)', 'translateY(100px)']}
                       transition="all 0.5s var(--ease-in-out-expo)"
                       className="card-title"
                     >
@@ -120,15 +120,16 @@ const Explore = () => {
 
                     <Box
                       className="card-title"
-                      transform="translateY(100px)"
+                      transform={['translateY(0)', 'translateY(100px)']}
                       transition="all 0.5s var(--ease-in-out-expo)"
                       dangerouslySetInnerHTML={{
                         __html: require(`../../images/${card.type}.svg?include`)
                       }}
                       opacity="0.25"
+                      mt="-1"
                       css={{
                         svg: {
-                          height: '1.5rem'
+                          height: '1.25em'
                         }
                       }}
                     />

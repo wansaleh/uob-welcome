@@ -24,12 +24,11 @@ const ContactTerms = () => {
     <Box
       color="#fff"
       bg={`linear-gradient(to bottom, ${theme.colors.brand[700]}, ${theme.colors.brand[900]})`}
-      pt="20"
-      pb="20"
+      py={[4, , 20]}
     >
-      <Container maxW="7xl" pt="16" pb="16" textAlign="center" lineHeight="1.3">
+      <Container pt="16" pb="16" textAlign="left" lineHeight="1.3">
         <SimpleGrid columns={[1, , 3]} spacing={10} align="flex-start">
-          <Box>
+          <Box py="4">
             <Heading
               as="h3"
               fontSize="3xl"
@@ -55,7 +54,7 @@ const ContactTerms = () => {
               Kota Kinabalu <b>088-477 121</b>
             </Text>
           </Box>
-          <Box>
+          <Box py="4">
             <Heading
               as="h3"
               fontSize="3xl"
@@ -83,7 +82,7 @@ const ContactTerms = () => {
               Read Agreement
             </Button>
           </Box>
-          <Box>
+          <Box py="4">
             <Heading
               as="h3"
               fontSize="3xl"

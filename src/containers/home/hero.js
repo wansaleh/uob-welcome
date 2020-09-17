@@ -75,9 +75,10 @@ const Hero = ({ toggleExplore }) => {
             <Fade delay={300}>
               <Heading
                 as="h2"
-                fontSize={['3xl', , '4xl']}
+                fontSize={['2xl', , '4xl']}
                 fontWeight="200"
                 lineHeight="1.2"
+                letterSpacing="tight"
               >
                 Welcome to the UOB family, we are delighted that you’ve joined
                 us. An abundance of perks, benefits, and privileges await you.

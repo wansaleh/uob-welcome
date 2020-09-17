@@ -24,7 +24,7 @@ const Mighty = () => {
       minH="100vh"
       bg={`linear-gradient(to bottom, ${theme.colors.brand[700]}, ${theme.colors.brand[500]} 60%)`}
       color="#fff"
-      pt="12rem"
+      pt={['6rem', , '12rem']}
       pb="5rem"
       pos="relative"
       zIndex="10"
@@ -35,9 +35,9 @@ const Mighty = () => {
           <Heading
             maxW="4xl"
             mx="auto"
-            fontSize={['2xl', , '3xl']}
+            fontSize={['xl', '2xl', '3xl']}
             lineHeight="0.95"
-            mb="8"
+            mb="6"
             letterSpacing="tight"
             // opacity="0.5"
             color="#61A3FF"
@@ -50,7 +50,7 @@ const Mighty = () => {
           <Heading
             maxW="4xl"
             mx="auto"
-            fontSize={['5xl', , '7xl']}
+            fontSize={['4xl', '5xl', '7xl']}
             lineHeight="0.95"
             mb="12"
             letterSpacing="tight"
@@ -67,7 +67,7 @@ const Mighty = () => {
             as="h2"
             maxW="4xl"
             mx="auto"
-            fontSize={['2xl', , '3xl']}
+            fontSize={['xl', '2xl', '3xl']}
             fontWeight="200"
             lineHeight="1.2"
             mb="16"
@@ -79,7 +79,7 @@ const Mighty = () => {
           </Heading>
         </SlideIn>
 
-        <Flex mb="20" justify="center" align="center">
+        <Flex mb="20" justify="center" align="center" wrap="wrap">
           <SlideIn>
             <Box
               mx={[1, , 2]}
@@ -87,16 +87,19 @@ const Mighty = () => {
               overflow="hidden"
               borderColor="gray.400"
               borderWidth="2px"
+              mb={[4, , 0]}
             >
               <Image
                 pos="relative"
                 src={require('../../images/mighty/icon.png')}
                 alt=""
-                w={['3rem', '4rem', '6rem']}
-                h={['3rem', '4rem', '6rem']}
+                d="block"
+                w={['6rem']}
+                h={['6rem']}
               />
             </Box>
           </SlideIn>
+          <Box flexBasis="100%" h="0" d={['block', , 'none']} />
           <SlideIn delay={200}>
             <Link
               href="https://apps.apple.com/my/app/uob-mighty-malaysia/id1239716055"
@@ -140,7 +143,13 @@ const Mighty = () => {
       </Container>
 
       <Container maxW="5xl">
-        <SimpleGrid columns={[1, , 3]} spacing="8" zIndex="20" pos="relative">
+        <SimpleGrid
+          columns={3}
+          spacing={[2, , 8]}
+          zIndex="20"
+          pos="relative"
+          mx={[-6, , 0]}
+        >
           {[1, 2, 3].map((num) => (
             <SlideIn key={num} delay={200 * num}>
               <Box>
@@ -150,7 +159,7 @@ const Mighty = () => {
                   // glareEnable
                   // glareMaxOpacity={0.2}
                   css={{
-                    borderRadius: 'clamp(2rem, 4vw, 3rem)',
+                    borderRadius: 'clamp(0.5rem, 3vw, 3rem)',
                     boxShadow: 'var(--shadow-card)',
                     overflow: 'hidden',
                     position: 'relative',
@@ -169,14 +178,21 @@ const Mighty = () => {
         </SimpleGrid>
       </Container>
 
-      <Box bg="#fff" pos="absolute" left="0" right="0" bottom="0" h="30rem">
+      <Box
+        bg="#fff"
+        pos="absolute"
+        left="0"
+        right="0"
+        bottom="0"
+        h={['15rem', , '30rem']}
+      >
         <svg
           className="waves"
           viewBox="0 24 150 28"
           preserveAspectRatio="none"
           css={{
             width: '100%',
-            height: '10rem',
+            height: '30%',
             background: theme.colors.brand[500]
           }}
         >

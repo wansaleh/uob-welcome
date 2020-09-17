@@ -18,8 +18,8 @@ const ScrollIn = ({ offset = 0, children, ...props }) => {
       parallaxData={[
         {
           start: 'self',
-          duration: 500,
-          startOffset: offset + 100,
+          duration: 300,
+          startOffset: offset + 50,
           easing: 'easeOut',
           properties: [
             {
