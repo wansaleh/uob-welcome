@@ -1,8 +1,8 @@
 /* eslint-disable no-new */
-import { Heading, Text, Flex, Box } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/core';
 import { view } from '@risingstack/react-easy-state';
-import { useEffect } from 'react';
-import Rellax from 'rellax';
+// import { useEffect } from 'react';
+// import Rellax from 'rellax';
 
 import { useBoolean } from 'react-use';
 import Head from '../components/head';
@@ -16,14 +16,14 @@ import Safety from '../containers/home/safety';
 import ContactTerms from '../containers/home/contact-terms';
 
 const Home = () => {
-  useEffect(() => {
-    new Rellax('.rellax');
-  }, []);
+  // useEffect(() => {
+  //   new Rellax('.rellax');
+  // }, []);
 
   const [explore, toggleExplore] = useBoolean(false);
 
   return (
-    <div>
+    <Box bg="#fff">
       <Head title="UOB Cardmembers Welcome" />
 
       <Header />
@@ -40,7 +40,7 @@ const Home = () => {
       )}
 
       <Footer />
-    </div>
+    </Box>
   );
 };
 

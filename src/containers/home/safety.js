@@ -19,8 +19,14 @@ const Safety = () => {
   const theme = useTheme();
 
   return (
-    <Box id="safety" pos="relative">
-      <Container maxW="5xl" mt="32" textAlign="center">
+    <Box id="safety" pos="relative" bg="#fff">
+      <Container
+        maxW="5xl"
+        mt="32"
+        textAlign="center"
+        pos="relative"
+        zIndex="10"
+      >
         <Box
           bg="linear-gradient(to top, #0575E6, #0446AE)"
           color="#fff"
@@ -224,7 +230,7 @@ const Safety = () => {
         h="50%"
         w="100%"
         pos="absolute"
-        zIndex="-1"
+        zIndex="0"
         bottom="0"
         left="0"
         right="0"

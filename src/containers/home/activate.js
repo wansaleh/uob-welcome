@@ -28,7 +28,7 @@ const Activate = () => {
       // minH="100vh"
       bg="#fff"
       // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, #000)`}
-      // color="#fff"
+      color="#000"
       pt={['6rem', , '12rem']}
       pos="relative"
       zIndex="10"
