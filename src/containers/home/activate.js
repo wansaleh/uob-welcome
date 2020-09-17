@@ -13,10 +13,9 @@ import {
 
 import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
-// import TiltCard from '../../components/tilt-card';
-// import cards from './cards.json';
-// import ScrollIn from '../../components/scroll-in';
-import FadeIn from '../../components/fade-in';
+import SlideIn from '../../components/slide-in';
+import Safety from './safety';
+import ContactTerms from './contact-terms';
 
 const Activate = () => {
   const theme = useTheme();
@@ -25,11 +24,12 @@ const Activate = () => {
     <Flex
       id="activate"
       // borderTopWidth="1px"
-      minH="100vh"
-      // bg="brand.500"
-      bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, #000)`}
-      color="#fff"
-      py="12rem"
+      w="100%"
+      // minH="100vh"
+      bg="#fff"
+      // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, #000)`}
+      // color="#fff"
+      pt="20rem"
       pos="relative"
       zIndex="10"
       overflow="hidden"
@@ -37,16 +37,72 @@ const Activate = () => {
       justify="center"
       align="center"
     >
-      <Container maxW="2xl" mb="16">
-        <SimpleGrid columns="6" spacing="4" fontSize="4xl" textAlign="center">
+      <Container textAlign="center" maxW="5xl" mb="20">
+        <SlideIn delay={0}>
+          <Heading
+            maxW="4xl"
+            mx="auto"
+            fontSize={['5xl', , '7xl']}
+            lineHeight="0.95"
+            mb="12"
+            letterSpacing="tight"
+          >
+            Activate your Card
+          </Heading>
+        </SlideIn>
+
+        <SlideIn delay={200}>
+          <Heading
+            as="h2"
+            maxW="4xl"
+            mx="auto"
+            fontSize={['2xl', , '3xl']}
+            fontWeight="200"
+            lineHeight="1.2"
+            mb="8"
+          >
+            Create your 6-digit PIN to start using your Card.
+            <br />
+            For more info on your PIN and to activate your Card, visit{' '}
+            <Link href="https://uob.my/pin">UOB.my/pin</Link>
+          </Heading>
+        </SlideIn>
+
+        <SlideIn delay={400}>
+          <Flex justify="center" align="center">
+            <Button
+              as="a"
+              href="https://www.uob.com.my/personal/cards/tools-tips/pin-n-pay.page#creatingyourpin"
+              colorScheme="brand"
+              // variant="outline"
+              // bg="transparent"
+              size="lg"
+              fontSize={['3xl', , '4xl']}
+              fontWeight="900"
+              lineHeight="1"
+              borderRadius="lg"
+              // borderColor="white"
+              // color="white"
+              // borderWidth="2px"
+              p="2px"
+              h="initial"
+            >
+              <Box p="0.6em 1em 0.4em">Find Out More</Box>
+            </Button>
+          </Flex>
+        </SlideIn>
+      </Container>
+
+      <Container maxW="2xl">
+        <SimpleGrid columns="6" spacing="4" fontSize="5xl" textAlign="center">
           {[1, 2, 3, 4, 5, 6].map((num) => (
             <Box key={num}>
               <AspectRatio
                 ratio={1}
                 borderWidth="2px"
-                borderColor="brand.500"
+                borderColor="gray.300"
                 borderRadius="1.5rem"
-                // color="brand.200"
+                color="brand.500"
               >
                 <Flex justify="center" align="center">
                   <Fade
@@ -61,68 +117,23 @@ const Activate = () => {
                       alignItems: 'center'
                     }}
                   >
-                    <i className="far fa-asterisk" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      x="0"
+                      y="0"
+                      viewBox="0 0 227.214 227.214"
+                      xmlSpace="preserve"
+                      css={{ height: '1em' }}
+                      fill="currentColor"
+                    >
+                      <path d="M209.255 160.178l-80.648-46.563 80.637-46.556a7.5 7.5 0 00-7.5-12.99l-80.643 46.559V7.5a7.5 7.5 0 00-15 0v93.121L25.47 54.069a7.498 7.498 0 00-10.245 2.745 7.5 7.5 0 002.745 10.245l80.637 46.556-80.648 46.563a7.5 7.5 0 007.5 12.99l80.643-46.559v93.105a7.5 7.5 0 0015 0v-93.112l80.654 46.566a7.499 7.499 0 0010.245-2.745 7.5 7.5 0 00-2.746-10.245z" />
+                    </svg>
                   </Fade>
                 </Flex>
               </AspectRatio>
             </Box>
           ))}
         </SimpleGrid>
-      </Container>
-
-      <Container textAlign="center" maxW="5xl">
-        <FadeIn delay={0}>
-          <Heading
-            maxW="4xl"
-            mx="auto"
-            fontSize={['5xl', , '7xl']}
-            lineHeight="0.95"
-            mb="12"
-            letterSpacing="tight"
-          >
-            Activate your Card
-          </Heading>
-        </FadeIn>
-
-        <FadeIn delay={200}>
-          <Heading
-            as="h2"
-            maxW="3xl"
-            mx="auto"
-            fontSize={['2xl', , '3xl']}
-            fontWeight="200"
-            lineHeight="1.2"
-            mb="16"
-          >
-            Create your 6-digit PIN to start using your Card. For more info on
-            your PIN and to activate your Card, visit{' '}
-            <Link href="https://uob.my/pin">UOB.my/pin</Link>
-          </Heading>
-        </FadeIn>
-
-        <FadeIn delay={400}>
-          <Flex justify="center" align="center">
-            <Button
-              as="a"
-              href="https://www.uob.com.my/personal/cards/tools-tips/pin-n-pay.page#creatingyourpin"
-              colorScheme="brand"
-              variant="outline"
-              // bg="transparent"
-              size="lg"
-              fontSize={['3xl', , '4xl']}
-              fontWeight="900"
-              lineHeight="1"
-              borderRadius="lg"
-              // borderColor="white"
-              color="white"
-              borderWidth="2px"
-              p="2px"
-              h="initial"
-            >
-              <Box p="0.6em 1em 0.4em">Find Out More</Box>
-            </Button>
-          </Flex>
-        </FadeIn>
       </Container>
     </Flex>
   );

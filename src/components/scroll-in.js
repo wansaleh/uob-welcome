@@ -6,7 +6,6 @@ const ScrollIn = ({ offset = 0, children, ...props }) => {
   const isWide = useMedia('(min-width: 480px)');
 
   return (
-    // <Box>{children}</Box>
     <Plx
       disabled={!isWide}
       className="scroll-in"
@@ -24,7 +23,7 @@ const ScrollIn = ({ offset = 0, children, ...props }) => {
           easing: 'easeOut',
           properties: [
             {
-              startValue: 100,
+              startValue: -200,
               endValue: 0,
               property: 'translateY'
             },
@@ -32,6 +31,16 @@ const ScrollIn = ({ offset = 0, children, ...props }) => {
               startValue: 0,
               endValue: 1,
               property: 'opacity'
+            },
+            {
+              startValue: 40,
+              endValue: 0,
+              property: 'rotateX'
+            },
+            {
+              startValue: -200,
+              endValue: 0,
+              property: 'translateZ'
             }
           ]
         }

@@ -5,7 +5,8 @@ import {
   Box,
   Text,
   Link,
-  Flex
+  Flex,
+  useTheme
   // Modal,
   // useDisclosure,
   // ModalOverlay,
@@ -78,6 +79,7 @@ const links2 = [
 ];
 
 const Footer = ({ ...props }) => {
+  const theme = useTheme();
   // const { isOpen, onOpen, onClose } = useDisclosure();
   // const btnRef = useRef();
 
@@ -86,7 +88,7 @@ const Footer = ({ ...props }) => {
       as="footer"
       className="site-footer"
       {...props}
-      bg="#000"
+      bg={`linear-gradient(to bottom, ${theme.colors.brand[900]}, #000)`}
       color="gray.200"
       minH="5rem"
       position="relative"

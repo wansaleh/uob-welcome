@@ -17,8 +17,6 @@ import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 
 import cards from './cards.json';
-import store from '../../store';
-import FadeIn from '../../components/fade-in';
 
 const cardImages = cards.map((card) => card.image);
 const cardColors = cards.map((card) => card.color);
@@ -26,7 +24,6 @@ const cardColors = cards.map((card) => card.color);
 const Hero = ({ toggleExplore }) => {
   const theme = useTheme();
   const [cardIndex, setCardIndex] = useState(0);
-  const [fauxLoading, setFauxLoading] = useState(false);
 
   useEffect(() => {
     confettiInit();
@@ -66,7 +63,7 @@ const Hero = ({ toggleExplore }) => {
           >
             <Fade>
               <Heading
-                fontSize={['4xl', '5xl', '6xl']}
+                fontSize={['5xl', , '7xl']}
                 lineHeight="0.95"
                 mb="12"
                 letterSpacing="-0.02em"
@@ -78,7 +75,7 @@ const Hero = ({ toggleExplore }) => {
             <Fade delay={300}>
               <Heading
                 as="h2"
-                fontSize={['2xl', , '3xl']}
+                fontSize={['3xl', , '4xl']}
                 fontWeight="200"
                 lineHeight="1.2"
               >
@@ -201,28 +198,6 @@ const Hero = ({ toggleExplore }) => {
           }
         }}
       />
-
-      {/* <Flex pos="absolute" left="0" right="0" bottom="0" h="0">
-        {[...Array(16)].map((val, i) => (
-          <Box
-            key={i}
-            w={1 / 16}
-            h="100rem"
-            // bg={['brand.500', 'brandAlt.500', 'white'][i % 3]}
-            px="1"
-            className="rellax"
-            data-rellax-speed={Math.random() * 4}
-          >
-            <Box
-              pos="relative"
-              w="100%"
-              h="100%"
-              bg="brand.500"
-              borderRadius="lg"
-            />
-          </Box>
-        ))}
-      </Flex> */}
     </Flex>
   );
 };

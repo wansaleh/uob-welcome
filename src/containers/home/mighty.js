@@ -1,26 +1,19 @@
 /* eslint-disable no-sparse-arrays */
 import React from 'react';
 import {
-  AspectRatio,
   Box,
-  Button,
   Flex,
   Heading,
   Image,
   Link,
   SimpleGrid,
-  Text,
   useTheme
 } from '@chakra-ui/core';
 
 import { rgba } from 'polished';
-import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
-// import TiltCard from '../../components/tilt-card';
-// import cards from './cards.json';
-import ScrollIn from '../../components/scroll-in';
 import TiltCard from '../../components/tilt-card';
-import FadeIn from '../../components/fade-in';
+import SlideIn from '../../components/slide-in';
 
 const Mighty = () => {
   const theme = useTheme();
@@ -29,9 +22,8 @@ const Mighty = () => {
     <Box
       id="mighty"
       minH="100vh"
-      // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[800]})`}
-      // color="#fff"
-      // bg={`linear-gradient(to bottom, #fff 60%, ${theme.colors.brand[600]} 60%, ${theme.colors.brand[500]} 100%)`}
+      bg={`linear-gradient(to bottom, ${theme.colors.brand[700]}, ${theme.colors.brand[500]} 60%)`}
+      color="#fff"
       pt="12rem"
       pb="5rem"
       pos="relative"
@@ -39,7 +31,22 @@ const Mighty = () => {
       overflow="hidden"
     >
       <Container textAlign="center" maxW="5xl">
-        <FadeIn duration={500}>
+        <SlideIn>
+          <Heading
+            maxW="4xl"
+            mx="auto"
+            fontSize={['2xl', , '3xl']}
+            lineHeight="0.95"
+            mb="8"
+            letterSpacing="tight"
+            // opacity="0.5"
+            color="#61A3FF"
+          >
+            Mobile Banking
+          </Heading>
+        </SlideIn>
+
+        <SlideIn delay={200}>
           <Heading
             maxW="4xl"
             mx="auto"
@@ -47,18 +54,18 @@ const Mighty = () => {
             lineHeight="0.95"
             mb="12"
             letterSpacing="tight"
-            color="brand.800"
+            // color="brand.200"
           >
             Bring home the bank,
             <br />
             bring home Mighty
           </Heading>
-        </FadeIn>
+        </SlideIn>
 
-        <FadeIn duration={500} delay={200}>
+        <SlideIn delay={400}>
           <Heading
             as="h2"
-            maxW="3xl"
+            maxW="4xl"
             mx="auto"
             fontSize={['2xl', , '3xl']}
             fontWeight="200"
@@ -70,10 +77,10 @@ const Mighty = () => {
             and improved UOB Mighty. Our all-in-one app makes your mobile
             banking experience easier and mightier.
           </Heading>
-        </FadeIn>
+        </SlideIn>
 
         <Flex mb="20" justify="center" align="center">
-          <FadeIn>
+          <SlideIn>
             <Box
               mx={[1, , 2]}
               borderRadius="22.5%"
@@ -89,8 +96,8 @@ const Mighty = () => {
                 h={['3rem', '4rem', '6rem']}
               />
             </Box>
-          </FadeIn>
-          <FadeIn delay={200}>
+          </SlideIn>
+          <SlideIn delay={200}>
             <Link
               href="https://apps.apple.com/my/app/uob-mighty-malaysia/id1239716055"
               dangerouslySetInnerHTML={{
@@ -102,8 +109,8 @@ const Mighty = () => {
               css={{ svg: { height: '100%' } }}
               mx={[1, , 2]}
             />
-          </FadeIn>
-          <FadeIn delay={400}>
+          </SlideIn>
+          <SlideIn delay={400}>
             <Link
               href="https://play.google.com/store/apps/details?id=com.uob.mightymy&hl=en"
               dangerouslySetInnerHTML={{
@@ -115,8 +122,8 @@ const Mighty = () => {
               css={{ svg: { height: '100%' } }}
               mx={[1, , 2]}
             />
-          </FadeIn>
-          <FadeIn delay={600}>
+          </SlideIn>
+          <SlideIn delay={600}>
             <Link
               href="https://appgallery.huawei.com/#/app/C101978121"
               dangerouslySetInnerHTML={{
@@ -128,54 +135,50 @@ const Mighty = () => {
               css={{ svg: { height: '100%' } }}
               mx={[1, , 2]}
             />
-          </FadeIn>
+          </SlideIn>
         </Flex>
       </Container>
 
       <Container maxW="5xl">
-        <SimpleGrid columns={[1, , 3]} spacing="8">
+        <SimpleGrid columns={[1, , 3]} spacing="8" zIndex="20" pos="relative">
           {[1, 2, 3].map((num) => (
-            <FadeIn key={num} delay={200 * num}>
-              <TiltCard
-                tiltMaxAngleX={0}
-                tiltMaxAngleY={3}
-                // glareEnable
-                // glareMaxOpacity={0.2}
-                css={{
-                  borderRadius: 'clamp(2rem, 4vw, 3rem)',
-                  boxShadow: `0 0 20px ${rgba('#000', 0.1)}, 0 3px 10px ${rgba(
-                    '#000',
-                    0.075
-                  )}`,
-                  overflow: 'hidden',
-                  position: 'relative',
-                  zIndex: 10
-                }}
-              >
-                <Image
-                  src={require(`../../images/mighty/${num}.png`)}
-                  alt=""
-                  w="full"
-                />
-              </TiltCard>
-            </FadeIn>
+            <SlideIn key={num} delay={200 * num}>
+              <Box>
+                <TiltCard
+                  tiltMaxAngleX={0}
+                  tiltMaxAngleY={3}
+                  // glareEnable
+                  // glareMaxOpacity={0.2}
+                  css={{
+                    borderRadius: 'clamp(2rem, 4vw, 3rem)',
+                    boxShadow: 'var(--shadow-card)',
+                    overflow: 'hidden',
+                    position: 'relative',
+                    zIndex: 10
+                  }}
+                >
+                  <Image
+                    src={require(`../../images/mighty/${num}.png`)}
+                    alt=""
+                    w="full"
+                  />
+                </TiltCard>
+              </Box>
+            </SlideIn>
           ))}
         </SimpleGrid>
       </Container>
 
-      <Box
-        bg="brand.500"
-        pos="absolute"
-        left="0"
-        right="0"
-        bottom="0"
-        h="30rem"
-      >
+      <Box bg="#fff" pos="absolute" left="0" right="0" bottom="0" h="30rem">
         <svg
           className="waves"
           viewBox="0 24 150 28"
           preserveAspectRatio="none"
-          css={{ transform: 'scaleY(-1)', width: '100%', height: '10rem' }}
+          css={{
+            width: '100%',
+            height: '10rem',
+            background: theme.colors.brand[500]
+          }}
         >
           <defs>
             <path

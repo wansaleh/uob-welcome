@@ -14,7 +14,7 @@ const customAnimation = keyframes`
   }
 `;
 
-export default function FadeIn({ children, ...props }) {
+export default function SlideIn({ children, ...props }) {
   return (
     <Reveal
       keyframes={customAnimation}

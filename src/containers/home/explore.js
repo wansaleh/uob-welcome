@@ -16,6 +16,7 @@ import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 import cards from './cards.json';
 import ScrollIn from '../../components/scroll-in';
+import SlideIn from '../../components/slide-in';
 
 const Explore = () => {
   const theme = useTheme();
@@ -32,19 +33,19 @@ const Explore = () => {
       overflow="hidden"
     >
       <Container textAlign="center">
-        <ScrollIn>
+        <SlideIn>
           <Heading
             fontSize={['5xl', , '7xl']}
             lineHeight="0.95"
             mb="12"
-            color="brand.200"
+            color="#85B1FF"
             textShadow={`0 0 60px ${rgba(theme.colors.brand[500], 0.9)}`}
           >
             Explore your UOB Card
           </Heading>
-        </ScrollIn>
+        </SlideIn>
 
-        <ScrollIn>
+        <SlideIn delay={300}>
           <Heading
             as="h2"
             maxW="3xl"
@@ -58,11 +59,19 @@ const Explore = () => {
             Be it shopping, travelling, dining – we’ve got you covered. Click on
             your Card below to find out more.
           </Heading>
-        </ScrollIn>
+        </SlideIn>
       </Container>
 
       <Container maxW="5xl" textAlign="center">
-        <Flex wrap="wrap" w="full" justify="center">
+        <Flex
+          wrap="wrap"
+          w="full"
+          justify="center"
+          css={{
+            perspective: '1500px',
+            transformStyle: 'preserve-3d'
+          }}
+        >
           {cards.map((card, i) => (
             <Box
               key={i}

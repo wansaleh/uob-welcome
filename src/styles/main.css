@@ -12,6 +12,7 @@
   --shadow-large: 0 30px 60px rgba(0, 0, 0, 0.12);
   --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
   --shadow-sticky: 0 12px 10px -10px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 0 20px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1);
 
   --social-default: theme('colors.gray.900');
   --social-hover: theme('colors.gray.900');
