@@ -1,33 +1,22 @@
 /* eslint-disable no-sparse-arrays */
 import React from 'react';
-import { Box, Button, Flex, Heading, Link, useTheme } from '@chakra-ui/core';
+import {
+  AspectRatio,
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Link,
+  SimpleGrid,
+  useTheme
+} from '@chakra-ui/core';
 
+import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
 // import TiltCard from '../../components/tilt-card';
 // import cards from './cards.json';
-import ScrollIn from '../../components/scroll-in';
-
-const chevronProps = {
-  css: {
-    height: '1em',
-    display: 'inline-block'
-  }
-};
-
-// const Chevron = () => (
-//   <svg
-//     xmlns="http://www.w3.org/2000/svg"
-//     viewBox="0 0 20 20"
-//     fill="currentColor"
-//     {...chevronProps}
-//   >
-//     <path
-//       fillRule="evenodd"
-//       d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-//       clipRule="evenodd"
-//     />
-//   </svg>
-// );
+// import ScrollIn from '../../components/scroll-in';
+import FadeIn from '../../components/fade-in';
 
 const Activate = () => {
   const theme = useTheme();
@@ -48,8 +37,41 @@ const Activate = () => {
       justify="center"
       align="center"
     >
+      <Container maxW="2xl" mb="16">
+        <SimpleGrid columns="6" spacing="4" fontSize="4xl" textAlign="center">
+          {[1, 2, 3, 4, 5, 6].map((num) => (
+            <Box key={num}>
+              <AspectRatio
+                ratio={1}
+                borderWidth="2px"
+                borderColor="brand.500"
+                borderRadius="1.5rem"
+                // color="brand.200"
+              >
+                <Flex justify="center" align="center">
+                  <Fade
+                    direction="up"
+                    delay={num * 200}
+                    duration={500}
+                    css={{
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center'
+                    }}
+                  >
+                    <i className="far fa-asterisk" />
+                  </Fade>
+                </Flex>
+              </AspectRatio>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </Container>
+
       <Container textAlign="center" maxW="5xl">
-        <ScrollIn>
+        <FadeIn delay={0}>
           <Heading
             maxW="4xl"
             mx="auto"
@@ -60,9 +82,9 @@ const Activate = () => {
           >
             Activate your Card
           </Heading>
-        </ScrollIn>
+        </FadeIn>
 
-        <ScrollIn>
+        <FadeIn delay={200}>
           <Heading
             as="h2"
             maxW="3xl"
@@ -76,10 +98,10 @@ const Activate = () => {
             your PIN and to activate your Card, visit{' '}
             <Link href="https://uob.my/pin">UOB.my/pin</Link>
           </Heading>
-        </ScrollIn>
+        </FadeIn>
 
-        <ScrollIn>
-          <Flex mb="20" justify="center" align="center">
+        <FadeIn delay={400}>
+          <Flex justify="center" align="center">
             <Button
               as="a"
               href="https://www.uob.com.my/personal/cards/tools-tips/pin-n-pay.page#creatingyourpin"
@@ -100,71 +122,8 @@ const Activate = () => {
               <Box p="0.6em 1em 0.4em">Find Out More</Box>
             </Button>
           </Flex>
-        </ScrollIn>
+        </FadeIn>
       </Container>
-
-      {/* <Container>
-        <SimpleGrid
-          mb="20"
-          columns="3"
-          spacing="16"
-          css={{ ol: { lineHeight: 1.3, li: { marginBottom: '0.75rem' } } }}
-        >
-          <Box textAlign="left">
-            <Heading as="h3" fontSize="2xl" mb="4">
-              Method 1
-            </Heading>
-            <OrderedList>
-              <ListItem>
-                Download UOB Mighty Malaysia mobile app from Google Play Store,
-                Apple App Store, or Huawei AppGallery
-              </ListItem>
-              <ListItem>
-                Sign up or log in to Mighty <Chevron /> Tap on “Accounts”{' '}
-                <Chevron /> Select your Card <Chevron /> Tap “Settings”{' '}
-                <Chevron /> “Reset card PIN”
-              </ListItem>
-              <ListItem>Create your new 6-digit PIN</ListItem>
-            </OrderedList>
-          </Box>
-
-          <Box textAlign="left">
-            <Heading as="h3" fontSize="2xl" mb="4">
-              Method 2
-            </Heading>
-            <OrderedList>
-              <ListItem>
-                Sign up or log in to UOB Personal Internet Banking via{' '}
-                <Link href="https://www.uob.com.my">www.UOB.com.my</Link>
-              </ListItem>
-              <ListItem>
-                Go to “Account Services” <Chevron /> “Manage Cards” <Chevron />{' '}
-                Select your Card <Chevron />
-                Click “PIN Reset”
-              </ListItem>
-              <ListItem>Create your new 6-digit PIN</ListItem>
-            </OrderedList>
-          </Box>
-
-          <Box textAlign="left">
-            <Heading as="h3" fontSize="2xl" mb="4">
-              Method 2
-            </Heading>
-            <OrderedList>
-              <ListItem>
-                Sign up or log in to UOB Personal Internet Banking via{' '}
-                <Link href="https://www.uob.com.my">www.UOB.com.my</Link>
-              </ListItem>
-              <ListItem>
-                Go to “Account Services” <Chevron /> “Manage Cards” <Chevron />{' '}
-                Select your Card <Chevron />
-                Click “PIN Reset”
-              </ListItem>
-              <ListItem>Create your new 6-digit PIN</ListItem>
-            </OrderedList>
-          </Box>
-        </SimpleGrid>
-      </Container> */}
     </Flex>
   );
 };

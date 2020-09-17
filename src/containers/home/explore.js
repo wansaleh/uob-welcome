@@ -38,6 +38,7 @@ const Explore = () => {
             lineHeight="0.95"
             mb="12"
             color="brand.200"
+            textShadow={`0 0 60px ${rgba(theme.colors.brand[500], 0.9)}`}
           >
             Explore your UOB Card
           </Heading>

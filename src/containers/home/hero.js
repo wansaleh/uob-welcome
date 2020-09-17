@@ -12,11 +12,13 @@ import {
 import { view } from '@risingstack/react-easy-state';
 import { mix, rgba } from 'polished';
 import { useInterval } from 'react-use';
+import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 
 import cards from './cards.json';
 import store from '../../store';
+import FadeIn from '../../components/fade-in';
 
 const cardImages = cards.map((card) => card.image);
 const cardColors = cards.map((card) => card.color);
@@ -62,60 +64,66 @@ const Hero = ({ toggleExplore }) => {
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-5"
           >
-            <Heading
-              fontSize={['4xl', '5xl', '6xl']}
-              lineHeight="0.95"
-              mb="12"
-              letterSpacing="-0.02em"
-            >
-              Congratulations on getting your new UOB Credit&nbsp;Card
-            </Heading>
-
-            <Heading
-              as="h2"
-              fontSize={['2xl', , '3xl']}
-              fontWeight="200"
-              lineHeight="1.2"
-            >
-              Welcome to the UOB family, we are delighted that you’ve joined us.
-              An abundance of perks, benefits, and privileges await you.
-            </Heading>
-
-            <Box>
-              <Button
-                mt="16"
-                // colorScheme="brand"
-                bg="transparent"
-                size="lg"
-                fontSize={['3xl', , '4xl']}
-                fontWeight="900"
-                lineHeight="1"
-                borderRadius="lg"
-                // border="2px solid"
-                p="2px"
-                h="initial"
-                css={{
-                  backgroundClip: 'content-box,border-box',
-                  backgroundImage:
-                    'linear-gradient(#000,#000),linear-gradient(to right,#333,#333)'
-                }}
-                _hover={{
-                  bg: 'transparent',
-                  backgroundClip: 'content-box,border-box',
-                  backgroundImage:
-                    'linear-gradient(#000,#000),linear-gradient(to left,#ec6192 4.44%,#ec4c34 21.45%,#ffbd2b 37.21%,#ebde56 54.63%,#57c754 70.8%,#53a1eb 84.07%)'
-                }}
-                onClick={() => {
-                  setTimeout(() => {
-                    document
-                      .getElementById('explore')
-                      .scrollIntoView({ behavior: 'smooth' });
-                  }, 10);
-                }}
+            <Fade>
+              <Heading
+                fontSize={['4xl', '5xl', '6xl']}
+                lineHeight="0.95"
+                mb="12"
+                letterSpacing="-0.02em"
               >
-                <Box p="0.6em 1em 0.4em">Explore Your Card</Box>
-              </Button>
-            </Box>
+                Congratulations on getting your new UOB Credit&nbsp;Card
+              </Heading>
+            </Fade>
+
+            <Fade delay={300}>
+              <Heading
+                as="h2"
+                fontSize={['2xl', , '3xl']}
+                fontWeight="200"
+                lineHeight="1.2"
+              >
+                Welcome to the UOB family, we are delighted that you’ve joined
+                us. An abundance of perks, benefits, and privileges await you.
+              </Heading>
+            </Fade>
+
+            <Fade delay={600}>
+              <Box>
+                <Button
+                  mt="16"
+                  // colorScheme="brand"
+                  bg="transparent"
+                  size="lg"
+                  fontSize={['3xl', , '4xl']}
+                  fontWeight="900"
+                  lineHeight="1"
+                  borderRadius="lg"
+                  // border="2px solid"
+                  p="2px"
+                  h="initial"
+                  css={{
+                    backgroundClip: 'content-box,border-box',
+                    backgroundImage:
+                      'linear-gradient(#000,#000),linear-gradient(to right,#333,#333)'
+                  }}
+                  _hover={{
+                    bg: 'transparent',
+                    backgroundClip: 'content-box,border-box',
+                    backgroundImage:
+                      'linear-gradient(#000,#000),linear-gradient(to left,#ec6192 4.44%,#ec4c34 21.45%,#ffbd2b 37.21%,#ebde56 54.63%,#57c754 70.8%,#53a1eb 84.07%)'
+                  }}
+                  onClick={() => {
+                    setTimeout(() => {
+                      document
+                        .getElementById('explore')
+                        .scrollIntoView({ behavior: 'smooth' });
+                    }, 10);
+                  }}
+                >
+                  <Box p="0.6em 1em 0.4em">Explore Your Card</Box>
+                </Button>
+              </Box>
+            </Fade>
           </Box>
 
           <Box
@@ -127,41 +135,45 @@ const Hero = ({ toggleExplore }) => {
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-6"
           >
-            <TiltCard
-              tiltMaxAngleX={5}
-              tiltMaxAngleY={5}
-              trackOnWindow
-              glareEnable
-              glareMaxOpacity={0.4}
-              css={{
-                borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
-                boxShadow: `0 0 2px 3px ${rgba(
-                  mix(0.9, '#000', cardColors[cardIndex % 7]),
-                  0.5
-                )}, 0 2px 200px ${rgba(
-                  cardColors[cardIndex % 7],
-                  0.5
-                )}, 0 2px 56px ${rgba(cardColors[cardIndex % 7], 0.25)}`,
-                overflow: 'hidden'
-              }}
-            >
-              <AspectRatio ratio={86 / 54}>
-                <Box
-                  className="uobcard"
-                  {...theme.insetProps}
-                  zIndex="-1"
-                  transition="all 0.5s ease"
-                  background={`url(${require(`../../images/cards/${
-                    cardImages[cardIndex % 7]
-                  }`)}) no-repeat center/cover`}
-                  w="100%"
-                  borderRadius="clamp(0.75rem, 1.5vw, 1.5rem)"
-                  transform="scale(1.01)"
-                  // border="2px solid"
-                  overflow="hidden"
-                />
-              </AspectRatio>
-            </TiltCard>
+            <Fade duration={3000} delay={500} triggerOnce>
+              <Box>
+                <TiltCard
+                  tiltMaxAngleX={5}
+                  tiltMaxAngleY={5}
+                  trackOnWindow
+                  glareEnable
+                  glareMaxOpacity={0.4}
+                  css={{
+                    borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
+                    boxShadow: `0 0 2px 3px ${rgba(
+                      mix(0.9, '#000', cardColors[cardIndex % 7]),
+                      0.5
+                    )}, 0 2px 200px ${rgba(
+                      cardColors[cardIndex % 7],
+                      0.5
+                    )}, 0 2px 56px ${rgba(cardColors[cardIndex % 7], 0.25)}`,
+                    overflow: 'hidden'
+                  }}
+                >
+                  <AspectRatio ratio={86 / 54}>
+                    <Box
+                      className="uobcard"
+                      {...theme.insetProps}
+                      zIndex="-1"
+                      transition="all 0.5s ease"
+                      background={`url(${require(`../../images/cards/${
+                        cardImages[cardIndex % 7]
+                      }`)}) no-repeat center/cover`}
+                      w="100%"
+                      borderRadius="clamp(0.75rem, 1.5vw, 1.5rem)"
+                      transform="scale(1.01)"
+                      // border="2px solid"
+                      overflow="hidden"
+                    />
+                  </AspectRatio>
+                </TiltCard>
+              </Box>
+            </Fade>
           </Box>
         </Flex>
       </Container>
