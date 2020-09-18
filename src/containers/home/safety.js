@@ -36,20 +36,21 @@ const Safety = () => {
             mb="12"
             letterSpacing="tight"
           >
-            Safety Tips{' '}
+            Safety Tips
             <Box
               as="svg"
               d="inline-block"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
               fill="none"
               h="1em"
-              color="brand.600"
+              // color="brand.600"
               mt="-2"
+              ml="4"
             >
               <circle cx="12" cy="12" r="10" />
               <line x1="12" y1="16" x2="12" y2="12" />

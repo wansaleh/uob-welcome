@@ -7,7 +7,8 @@ import {
   Image,
   Link,
   SimpleGrid,
-  useTheme
+  useTheme,
+  VisuallyHidden
 } from '@chakra-ui/core';
 
 import { rgba } from 'polished';
@@ -101,43 +102,49 @@ const Mighty = () => {
           </SlideIn>
           <Box flexBasis="100%" h="0" d={['block', , 'none']} />
           <SlideIn delay={200}>
-            <Link
-              href="https://apps.apple.com/my/app/uob-mighty-malaysia/id1239716055"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line import/no-unresolved
-                __html: require('../../images/mighty/appstore.svg?include')
-              }}
-              d="block"
-              h={['2rem', , '3rem']}
-              css={{ svg: { height: '100%' } }}
-              mx={[1, , 2]}
-            />
+            <Link href="https://apps.apple.com/my/app/uob-mighty-malaysia/id1239716055">
+              <VisuallyHidden>App Store</VisuallyHidden>
+              <Box
+                dangerouslySetInnerHTML={{
+                  // eslint-disable-next-line import/no-unresolved
+                  __html: require('../../images/mighty/appstore.svg?include')
+                }}
+                d="block"
+                h={['2rem', , '3rem']}
+                css={{ svg: { height: '100%' } }}
+                mx={[1, , 2]}
+              />
+            </Link>
           </SlideIn>
           <SlideIn delay={400}>
-            <Link
-              href="https://play.google.com/store/apps/details?id=com.uob.mightymy&hl=en"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line import/no-unresolved
-                __html: require('../../images/mighty/googleplay.svg?include')
-              }}
-              d="block"
-              h={['2rem', , '3rem']}
-              css={{ svg: { height: '100%' } }}
-              mx={[1, , 2]}
-            />
+            <Link href="https://play.google.com/store/apps/details?id=com.uob.mightymy&hl=en">
+              <VisuallyHidden>Google Play</VisuallyHidden>
+              <Box
+                dangerouslySetInnerHTML={{
+                  // eslint-disable-next-line import/no-unresolved
+                  __html: require('../../images/mighty/googleplay.svg?include')
+                }}
+                d="block"
+                h={['2rem', , '3rem']}
+                css={{ svg: { height: '100%' } }}
+                mx={[1, , 2]}
+              />
+            </Link>
           </SlideIn>
           <SlideIn delay={600}>
-            <Link
-              href="https://appgallery.huawei.com/#/app/C101978121"
-              dangerouslySetInnerHTML={{
-                // eslint-disable-next-line import/no-unresolved
-                __html: require('../../images/mighty/appgallery.svg?include')
-              }}
-              d="block"
-              h={['2rem', , '3rem']}
-              css={{ svg: { height: '100%' } }}
-              mx={[1, , 2]}
-            />
+            <Link href="https://appgallery.huawei.com/#/app/C101978121">
+              <VisuallyHidden>AppGallery</VisuallyHidden>
+              <Box
+                dangerouslySetInnerHTML={{
+                  // eslint-disable-next-line import/no-unresolved
+                  __html: require('../../images/mighty/appgallery.svg?include')
+                }}
+                d="block"
+                h={['2rem', , '3rem']}
+                css={{ svg: { height: '100%' } }}
+                mx={[1, , 2]}
+              />
+            </Link>
           </SlideIn>
         </Flex>
       </Container>

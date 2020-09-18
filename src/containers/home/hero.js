@@ -72,7 +72,7 @@ const Hero = ({ toggleExplore }) => {
               </Heading>
             </Fade>
 
-            <Fade delay={300}>
+            <Fade>
               <Heading
                 as="h2"
                 fontSize={['2xl', , '4xl']}
@@ -85,7 +85,7 @@ const Hero = ({ toggleExplore }) => {
               </Heading>
             </Fade>
 
-            <Fade delay={600}>
+            <Fade>
               <Box>
                 <Button
                   mt="16"
@@ -133,7 +133,7 @@ const Hero = ({ toggleExplore }) => {
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-6"
           >
-            <Fade duration={3000} delay={500} triggerOnce>
+            <Fade duration={3000} delay={0} triggerOnce>
               <Box>
                 <TiltCard
                   tiltMaxAngleX={5}
