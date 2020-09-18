@@ -20,15 +20,9 @@ const Safety = () => {
 
   return (
     <Box id="safety" pos="relative" bg="#fff">
-      <Container
-        maxW="5xl"
-        mt="32"
-        textAlign="center"
-        pos="relative"
-        zIndex="10"
-      >
+      <Container maxW="5xl" mt="32" pos="relative" zIndex="10">
         <Box
-          bg="linear-gradient(to top, #0575E6, #0446AE)"
+          bg="linear-gradient(to bottom, #1E6BD7, #0A4CA9)"
           color="#fff"
           p={[8, , 16]}
           py={16}
@@ -37,30 +31,51 @@ const Safety = () => {
         >
           <Heading
             maxW="4xl"
-            mx="auto"
             fontSize={['4xl', , '5xl']}
             lineHeight="0.95"
             mb="12"
             letterSpacing="tight"
           >
-            Safety Tips
+            Safety Tips{' '}
+            <Box
+              as="svg"
+              d="inline-block"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              className="eva eva-info-outline"
+              fill="currentColor"
+              h="1em"
+              color="brand.600"
+              mt="-2"
+            >
+              <g data-name="Layer 2">
+                <g data-name="info">
+                  <rect
+                    width="24"
+                    height="24"
+                    transform="rotate(180 12 12)"
+                    opacity="0"
+                  />
+                  <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z" />
+                  <circle cx="12" cy="8" r="1" />
+                  <path d="M12 10a1 1 0 0 0-1 1v5a1 1 0 0 0 2 0v-5a1 1 0 0 0-1-1z" />
+                </g>
+              </g>
+            </Box>
           </Heading>
 
           <Heading
-            as="h2"
-            maxW="2xl"
-            mx="auto"
             fontSize={['lg', , '2xl']}
             fontWeight="200"
             lineHeight="1.2"
-            mb="10"
+            mb="4"
           >
             Your UOB Credit Card may be the gateway to a myriad of conveniences,
             but it can be subjected to scams and theft.
           </Heading>
 
           <Text
-            fontSize={['xl', , '3xl']}
+            fontSize={['lg', , '2xl']}
             fontWeight="600"
             mb="16"
             lineHeight="1.2"
