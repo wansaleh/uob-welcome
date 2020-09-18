@@ -1,4 +1,22 @@
 {
-  "presets": ["next/babel", "@emotion/babel-preset-css-prop"],
-  "plugins": ["macros", "inline-react-svg"]
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "targets": {
+            "chrome": "58",
+            "ie": "10"
+          }
+        }
+      }
+    ],
+    "@emotion/babel-preset-css-prop"
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-transform-arrow-functions",
+    "macros",
+    "inline-react-svg"
+  ]
 }

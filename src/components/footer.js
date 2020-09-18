@@ -104,8 +104,7 @@ const Footer = ({ ...props }) => {
 
         <Text fontSize="md" fontWeight="700" mt="4" lineHeight="1.3">
           Copyright &copy; 2020 United Overseas Bank (Malaysia) Bhd
-          (199301017069 (271809-K)). All rights reserved.{' '}
-          {process.env.NODE_ENV === 'production' && 'TEST'}
+          (199301017069 (271809-K)). All rights reserved.
         </Text>
 
         <Flex flexWrap="wrap" justify="space-between">

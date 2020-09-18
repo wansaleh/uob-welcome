@@ -160,7 +160,7 @@ const Explore = () => {
                           transition="all 0.2s ease"
                         />
 
-                        <Box
+                        {/* <Box
                           w="300%"
                           h="30%"
                           bg="linear-gradient(to bottom, #fff, #fff 50%)"
@@ -170,7 +170,7 @@ const Explore = () => {
                           opacity="0.02"
                           animation="glossy 10s infinite"
                           // animationDelay={i * 500}
-                        />
+                        /> */}
                       </Box>
                     </AspectRatio>
                   </TiltCard>

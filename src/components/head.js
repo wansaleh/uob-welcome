@@ -1,8 +1,9 @@
 import NextHead from 'next/head';
 import { string } from 'prop-types';
 
-const defaultDescription = '';
-const defaultOGURL = '';
+const defaultDescription =
+  'Welcome to the UOB family, we are delighted that you’ve joined us. An abundance of perks, benefits, and privileges await you.';
+const defaultOGURL = 'https://uob.com.my/cardwelcome';
 const defaultOGImage = '';
 
 const Head = (props) => (
@@ -14,10 +15,8 @@ const Head = (props) => (
       content={props.description || defaultDescription}
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
-    <link rel="apple-touch-icon" href="/static/touch-icon.png" />
-    <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
-    <link rel="icon" href="/favicon.ico" />
+    <meta name="product" content="UOB Cardmembers Welcome" />
+    <link rel="icon" href={require('../images/favicon.png')} />
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ''} />
     <meta
@@ -31,10 +30,6 @@ const Head = (props) => (
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="format-detection" content="telephone=no" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
   </NextHead>
 );
 

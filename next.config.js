@@ -1,14 +1,36 @@
 const withPlugins = require('next-compose-plugins');
-// const withCSS = require('@zeit/next-css');
-// const withSASS = require('@zeit/next-sass');
 const withFonts = require('next-fonts');
-const withImages = require('next-optimized-images');
+const withOptimizedImages = require('next-optimized-images');
+const withTM = require('next-transpile-modules')(['tailwindcss']);
 
-module.exports = withPlugins([[withImages], [withFonts]], {
+const useBasePath =
+  process.env.USE_BASEPATH === 'true'
+    ? {
+        basePath: '/cardwelcome',
+        assetPrefix: '/cardwelcome'
+      }
+    : {};
+
+module.exports = withPlugins([[withTM], [withOptimizedImages], [withFonts]], {
+  ...useBasePath,
   webpack: (config) => {
     // Fixes npm packages that depend on `fs` module
     config.node = {
       fs: 'empty'
+    };
+
+    const originalEntry = config.entry;
+    config.entry = async () => {
+      const entries = await originalEntry();
+
+      if (
+        entries['main.js'] &&
+        !entries['main.js'].includes('./client/polyfills.js')
+      ) {
+        entries['main.js'].unshift('./client/polyfills.js');
+      }
+
+      return entries;
     };
 
     return config;
