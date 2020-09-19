@@ -103,3 +103,18 @@
     transform: translateX(100%) rotate(-70deg);
   }
 }
+
+@keyframes mousewheel {
+  0% {
+    top: 10%;
+    opacity: 1;
+  }
+  80% {
+    top: 35%;
+    opacity: 1;
+  }
+  100% {
+    top: 40%;
+    opacity: 0;
+  }
+}

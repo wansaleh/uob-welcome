@@ -41,10 +41,10 @@ const Mighty = () => {
               start: 'self',
               duration: 400,
               startOffset: 200,
-              // easing: 'easeOut',
+              easing: 'easeOut',
               properties: [
                 {
-                  startValue: -200,
+                  startValue: -400,
                   endValue: 0,
                   // unit: 'vh',
                   property: 'translateY'

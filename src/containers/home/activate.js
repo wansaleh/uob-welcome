@@ -87,7 +87,7 @@ const Activate = () => {
               p="2px"
               h="initial"
             >
-              <Box p="0.6em 1em 0.4em">Find Out More</Box>
+              <Box p="0.6em 1em 0.4em">Create PIN</Box>
             </Button>
           </Flex>
         </SlideIn>

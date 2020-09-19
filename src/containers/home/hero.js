@@ -6,9 +6,10 @@ import {
   Button,
   Flex,
   Heading,
+  Text,
   useTheme
 } from '@chakra-ui/core';
-
+import confetti from 'canvas-confetti';
 import { view } from '@risingstack/react-easy-state';
 import { mix, rgba } from 'polished';
 import { useInterval } from 'react-use';
@@ -21,12 +22,41 @@ import cards from './cards.json';
 const cardImages = cards.map((card) => card.image);
 const cardColors = cards.map((card) => card.color);
 
-const Hero = ({ toggleExplore }) => {
+function randomInRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+const Hero = () => {
   const theme = useTheme();
   const [cardIndex, setCardIndex] = useState(0);
 
   useEffect(() => {
     confettiInit();
+
+    //   const canvas = document.getElementById('canvas-confetti');
+    //   canvas.confetti = confetti.create(canvas, { resize: true });
+
+    //   ['#09369F', '#ed1c2b'].forEach((color) => {
+    //     let skew = 1;
+
+    //     (function frame() {
+    //       skew = Math.max(0.8, skew - 0.001);
+
+    //       canvas.confetti({
+    //         particleCount: 1,
+    //         startVelocity: 0,
+    //         gravity: 0.5,
+    //         ticks: 100,
+    //         origin: {
+    //           x: Math.random(),
+    //           // since particles fall down, skew start toward the top
+    //           y: Math.random() * skew - 0.2
+    //         },
+    //         colors: [color]
+    //       });
+
+    //       requestAnimationFrame(frame);
+    //     })();
   }, []);
 
   useInterval(() => {
@@ -51,7 +81,7 @@ const Hero = ({ toggleExplore }) => {
       // transition="all 1s ease"
       // transform={store.showHero ? 'translateY(0)' : 'translateY(-100%)'}
     >
-      <Container h="100%">
+      <Container h="100%" pos="relative" zIndex="1">
         <Flex h="100%" align="center" wrap="wrap" mx="-8">
           <Box
             w={['full', , 1 / 2]}
@@ -86,41 +116,52 @@ const Hero = ({ toggleExplore }) => {
             </Fade>
 
             <Fade>
-              <Box>
-                <Button
-                  mt="16"
-                  // colorScheme="brand"
-                  bg="transparent"
-                  size="lg"
-                  fontSize={['3xl', , '4xl']}
-                  fontWeight="900"
-                  lineHeight="1"
-                  borderRadius="lg"
-                  // border="2px solid"
-                  p="2px"
-                  h="initial"
-                  css={{
-                    backgroundClip: 'content-box,border-box',
-                    backgroundImage:
-                      'linear-gradient(#000,#000),linear-gradient(to right,#333,#333)'
-                  }}
-                  _hover={{
-                    bg: 'transparent',
-                    backgroundClip: 'content-box,border-box',
-                    backgroundImage:
-                      'linear-gradient(#000,#000),linear-gradient(to left,#ec6192 4.44%,#ec4c34 21.45%,#ffbd2b 37.21%,#ebde56 54.63%,#57c754 70.8%,#53a1eb 84.07%)'
-                  }}
-                  onClick={() => {
-                    setTimeout(() => {
-                      document
-                        .getElementById('explore')
-                        .scrollIntoView({ behavior: 'smooth' });
-                    }, 10);
-                  }}
+              <Flex justify="flex-start">
+                <Flex
+                  mt="10"
+                  justify="center"
+                  align="center"
+                  direction="column"
+                  textAlign="center"
                 >
-                  <Box p="0.6em 1em 0.4em">Explore your Card</Box>
-                </Button>
-              </Box>
+                  <AspectRatio
+                    ratio={0.65}
+                    pos="relative"
+                    border="3px solid #fff"
+                    borderRadius="9999px"
+                    w="100%"
+                    d="block"
+                    zIndex="10"
+                  >
+                    <Box>
+                      <Box
+                        pos="absolute"
+                        borderRadius="10px"
+                        background="#fff"
+                        w="8px"
+                        h="8px"
+                        top="10%"
+                        left="calc(50% - 4px)"
+                        ml="auto"
+                        mr="auto"
+                        animation="mousewheel 1.5s linear infinite running"
+                      />
+                    </Box>
+                  </AspectRatio>
+
+                  <Text
+                    mt="2"
+                    opacity="0.35"
+                    fontSize="sm"
+                    fontWeight="800"
+                    lineHeight="1"
+                  >
+                    Scroll/swipe
+                    <br />
+                    down
+                  </Text>
+                </Flex>
+              </Flex>
             </Fade>
           </Box>
 
@@ -175,6 +216,30 @@ const Hero = ({ toggleExplore }) => {
           </Box>
         </Flex>
       </Container>
+
+      {/* <Box
+        as="canvas"
+        id="canvas-confetti"
+        pos="absolute"
+        inset="0"
+        w="100%"
+        h="100%"
+        zIndex="-1"
+        overflow="hidden"
+        opacity="0.25"
+        css={{
+          ':after': {
+            content: '""',
+            position: 'absolute',
+            height: '30%',
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 10,
+            background: 'linear-gradient(to top, #000, rgba(0,0,0,0))'
+          }
+        }}
+      /> */}
 
       <Box
         id="confetti-wrapper"

@@ -22,24 +22,18 @@ const Home = () => {
     SmoothScroll();
   }, []);
 
-  const [explore, toggleExplore] = useBoolean(false);
-
   return (
     <Box bg="#fff">
       <Head title="UOB Cardmembers Welcome" />
 
       <Header />
 
-      <Hero toggleExplore={toggleExplore} />
-      {true && (
-        <>
-          <Explore />
-          <Mighty />
-          <Activate />
-          <Safety />
-          <ContactTerms />
-        </>
-      )}
+      <Hero />
+      <Explore />
+      <Mighty />
+      <Activate />
+      <Safety />
+      <ContactTerms />
 
       <Footer />
     </Box>
