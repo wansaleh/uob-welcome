@@ -124,16 +124,6 @@ const Footer = ({ ...props }) => {
                 </Link>
               </Box>
             ))}
-          </Flex>
-          <Flex
-            as="ul"
-            flexWrap="wrap"
-            fontSize="md"
-            lineHeight="1.2"
-            mt="4"
-            mx="-0.5rem"
-            display="flex"
-          >
             {links2.map((link, i) => (
               <Box key={i} as="li">
                 {!link.internal ? (

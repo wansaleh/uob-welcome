@@ -10,8 +10,9 @@ import {
   useTheme,
   VisuallyHidden
 } from '@chakra-ui/core';
-
 import { rgba } from 'polished';
+import Plx from 'react-plx';
+
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 import SlideIn from '../../components/slide-in';
@@ -28,57 +29,98 @@ const Mighty = () => {
       pt={['6rem', , '12rem']}
       pb="5rem"
       pos="relative"
-      zIndex="10"
-      overflow="hidden"
+      zIndex="20"
+      // overflow="hidden"
     >
       <Container textAlign="center" maxW="5xl">
-        <SlideIn>
-          <Heading
-            maxW="4xl"
-            mx="auto"
-            fontSize={['xl', '2xl', '3xl']}
-            lineHeight="0.95"
-            mb="6"
-            letterSpacing="tight"
-            // opacity="0.5"
-            color="#61A3FF"
-          >
-            Mobile Banking
-          </Heading>
-        </SlideIn>
+        <Box className="trigger" />
+        <Plx
+          css={{ opacity: 0 }}
+          parallaxData={[
+            {
+              start: 'self',
+              duration: 400,
+              startOffset: 200,
+              // easing: 'easeOut',
+              properties: [
+                {
+                  startValue: -200,
+                  endValue: 0,
+                  // unit: 'vh',
+                  property: 'translateY'
+                },
+                {
+                  startValue: 0,
+                  endValue: 1,
+                  property: 'opacity'
+                }
+              ]
+            }
+            // {
+            //   start: '.trigger',
+            //   startOffset: '60vh',
+            //   duration: '30vh',
+            //   properties: [
+            //     {
+            //       startValue: 50,
+            //       endValue: -100,
+            //       unit: 'vh',
+            //       property: 'translateY'
+            //     },
+            //     {
+            //       startValue: 1,
+            //       endValue: 0,
+            //       property: 'opacity'
+            //     }
+            //   ]
+            // }
+          ]}
+        >
+          <Box>
+            <Heading
+              maxW="4xl"
+              mx="auto"
+              fontSize={['xl', '2xl', '3xl']}
+              lineHeight="0.95"
+              mb="6"
+              letterSpacing="tight"
+              // opacity="0.5"
+              color="#61A3FF"
+            >
+              Mobile Banking
+            </Heading>
 
-        <SlideIn delay={200}>
-          <Heading
-            maxW="4xl"
-            mx="auto"
-            fontSize={['4xl', '5xl', '7xl']}
-            lineHeight="0.95"
-            mb="12"
-            letterSpacing="tight"
-            // color="brand.200"
-          >
-            Bring home the bank,
-            <br />
-            bring home Mighty
-          </Heading>
-        </SlideIn>
+            <Heading
+              maxW="4xl"
+              mx="auto"
+              fontSize={['4xl', '5xl', '7xl']}
+              lineHeight="0.95"
+              mb="12"
+              letterSpacing="tight"
+              // color="brand.200"
+            >
+              Bring home the bank,
+              <br />
+              bring home Mighty
+            </Heading>
 
-        <SlideIn delay={400}>
-          <Heading
-            as="h2"
-            maxW="4xl"
-            mx="auto"
-            fontSize={['xl', '2xl', '3xl']}
-            fontWeight="200"
-            lineHeight="1.2"
-            mb="16"
-          >
-            Life simplified with the all-new UOB Mighty. Redesigned to make
-            banking easier. Manage your finances anytime, anywhere with the new
-            and improved UOB Mighty. Our all-in-one app makes your mobile
-            banking experience easier and mightier.
-          </Heading>
-        </SlideIn>
+            <Heading
+              as="h2"
+              maxW="4xl"
+              mx="auto"
+              fontSize={['xl', '2xl', '3xl']}
+              fontWeight="200"
+              lineHeight="1.2"
+              mb="16"
+              className="trig"
+            >
+              Life simplified with the all-new UOB Mighty. Redesigned to make
+              banking easier. Manage your finances anytime, anywhere with the
+              new and improved UOB Mighty. Our all-in-one app makes your mobile
+              banking experience easier and mightier.
+            </Heading>
+          </Box>
+        </Plx>
 
         <Flex mb="20" justify="center" align="center" wrap="wrap">
           <SlideIn>

@@ -12,8 +12,8 @@ import {
   Wrap
 } from '@chakra-ui/core';
 
+import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
-import SlideIn from '../../components/slide-in';
 
 const Safety = () => {
   const theme = useTheme();
@@ -29,53 +29,59 @@ const Safety = () => {
           borderRadius="1rem"
           boxShadow="var(--shadow-card)"
         >
-          <Heading
-            maxW="4xl"
-            fontSize={['4xl', , '5xl']}
-            lineHeight="0.95"
-            mb="12"
-            letterSpacing="tight"
-          >
-            Safety Tips
-            <Box
-              as="svg"
-              d="inline-block"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              fill="none"
-              h="1em"
-              // color="brand.600"
-              mt="-2"
-              ml="4"
+          <Fade>
+            <Heading
+              maxW="4xl"
+              fontSize={['4xl', , '5xl']}
+              lineHeight="0.95"
+              mb="12"
+              letterSpacing="tight"
             >
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="16" x2="12" y2="12" />
-              <line x1="12" y1="8" x2="12.01" y2="8" />
-            </Box>
-          </Heading>
+              Safety Tips
+              <Box
+                as="svg"
+                d="inline-block"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+                h="1em"
+                // color="brand.600"
+                mt="-2"
+                ml="4"
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="16" x2="12" y2="12" />
+                <line x1="12" y1="8" x2="12.01" y2="8" />
+              </Box>
+            </Heading>
+          </Fade>
 
-          <Heading
-            fontSize={['lg', , '2xl']}
-            fontWeight="200"
-            lineHeight="1.2"
-            mb="4"
-          >
-            Your UOB Credit Card may be the gateway to a myriad of conveniences,
-            but it can be subjected to scams and theft.
-          </Heading>
+          <Fade delay={200}>
+            <Heading
+              fontSize={['lg', , '2xl']}
+              fontWeight="200"
+              lineHeight="1.2"
+              mb="4"
+            >
+              Your UOB Credit Card may be the gateway to a myriad of
+              conveniences, but it can be subjected to scams and theft.
+            </Heading>
+          </Fade>
 
-          <Text
-            fontSize={['lg', , '2xl']}
-            fontWeight="600"
-            mb="16"
-            lineHeight="1.2"
-          >
-            To prevent this, safeguard your UOB Card and PIN at all times.
-          </Text>
+          <Fade delay={400}>
+            <Text
+              fontSize={['lg', , '2xl']}
+              fontWeight="600"
+              mb="16"
+              lineHeight="1.2"
+            >
+              To prevent this, safeguard your UOB Card and PIN at all times.
+            </Text>
+          </Fade>
 
           <SimpleGrid
             columns={[1, , 3]}
@@ -85,7 +91,7 @@ const Safety = () => {
             textAlign="left"
           >
             <Box>
-              <SlideIn duration={500} delay={0} cascade damping={0.2}>
+              <Fade duration={600} delay={800} cascade damping={0.2}>
                 <svg
                   id="Capa_1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -143,10 +149,10 @@ const Safety = () => {
                   Do not fall victim to phone scam. Never transfer money to any
                   unknown party. Do not divulge OTP details to anyone.
                 </Text>
-              </SlideIn>
+              </Fade>
             </Box>
             <Box>
-              <SlideIn duration={500} delay={500} cascade damping={0.2}>
+              <Fade duration={600} delay={1100} cascade damping={0.2}>
                 <svg
                   id="Capa_1"
                   viewBox="0 0 511.38 511.38"
@@ -183,10 +189,10 @@ const Safety = () => {
                   passport, driving license or contact numbers when choosing a
                   PIN.
                 </Text>
-              </SlideIn>
+              </Fade>
             </Box>
             <Box>
-              <SlideIn duration={500} delay={1000} cascade damping={0.2}>
+              <Fade duration={600} delay={1400} cascade damping={0.2}>
                 <svg
                   viewBox="0 0 511.262 511.262"
                   xmlns="http://www.w3.org/2000/svg"
@@ -228,7 +234,7 @@ const Safety = () => {
                   Never write down your PIN on anything that is kept in close
                   proximity with your card, including the back of your card.
                 </Text>
-              </SlideIn>
+              </Fade>
             </Box>
           </SimpleGrid>
         </Box>
