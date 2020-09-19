@@ -14,10 +14,12 @@ import Activate from '../containers/home/activate';
 import Footer from '../components/footer';
 import Safety from '../containers/home/safety';
 import ContactTerms from '../containers/home/contact-terms';
+import SmoothScroll from '../smoothscroll';
 
 const Home = () => {
   useEffect(() => {
     new Rellax('.rellax');
+    SmoothScroll();
   }, []);
 
   const [explore, toggleExplore] = useBoolean(false);
