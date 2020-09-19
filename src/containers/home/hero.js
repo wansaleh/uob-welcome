@@ -116,7 +116,7 @@ const Hero = () => {
             </Fade>
 
             <Fade>
-              <Flex justify="flex-start">
+              <Flex justify={['center', , 'flex-start']}>
                 <Flex
                   mt="10"
                   justify="center"
@@ -129,7 +129,7 @@ const Hero = () => {
                     pos="relative"
                     border="3px solid #fff"
                     borderRadius="9999px"
-                    w="100%"
+                    w="3rem"
                     d="block"
                     zIndex="10"
                   >
