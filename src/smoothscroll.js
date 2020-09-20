@@ -47,21 +47,7 @@ export default function SmoothScroll({
 
     target.scrollTop += delta;
 
-    if (Math.abs(delta) > 0.5) requestFrame(update);
+    if (Math.abs(delta) > 0.5) window.requestAnimationFrame(update);
     else moving = false;
   }
-
-  const requestFrame = (() => {
-    // requestAnimationFrame cross browser
-    return (
-      window.requestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.oRequestAnimationFrame ||
-      window.msRequestAnimationFrame ||
-      function (func) {
-        window.setTimeout(func, 1000 / 50);
-      }
-    );
-  })();
 }

@@ -2,9 +2,8 @@
 import { Box } from '@chakra-ui/core';
 import { view } from '@risingstack/react-easy-state';
 import { useEffect } from 'react';
-import Rellax from 'rellax';
+// import Rellax from 'rellax';
 
-import { useBoolean } from 'react-use';
 import Head from '../components/head';
 import Header from '../components/header';
 import Explore from '../containers/home/explore';
@@ -18,7 +17,7 @@ import SmoothScroll from '../smoothscroll';
 
 const Home = () => {
   useEffect(() => {
-    new Rellax('.rellax');
+    // new Rellax('.rellax');
     SmoothScroll();
   }, []);
 

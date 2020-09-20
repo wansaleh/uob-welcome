@@ -153,7 +153,8 @@ const Explore = () => {
                       <Box>
                         <Box
                           className="uobcard"
-                          {...theme.insetProps}
+                          pos="absolute"
+                          inset="0"
                           zIndex="-1"
                           background={`url(${require(`../../images/cards/${card.image}`)}) no-repeat center/cover`}
                           w="100%"

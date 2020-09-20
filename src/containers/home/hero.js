@@ -3,13 +3,12 @@ import React, { useEffect, useState } from 'react';
 import {
   AspectRatio,
   Box,
-  Button,
   Flex,
   Heading,
+  Image,
   Text,
   useTheme
 } from '@chakra-ui/core';
-import confetti from 'canvas-confetti';
 import { view } from '@risingstack/react-easy-state';
 import { mix, rgba } from 'polished';
 import { useInterval } from 'react-use';
@@ -22,9 +21,9 @@ import cards from './cards.json';
 const cardImages = cards.map((card) => card.image);
 const cardColors = cards.map((card) => card.color);
 
-function randomInRange(min, max) {
-  return Math.random() * (max - min) + min;
-}
+// function randomInRange(min, max) {
+//   return Math.random() * (max - min) + min;
+// }
 
 const Hero = () => {
   const theme = useTheme();
@@ -32,31 +31,6 @@ const Hero = () => {
 
   useEffect(() => {
     confettiInit();
-
-    //   const canvas = document.getElementById('canvas-confetti');
-    //   canvas.confetti = confetti.create(canvas, { resize: true });
-
-    //   ['#09369F', '#ed1c2b'].forEach((color) => {
-    //     let skew = 1;
-
-    //     (function frame() {
-    //       skew = Math.max(0.8, skew - 0.001);
-
-    //       canvas.confetti({
-    //         particleCount: 1,
-    //         startVelocity: 0,
-    //         gravity: 0.5,
-    //         ticks: 100,
-    //         origin: {
-    //           x: Math.random(),
-    //           // since particles fall down, skew start toward the top
-    //           y: Math.random() * skew - 0.2
-    //         },
-    //         colors: [color]
-    //       });
-
-    //       requestAnimationFrame(frame);
-    //     })();
   }, []);
 
   useInterval(() => {
@@ -176,70 +150,12 @@ const Hero = () => {
           >
             <Fade duration={3000} delay={0} triggerOnce>
               <Box>
-                <TiltCard
-                  tiltMaxAngleX={5}
-                  tiltMaxAngleY={5}
-                  trackOnWindow
-                  glareEnable
-                  glareMaxOpacity={0.4}
-                  css={{
-                    borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
-                    boxShadow: `0 0 2px 3px ${rgba(
-                      mix(0.9, '#000', cardColors[cardIndex % 7]),
-                      0.5
-                    )}, 0 2px 200px ${rgba(
-                      cardColors[cardIndex % 7],
-                      0.5
-                    )}, 0 2px 56px ${rgba(cardColors[cardIndex % 7], 0.25)}`,
-                    overflow: 'hidden'
-                  }}
-                >
-                  <AspectRatio ratio={86 / 54}>
-                    <Box
-                      className="uobcard"
-                      {...theme.insetProps}
-                      zIndex="-1"
-                      transition="all 0.5s ease"
-                      background={`url(${require(`../../images/cards/${
-                        cardImages[cardIndex % 7]
-                      }`)}) no-repeat center/cover`}
-                      w="100%"
-                      borderRadius="clamp(0.75rem, 1.5vw, 1.5rem)"
-                      transform="scale(1.01)"
-                      // border="2px solid"
-                      overflow="hidden"
-                    />
-                  </AspectRatio>
-                </TiltCard>
+                <CardCrossfade cardIndex={cardIndex} />
               </Box>
             </Fade>
           </Box>
         </Flex>
       </Container>
-
-      {/* <Box
-        as="canvas"
-        id="canvas-confetti"
-        pos="absolute"
-        inset="0"
-        w="100%"
-        h="100%"
-        zIndex="-1"
-        overflow="hidden"
-        opacity="0.25"
-        css={{
-          ':after': {
-            content: '""',
-            position: 'absolute',
-            height: '30%',
-            left: 0,
-            right: 0,
-            bottom: 0,
-            zIndex: 10,
-            background: 'linear-gradient(to top, #000, rgba(0,0,0,0))'
-          }
-        }}
-      /> */}
 
       <Box
         id="confetti-wrapper"
@@ -283,16 +199,7 @@ const confettiInit = () => {
     const randomAnimationDelay = Math.floor(Math.random() * 5);
 
     // Random colors
-    const colors = [
-      '#09369F',
-      '#ed1c2b',
-      // '#57c754',
-      // '#ec4c34',
-      // '#ec6192',
-      // '#53a1eb',
-      // '#ebde56',
-      '#8497B0'
-    ];
+    const colors = ['#09369F', '#ed1c2b', '#8497B0'];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
     // Create confetti piece
@@ -307,4 +214,54 @@ const confettiInit = () => {
     confetti.style.animationDelay = `${randomAnimationDelay}s`;
     wrapper.appendChild(confetti);
   }
+};
+
+const CardCrossfade = ({ cardIndex }) => {
+  return (
+    <TiltCard
+      tiltMaxAngleX={5}
+      tiltMaxAngleY={5}
+      trackOnWindow
+      glareEnable
+      glareMaxOpacity={0.4}
+      css={{
+        borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
+        // boxShadow: `0 0 2px 3px ${rgba(
+        //   mix(0.9, '#000', cardColors[cardIndex % 7]),
+        //   0.5
+        // )}, 0 2px 200px ${rgba(
+        //   cardColors[cardIndex % 7],
+        //   0.5
+        // )}, 0 2px 56px ${rgba(cardColors[cardIndex % 7], 0.25)}`,
+        overflow: 'hidden'
+      }}
+    >
+      <AspectRatio ratio={86 / 54}>
+        <Box>
+          {cardImages.map((image, i) => (
+            <Image
+              key={i}
+              userSelect="none"
+              pointerEvents="none"
+              src={require(`../../images/cards/${image}`)}
+              alt=""
+              pos="absolute"
+              inset="0"
+              w="100%"
+              h="100%"
+              objectFit="cover"
+              // zIndex={cardIndex % cardImages.length === i ? 10 : 0}
+              opacity={cardIndex % cardImages.length === i ? 1 : 0}
+              transition="all 0.8s ease"
+              // transform={
+              //   cardIndex % cardImages.length === i
+              //     ? 'translateY(0)'
+              //     : 'translateY(200%)'
+              // }
+            />
+          ))}
+        </Box>
+      </AspectRatio>
+    </TiltCard>
+  );
 };
