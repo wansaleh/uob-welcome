@@ -29,7 +29,7 @@ const Activate = () => {
       bg="#fff"
       // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, #000)`}
       color="#000"
-      pt={['6rem', , '12rem']}
+      py={['6rem', , '12rem']}
       pos="relative"
       zIndex="10"
       overflow="hidden"

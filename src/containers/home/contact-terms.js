@@ -30,7 +30,7 @@ const ContactTerms = () => {
     >
       <Container pt="16" pb="16" textAlign="left" lineHeight="1.3">
         <SimpleGrid columns={[1, , 3]} spacing={10}>
-          <Fade>
+          <Fade triggerOnce>
             <Box py="4">
               <Box
                 fontSize="4xl"
@@ -65,7 +65,7 @@ const ContactTerms = () => {
               </Text>
             </Box>
           </Fade>
-          <Fade delay={300}>
+          <Fade triggerOnce delay={300}>
             <Box py="4">
               <Box
                 fontSize="4xl"
@@ -93,7 +93,8 @@ const ContactTerms = () => {
                 mt="8"
                 onClick={() =>
                   Router.push(
-                    'https://www.uob.com.my/web-resources/personal/pdf/personal/fees/visamaster-tnc.pdf'
+                    'https://www.uob.com.my/personal/cards/credit-cards-terms.page'
+                    // 'https://www.uob.com.my/web-resources/personal/pdf/personal/fees/visamaster-tnc.pdf'
                   )
                 }
               >
@@ -101,7 +102,7 @@ const ContactTerms = () => {
               </Button>
             </Box>
           </Fade>
-          <Fade delay={600}>
+          <Fade triggerOnce delay={600}>
             <Box py="4">
               <Box
                 fontSize="4xl"

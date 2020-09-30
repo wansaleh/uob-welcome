@@ -6,6 +6,7 @@ import {
   Button,
   Flex,
   Heading,
+  Image,
   Link,
   Text,
   useTheme
@@ -54,10 +55,22 @@ const Explore = () => {
             fontWeight="200"
             lineHeight="1.2"
             letterSpacing="tight"
+            mb="0"
+          >
+            Be it shopping, travelling, dining – we’ve got you covered.
+          </Heading>
+
+          <Heading
+            as="h2"
+            maxW="3xl"
+            mx="auto"
+            fontSize={['2xl', , '4xl']}
+            fontWeight="600"
+            lineHeight="1.2"
+            letterSpacing="tight"
             mb="16"
           >
-            Be it shopping, travelling, dining – we’ve got you covered. Click on
-            your Card below to find out more.
+            Click on your Card below to find out more.
           </Heading>
         </SlideIn>
       </Container>
@@ -149,29 +162,26 @@ const Explore = () => {
                       zIndex: 10
                     }}
                   >
-                    <AspectRatio ratio={86 / 54}>
+                    <AspectRatio ratio={card.vertical ? 54 / 86 : 86 / 54}>
                       <Box>
-                        <Box
-                          className="uobcard"
-                          pos="absolute"
-                          inset="0"
-                          zIndex="-1"
-                          background={`url(${require(`../../images/cards/${card.image}`)}) no-repeat center/cover`}
+                        <AspectRatio
+                          ratio={86 / 54}
                           w="100%"
-                          transition="all 0.2s ease"
-                        />
-
-                        {/* <Box
-                          w="300%"
-                          h="30%"
-                          bg="linear-gradient(to bottom, #fff, #fff 50%)"
-                          position="absolute"
-                          top="0"
-                          left="0"
-                          opacity="0.02"
-                          animation="glossy 10s infinite"
-                          // animationDelay={i * 500}
-                        /> */}
+                          transform={
+                            card.vertical && `rotate(90deg) scale(${86 / 54})`
+                          }
+                        >
+                          <Image
+                            alt=""
+                            src={require(`../../images/cards/${card.image}`)}
+                            w="100%"
+                            h="100%"
+                            className="uobcard"
+                            pos="absolute"
+                            inset="0"
+                            zIndex="-1"
+                          />
+                        </AspectRatio>
                       </Box>
                     </AspectRatio>
                   </TiltCard>

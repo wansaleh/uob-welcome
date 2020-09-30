@@ -29,7 +29,7 @@ const Safety = () => {
           borderRadius="1rem"
           boxShadow="var(--shadow-card)"
         >
-          <Fade>
+          <Fade triggerOnce>
             <Heading
               maxW="4xl"
               fontSize={['4xl', , '5xl']}
@@ -60,7 +60,7 @@ const Safety = () => {
             </Heading>
           </Fade>
 
-          <Fade delay={200}>
+          <Fade triggerOnce delay={200}>
             <Heading
               fontSize={['lg', , '2xl']}
               fontWeight="200"
@@ -72,7 +72,7 @@ const Safety = () => {
             </Heading>
           </Fade>
 
-          <Fade delay={400}>
+          <Fade triggerOnce delay={400}>
             <Text
               fontSize={['lg', , '2xl']}
               fontWeight="600"
@@ -91,7 +91,13 @@ const Safety = () => {
             textAlign="left"
           >
             <Box>
-              <Fade duration={600} delay={800} cascade damping={0.2}>
+              <Fade
+                triggerOnce
+                duration={600}
+                delay={800}
+                cascade
+                damping={0.2}
+              >
                 <svg
                   id="Capa_1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -152,7 +158,13 @@ const Safety = () => {
               </Fade>
             </Box>
             <Box>
-              <Fade duration={600} delay={1100} cascade damping={0.2}>
+              <Fade
+                triggerOnce
+                duration={600}
+                delay={1100}
+                cascade
+                damping={0.2}
+              >
                 <svg
                   id="Capa_1"
                   viewBox="0 0 511.38 511.38"
@@ -192,7 +204,13 @@ const Safety = () => {
               </Fade>
             </Box>
             <Box>
-              <Fade duration={600} delay={1400} cascade damping={0.2}>
+              <Fade
+                triggerOnce
+                duration={600}
+                delay={1400}
+                cascade
+                damping={0.2}
+              >
                 <svg
                   viewBox="0 0 511.262 511.262"
                   xmlns="http://www.w3.org/2000/svg"
@@ -240,7 +258,7 @@ const Safety = () => {
         </Box>
       </Container>
 
-      <Box
+      {/* <Box
         bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, ${theme.colors.brand[700]})`}
         h="50%"
         w="100%"
@@ -249,7 +267,7 @@ const Safety = () => {
         bottom="0"
         left="0"
         right="0"
-      />
+      /> */}
     </Box>
   );
 };

@@ -108,16 +108,14 @@ const Mighty = () => {
               as="h2"
               maxW="4xl"
               mx="auto"
-              fontSize={['xl', '2xl', '3xl']}
+              fontSize={['2xl', , '4xl']}
               fontWeight="200"
               lineHeight="1.2"
               mb="16"
               className="trig"
             >
-              Life simplified with the all-new UOB Mighty. Redesigned to make
-              banking easier. Manage your finances anytime, anywhere with the
-              new and improved UOB Mighty. Our all-in-one app makes your mobile
-              banking experience easier and mightier.
+              Life is a lot easier, now that banking is simpler with the all new
+              UOB Mighty app.
             </Heading>
           </Box>
         </Plx>
@@ -191,16 +189,18 @@ const Mighty = () => {
         </Flex>
       </Container>
 
-      <Container maxW="5xl">
+      <Container maxW="5xl" overflow="scroll" py="8">
         <SimpleGrid
           columns={3}
-          spacing={[2, , 8]}
+          spacing={[4, , 8]}
           zIndex="20"
           pos="relative"
-          mx={[-6, , 0]}
+          mx={[-4, , 0]}
+          pr={[4, , 0]}
+          w={['250vw', , '100%']}
         >
           {[1, 2, 3].map((num) => (
-            <SlideIn key={num} delay={200 * num}>
+            <SlideIn key={num} delay={200 * num} triggerOnce>
               <Box>
                 <TiltCard
                   tiltMaxAngleX={0}

@@ -18,6 +18,7 @@ export default function SlideIn({ children, ...props }) {
   return (
     <Reveal
       keyframes={customAnimation}
+      duration={500}
       css={{
         animationTimingFunction: 'var(--ease-out-quart) !important'
       }}

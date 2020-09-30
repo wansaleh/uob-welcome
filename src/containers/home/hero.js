@@ -10,8 +10,8 @@ import {
   useTheme
 } from '@chakra-ui/core';
 import { view } from '@risingstack/react-easy-state';
-import { mix, rgba } from 'polished';
-import { useInterval } from 'react-use';
+// import { mix, rgba } from 'polished';
+import { useInterval, useMedia } from 'react-use';
 import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
@@ -19,15 +19,16 @@ import TiltCard from '../../components/tilt-card';
 import cards from './cards.json';
 
 const cardImages = cards.map((card) => card.image);
-const cardColors = cards.map((card) => card.color);
+// const cardColors = cards.map((card) => card.color);
 
 // function randomInRange(min, max) {
 //   return Math.random() * (max - min) + min;
 // }
 
 const Hero = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
   const [cardIndex, setCardIndex] = useState(0);
+  const isWide = useMedia('(min-width: 480px)');
 
   useEffect(() => {
     confettiInit();
@@ -67,25 +68,35 @@ const Hero = () => {
           >
             <Fade>
               <Heading
-                fontSize={['5xl', , '7xl']}
+                fontSize={['5xl', , '6xl']}
                 lineHeight="0.95"
                 mb="12"
                 letterSpacing="-0.02em"
               >
-                Congratulations on getting your new UOB Credit&nbsp;Card
+                Congratulations on getting your new UOB&nbsp;Credit&nbsp;Card
               </Heading>
             </Fade>
 
             <Fade>
               <Heading
                 as="h2"
-                fontSize={['2xl', , '4xl']}
+                fontSize={['2xl', , '3xl']}
+                fontWeight="200"
+                lineHeight="1.2"
+                letterSpacing="tight"
+                mb="8"
+              >
+                Welcome to the UOB family, we are delighted that you’ve joined
+                us.
+              </Heading>
+              <Heading
+                as="h2"
+                fontSize={['2xl', , '3xl']}
                 fontWeight="200"
                 lineHeight="1.2"
                 letterSpacing="tight"
               >
-                Welcome to the UOB family, we are delighted that you’ve joined
-                us. An abundance of perks, benefits, and privileges await you.
+                An abundance of perks, benefits, and privileges await you.
               </Heading>
             </Fade>
 
@@ -139,21 +150,23 @@ const Hero = () => {
             </Fade>
           </Box>
 
-          <Box
-            w={['full', , 1 / 2]}
-            px="12"
-            py="16"
-            textAlign="center"
-            // className="rellax"
-            // data-rellax-percentage="0.5"
-            // data-rellax-speed="-6"
-          >
-            <Fade duration={3000} delay={0} triggerOnce>
-              <Box>
-                <CardCrossfade cardIndex={cardIndex} />
-              </Box>
-            </Fade>
-          </Box>
+          {isWide && (
+            <Box
+              w={['full', , 1 / 2]}
+              px="12"
+              py="16"
+              textAlign="center"
+              // className="rellax"
+              // data-rellax-percentage="0.5"
+              // data-rellax-speed="-6"
+            >
+              <Fade duration={3000} delay={0} triggerOnce>
+                <Box>
+                  <CardCrossfade cardIndex={cardIndex} />
+                </Box>
+              </Fade>
+            </Box>
+          )}
         </Flex>
       </Container>
 

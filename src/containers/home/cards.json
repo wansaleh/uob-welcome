@@ -1,11 +1,11 @@
 [
   {
-    "name": "Basic Card",
-    "image": "UOBBasicCard500.png",
-    "imagehires": "UOBBasicCard1000.png",
-    "color": "#3DABF1",
+    "name": "VISA Infinite Card",
+    "image": "UOBVisaInfinite500.png",
+    "imagehires": "UOBVisaInfinite1000.png",
+    "color": "#999",
     "type": "visa1",
-    "link": "https://www.uob.com.my/personal/cards/credit-cards/uob-basic-card.page"
+    "link": "http://www.uob.com.my/personal/cards/credit/uob_infinite_card.html"
   },
   {
     "name": "Lady's Card",
@@ -16,28 +16,12 @@
     "link": "http://www.uob.com.my/personal/cards/credit/ladys/"
   },
   {
-    "name": "VISA Infinite Card",
-    "image": "UOBVisaInfinite500.png",
-    "imagehires": "UOBVisaInfinite1000.png",
-    "color": "#999",
-    "type": "visa1",
-    "link": "http://www.uob.com.my/personal/cards/credit/uob_infinite_card.html"
-  },
-  {
     "name": "PRVI Miles Card",
     "image": "UOBCardPrvimiles500.png",
     "imagehires": "UOBCardPrvimiles1000.png",
     "color": "#999",
     "type": "visa1",
     "link": "http://www.uob.com.my/personal/cards/credit/uob_prvi_card.html"
-  },
-  {
-    "name": "One Card",
-    "image": "UOBOneCard500.png",
-    "imagehires": "UOBOneCard1000.png",
-    "color": "#CEC087",
-    "type": "visa1",
-    "link": "https://www.uob.com.my/personal/cards/credit-cards/uob-one-card.page"
   },
   {
     "name": "Preferred Platinum",
@@ -54,5 +38,22 @@
     "color": "#22AEF1",
     "type": "visa1",
     "link": "http://www.uob.com.my/personal/cards/credit/yolo/index.html"
+  },
+  {
+    "name": "One Card",
+    "image": "UOBOneCard500.png",
+    "imagehires": "UOBOneCard1000.png",
+    "color": "#CEC087",
+    "type": "visa1",
+    "link": "https://www.uob.com.my/personal/cards/credit-cards/uob-one-card.page",
+    "vertical": true
+  },
+  {
+    "name": "Basic Card",
+    "image": "UOBBasicCard500-new.png",
+    "imagehires": "UOBBasicCard1000-new.png",
+    "color": "#3DABF1",
+    "type": "visa1",
+    "link": "https://www.uob.com.my/personal/cards/credit-cards/uob-basic-card.page"
   }
 ]
