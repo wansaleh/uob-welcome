@@ -91,6 +91,7 @@ const ContactTerms = () => {
                 colorScheme="brand"
                 size="lg"
                 mt="8"
+                _hover={{ bg: 'brandAlt.500' }}
                 onClick={() =>
                   Router.push(
                     'https://www.uob.com.my/personal/cards/credit-cards-terms.page'
@@ -129,6 +130,7 @@ const ContactTerms = () => {
                 colorScheme="brand"
                 size="lg"
                 mt="8"
+                _hover={{ bg: 'brandAlt.500' }}
                 onClick={() =>
                   Router.push(
                     'https://www.uob.com.my/personal/cards/credit-cards-terms.page'

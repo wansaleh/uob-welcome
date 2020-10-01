@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/core';
 import { view } from '@risingstack/react-easy-state';
 // import { mix, rgba } from 'polished';
+import useMobileDetect from 'use-mobile-detect-hook';
 import { useInterval, useMedia } from 'react-use';
 import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
@@ -29,6 +30,7 @@ const Hero = () => {
   // const theme = useTheme();
   const [cardIndex, setCardIndex] = useState(0);
   const isWide = useMedia('(min-width: 480px)');
+  const detectMobile = useMobileDetect();
 
   useEffect(() => {
     confettiInit();
@@ -84,10 +86,10 @@ const Hero = () => {
                 fontWeight="200"
                 lineHeight="1.2"
                 letterSpacing="tight"
-                mb="8"
+                mb={[4, , 8]}
               >
-                Welcome to the UOB family, we are delighted that you’ve joined
-                us.
+                Welcome to the UOB family, we are delighted that you’ve
+                joined&nbsp;us.
               </Heading>
               <Heading
                 as="h2"
@@ -96,57 +98,8 @@ const Hero = () => {
                 lineHeight="1.2"
                 letterSpacing="tight"
               >
-                An abundance of perks, benefits, and privileges await you.
+                An abundance of perks, benefits, and privileges await&nbsp;you.
               </Heading>
-            </Fade>
-
-            <Fade>
-              <Flex justify={['center', , 'flex-start']}>
-                <Flex
-                  mt="10"
-                  justify="center"
-                  align="center"
-                  direction="column"
-                  textAlign="center"
-                >
-                  <AspectRatio
-                    ratio={0.65}
-                    pos="relative"
-                    border="3px solid #fff"
-                    borderRadius="9999px"
-                    w="3rem"
-                    d="block"
-                    zIndex="10"
-                  >
-                    <Box>
-                      <Box
-                        pos="absolute"
-                        borderRadius="10px"
-                        background="#fff"
-                        w="8px"
-                        h="8px"
-                        top="10%"
-                        left="calc(50% - 4px)"
-                        ml="auto"
-                        mr="auto"
-                        animation="mousewheel 1.5s linear infinite running"
-                      />
-                    </Box>
-                  </AspectRatio>
-
-                  <Text
-                    mt="2"
-                    opacity="0.35"
-                    fontSize="sm"
-                    fontWeight="800"
-                    lineHeight="1"
-                  >
-                    Scroll/swipe
-                    <br />
-                    down
-                  </Text>
-                </Flex>
-              </Flex>
             </Fade>
           </Box>
 
@@ -169,6 +122,57 @@ const Hero = () => {
           )}
         </Flex>
       </Container>
+
+      <Box pos="absolute" bottom="8" left="50%" transform="translateX(-50%)">
+        <Fade>
+          <Flex justify={['center', , 'flex-start']}>
+            <Flex
+              mt="10"
+              justify="center"
+              align="center"
+              direction="column"
+              textAlign="center"
+            >
+              {detectMobile.isDesktop() && (
+                <AspectRatio
+                  ratio={0.55}
+                  pos="relative"
+                  border="2px solid #555"
+                  borderRadius="9999px"
+                  w="2rem"
+                  d="block"
+                  zIndex="10"
+                >
+                  <Box>
+                    <Box
+                      pos="absolute"
+                      borderRadius="10px"
+                      background="#fff"
+                      w="4px"
+                      h="4px"
+                      top="10%"
+                      left="calc(50% - 2px)"
+                      ml="auto"
+                      mr="auto"
+                      animation="mousewheel 1.5s linear infinite running"
+                    />
+                  </Box>
+                </AspectRatio>
+              )}
+
+              <Text
+                mt="3"
+                opacity="0.35"
+                fontSize="sm"
+                fontWeight="800"
+                lineHeight="1"
+              >
+                {detectMobile.isMobile() ? 'Swipe' : 'Scroll'} down
+              </Text>
+            </Flex>
+          </Flex>
+        </Fade>
+      </Box>
 
       <Box
         id="confetti-wrapper"

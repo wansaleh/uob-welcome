@@ -118,3 +118,17 @@
     opacity: 0;
   }
 }
+
+.card-grid {
+  display: flex;
+  width: auto;
+  perspective: 1500px;
+  transformstyle: preserve-3d;
+}
+.card-grid_column {
+}
+
+/* Style your items */
+.card-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+}

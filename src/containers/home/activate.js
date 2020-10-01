@@ -86,6 +86,7 @@ const Activate = () => {
               // borderWidth="2px"
               p="2px"
               h="initial"
+              _hover={{ bg: 'brandAlt.500' }}
             >
               <Box p="0.6em 1em 0.4em">Create PIN</Box>
             </Button>

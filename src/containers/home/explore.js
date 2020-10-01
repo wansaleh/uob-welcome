@@ -11,8 +11,9 @@ import {
   Text,
   useTheme
 } from '@chakra-ui/core';
-
+import Masonry from 'react-masonry-css';
 import { mix, rgba } from 'polished';
+
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 import cards from './cards.json';
@@ -76,14 +77,15 @@ const Explore = () => {
       </Container>
 
       <Container maxW="5xl" textAlign="center">
-        <Flex
-          wrap="wrap"
-          w="full"
-          justify="center"
-          css={{
-            perspective: '1500px',
-            transformStyle: 'preserve-3d'
+        <Masonry
+          breakpointCols={{
+            default: 2,
+            1100: 2,
+            700: 1,
+            500: 1
           }}
+          className="card-grid"
+          columnClassName="card-grid_column"
         >
           {cards.map((card, i) => (
             <Box
@@ -92,7 +94,7 @@ const Explore = () => {
               // pt="4"
               // pb="6"
               textAlign="center"
-              w={['full', 1 / 2]}
+              // w={['full', 1 / 2]}
             >
               <ScrollIn key={i}>
                 <Link
@@ -189,7 +191,7 @@ const Explore = () => {
               </ScrollIn>
             </Box>
           ))}
-        </Flex>
+        </Masonry>
       </Container>
     </Box>
   );
