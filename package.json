@@ -7,10 +7,10 @@
     "deploy": "git add . && git commit -m 'Updates.' && git push origin master"
   },
   "dependencies": {
-    "@chakra-ui/core": "^1.0.0-rc.3",
-    "@chakra-ui/icons": "^1.0.0-rc.3",
-    "@chakra-ui/media-query": "^1.0.0-rc.3",
-    "@chakra-ui/theme": "^1.0.0-rc.3",
+    "@chakra-ui/core": "^1.0.0-rc.5",
+    "@chakra-ui/icons": "^1.0.0-rc.5",
+    "@chakra-ui/media-query": "^1.0.0-rc.5",
+    "@chakra-ui/theme": "^1.0.0-rc.5",
     "@emotion/babel-preset-css-prop": "^10.0.27",
     "@risingstack/react-easy-state": "^6.3.0",
     "@zeit/next-css": "^1.0.1",
