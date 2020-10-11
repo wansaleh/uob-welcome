@@ -10,7 +10,7 @@ import {
   useTheme
 } from '@chakra-ui/core';
 import { view } from '@risingstack/react-easy-state';
-// import { mix, rgba } from 'polished';
+import { mix, rgba } from 'polished';
 import useMobileDetect from 'use-mobile-detect-hook';
 import { useInterval, useMedia } from 'react-use';
 import { Fade } from 'react-awesome-reveal';
@@ -20,7 +20,7 @@ import TiltCard from '../../components/tilt-card';
 import cards from './cards.json';
 
 const cardImages = cards.map((card) => card.image);
-// const cardColors = cards.map((card) => card.color);
+const cardColors = cards.map((card) => card.color);
 
 // function randomInRange(min, max) {
 //   return Math.random() * (max - min) + min;
@@ -133,7 +133,7 @@ const Hero = () => {
               direction="column"
               textAlign="center"
             >
-              {detectMobile.isDesktop() && (
+              {/* {detectMobile.isDesktop() && (
                 <AspectRatio
                   ratio={0.55}
                   pos="relative"
@@ -158,7 +158,16 @@ const Hero = () => {
                     />
                   </Box>
                 </AspectRatio>
-              )}
+              )} */}
+
+              <Box
+                fontSize="2rem"
+                animation="mousewheel 1.5s linear infinite running"
+                mb="4"
+                pos="relative"
+              >
+                <i className="fal fa-chevron-down" />
+              </Box>
 
               <Text
                 mt="3"
@@ -243,13 +252,13 @@ const CardCrossfade = ({ cardIndex }) => {
       glareMaxOpacity={0.4}
       css={{
         borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
-        // boxShadow: `0 0 2px 3px ${rgba(
-        //   mix(0.9, '#000', cardColors[cardIndex % 7]),
-        //   0.5
-        // )}, 0 2px 200px ${rgba(
-        //   cardColors[cardIndex % 7],
-        //   0.5
-        // )}, 0 2px 56px ${rgba(cardColors[cardIndex % 7], 0.25)}`,
+        boxShadow: `0 0 2px 3px ${rgba(
+          mix(0.9, '#000', cardColors[cardIndex % 7]),
+          0.25
+        )}, 0 2px 200px ${rgba(
+          cardColors[cardIndex % 7],
+          0.25
+        )}, 0 2px 56px ${rgba(cardColors[cardIndex % 7], 0.25)}`,
         overflow: 'hidden'
       }}
     >

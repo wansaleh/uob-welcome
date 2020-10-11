@@ -49,20 +49,41 @@ const ContactTerms = () => {
                 Contact Centre
               </Heading>
               <Text fontSize="lg" mb="4" maxW="xs">
-                If you need further assistance, don&apos;t hesitate to call one
-                of our UOB&nbsp;Contact&nbsp;Centres.
+                If you need further assistance, please call one of our 24-hour
+                UOB&nbsp;Contact&nbsp;Centres.
               </Text>
-              <Text fontSize="md">
-                Kuala Lumpur <b>03-26128 121</b>
-                <br />
-                Penang <b>04-2401 121</b>
-                <br />
-                Johor Bahru <b>07-2881 121</b>
-                <br />
-                Kuching <b>082-287 121</b>
-                <br />
-                Kota Kinabalu <b>088-477 121</b>
-              </Text>
+              <Flex
+                wrap="wrap"
+                fontSize="md"
+                justify="space-between"
+                maxW="18rem"
+                lineHeight="1.5"
+              >
+                <Text as="span">Kuala Lumpur</Text>
+                <Text as="b" w="12ch">
+                  +603 26128 121
+                </Text>
+                <Box className="break" />
+                <Text as="span">Penang</Text>
+                <Text as="b" w="12ch">
+                  +604 2401 121
+                </Text>
+                <Box className="break" />
+                <Text as="span">Johor Bahru</Text>
+                <Text as="b" w="12ch">
+                  +607 2881 121
+                </Text>
+                <Box className="break" />
+                <Text as="span">Kuching</Text>
+                <Text as="b" w="12ch">
+                  +6082 287 121
+                </Text>
+                <Box className="break" />
+                <Text as="span">Kota Kinabalu</Text>
+                <Text as="b" w="12ch">
+                  +6088 477 121
+                </Text>
+              </Flex>
             </Box>
           </Fade>
           <Fade triggerOnce delay={300}>

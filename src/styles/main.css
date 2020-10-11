@@ -132,3 +132,8 @@
 .card-grid_column > div {
   /* change div to reference your elements you put in <Masonry> */
 }
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}

@@ -71,7 +71,7 @@ const Explore = () => {
             letterSpacing="tight"
             mb="16"
           >
-            Click on your Card below to find out more.
+            Tap on your Card below to find out more.
           </Heading>
         </SlideIn>
       </Container>
@@ -154,11 +154,16 @@ const Explore = () => {
                     glareEnable
                     glareMaxOpacity={0.2}
                     css={{
-                      borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
+                      borderRadius: card.vertical
+                        ? 'clamp(1rem, 6vw, 2rem)'
+                        : 'clamp(0.75rem, 1.5vw, 1.5rem)',
                       boxShadow: `0 3px 0 0 ${rgba(
                         mix(0.9, '#000', card.color),
                         0.35
-                      )}, 0 0 30px ${rgba(card.color, 0.25)}`,
+                      )}, 0 0 30px ${rgba(
+                        card.color,
+                        0.25
+                      )}, 0 0 1px 3px ${rgba('#fff', 0.2)}`,
                       overflow: 'hidden',
                       position: 'relative',
                       zIndex: 10

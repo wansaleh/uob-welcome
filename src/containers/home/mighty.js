@@ -78,7 +78,7 @@ const Mighty = () => {
         >
           <Box>
             <Heading
-              maxW="4xl"
+              maxW="3xl"
               mx="auto"
               fontSize={['xl', '2xl', '3xl']}
               lineHeight="0.95"
@@ -87,21 +87,20 @@ const Mighty = () => {
               // opacity="0.5"
               color="#61A3FF"
             >
-              Mobile Banking
+              All Mighty Assistance. By My Side.
             </Heading>
 
             <Heading
-              maxW="4xl"
+              maxW="3xl"
               mx="auto"
-              fontSize={['4xl', '5xl', '7xl']}
+              fontSize={['3xl', '4xl', '5xl']}
               lineHeight="0.95"
               mb="12"
               letterSpacing="tight"
               // color="brand.200"
             >
-              Bring home the bank,
-              <br />
-              bring home Mighty
+              AI-powered UOB Mighty app simplifies your banking experience by
+              giving more meaning to numbers.
             </Heading>
 
             <Heading
@@ -114,8 +113,8 @@ const Mighty = () => {
               mb="16"
               className="trig"
             >
-              Life is a lot easier, now that banking is simpler with the all new
-              UOB Mighty app.
+              Life is a lot easier, now that banking is simpler with
+              UOB&nbsp;Mighty app.
             </Heading>
           </Box>
         </Plx>
