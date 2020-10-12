@@ -15,7 +15,8 @@ export default {
         ...theme.styles.global,
 
         body: {
-          backgroundColor: props.colorMode !== 'dark' ? 'white' : 'black',
+          // backgroundColor: props.colorMode !== 'dark' ? 'white' : 'black',
+          backgroundColor: 'black',
           fontFamily: 'body',
           color: props.colorMode === 'dark' ? 'white' : 'gray.900'
         },

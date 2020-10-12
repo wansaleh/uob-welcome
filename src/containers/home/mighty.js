@@ -12,10 +12,12 @@ import {
 } from '@chakra-ui/core';
 import { rgba } from 'polished';
 import Plx from 'react-plx';
+import Slider from 'react-slick';
 
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 import SlideIn from '../../components/slide-in';
+import { cardsSlickSettings } from '../../components/slick';
 
 const Mighty = () => {
   const theme = useTheme();
@@ -188,42 +190,32 @@ const Mighty = () => {
         </Flex>
       </Container>
 
-      <Container maxW="5xl" overflow="scroll" py="8">
-        <SimpleGrid
-          columns={3}
-          spacing={[4, , 8]}
-          zIndex="20"
-          pos="relative"
-          mx={[-4, , 0]}
-          pr={[4, , 0]}
-          w={['250vw', , '100%']}
-        >
+      <Container maxW="7xl" py="8" px="0" pos="relative" zIndex="20">
+        <Slider {...cardsSlickSettings}>
           {[1, 2, 3].map((num) => (
-            <SlideIn key={num} delay={200 * num} triggerOnce>
-              <Box>
-                <TiltCard
-                  tiltMaxAngleX={0}
-                  tiltMaxAngleY={3}
-                  // glareEnable
-                  // glareMaxOpacity={0.2}
-                  css={{
-                    borderRadius: 'clamp(0.5rem, 3vw, 3rem)',
-                    boxShadow: 'var(--shadow-card)',
-                    overflow: 'hidden',
-                    position: 'relative',
-                    zIndex: 10
-                  }}
-                >
-                  <Image
-                    src={require(`../../images/mighty/${num}.png`)}
-                    alt=""
-                    w="full"
-                  />
-                </TiltCard>
-              </Box>
-            </SlideIn>
+            <Box key={num} py="4" px="6">
+              <TiltCard
+                tiltMaxAngleX={0}
+                tiltMaxAngleY={3}
+                // glareEnable
+                // glareMaxOpacity={0.2}
+                css={{
+                  borderRadius: 'clamp(0.5rem, 3vw, 3rem)',
+                  boxShadow: 'var(--shadow-card)',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  zIndex: 10
+                }}
+              >
+                <Image
+                  src={require(`../../images/mighty/${num}.png`)}
+                  alt=""
+                  w="full"
+                />
+              </TiltCard>
+            </Box>
           ))}
-        </SimpleGrid>
+        </Slider>
       </Container>
 
       <Box
