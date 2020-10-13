@@ -41,7 +41,7 @@
     "react-slick": "^0.27.11",
     "react-use": "^15.3.4",
     "rellax": "^1.12.1",
-    "tailwindcss": "^1.8.13",
+    "tailwindcss": "^1.9.1",
     "use-mobile-detect-hook": "^1.0.3"
   },
   "devDependencies": {

@@ -244,24 +244,26 @@ const Mighty = () => {
         <Slider {...cardsSlickSettings}>
           {screenshots.map((screenshot, i) => (
             <Box key={screenshot.id} py="4" px="6">
-              <Box
-                bg="linear-gradient(to bottom right, #1E6BD7, #0A4CA9)"
-                borderRadius="clamp(0.5rem, 3vw, 3rem)"
-                boxShadow="var(--shadow-card)"
-                overflow="hidden"
-                position="relative"
-                zIndex="10"
-                transition="all 0.8s var(--ease-out-expo)"
-                _hover={{
-                  transform: 'scale(1.02)',
-                  img: { transform: 'translateY(-60px)' }
+              <TiltCard
+                tiltMaxAngleX={0}
+                tiltMaxAngleY={3}
+                // glareEnable
+                // glareMaxOpacity={0.2}
+                css={{
+                  background:
+                    'linear-gradient(to bottom right, #1E6BD7, #0A4CA9)',
+                  borderRadius: 'clamp(0.5rem, 3vw, 3rem)',
+                  boxShadow: 'var(--shadow-card)',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  zIndex: 10
                 }}
               >
-                <Box pt="10" px="8" minH={['150px', , '220px']}>
-                  <Heading fontSize={['3xl']} lineHeight="1.1">
+                <Box pt="10" px="8" minH="220px">
+                  <Heading fontSize="3xl" lineHeight="1.1">
                     {screenshot.title}
                   </Heading>
-                  <Text fontSize={['lg', , 'xl']} lineHeight="1.2" mt="4">
+                  <Text fontSize="xl" lineHeight="1.2" mt="4">
                     {screenshot.desc}
                   </Text>
                 </Box>
@@ -272,9 +274,8 @@ const Mighty = () => {
                   maxW="initial"
                   mx="-15%"
                   mb="-112px"
-                  transition="all 0.8s var(--ease-out-expo)"
                 />
-              </Box>
+              </TiltCard>
             </Box>
           ))}
         </Slider>

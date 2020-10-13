@@ -4,7 +4,7 @@ import { Box } from '@chakra-ui/core';
 export const slickSettings = {
   arrows: true,
   dots: true,
-  infinite: false,
+  infinite: true,
   // swipeToSlide: true,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
@@ -54,10 +54,10 @@ export const cardsSlickSettings = {
 
 const arrowStyles = {
   pos: 'absolute',
-  bottom: '0rem',
-  fontSize: '2.5rem',
+  bottom: '50%',
+  fontSize: '3rem',
   zIndex: '100',
-  mx: [4, , 8],
+  mx: [4, , , , -8],
   cursor: 'pointer',
   transition: 'all 0.2s ease',
   _hover: { opacity: 0.7 }
@@ -66,7 +66,7 @@ const arrowStyles = {
 export function PrevArrow({ onClick }) {
   return (
     <Box onClick={onClick} {...arrowStyles} left="0">
-      <i className="fal fa-arrow-circle-left" />
+      <i className="fal fa-chevron-left" />
     </Box>
   );
 }
@@ -74,7 +74,7 @@ export function PrevArrow({ onClick }) {
 export function NextArrow({ onClick }) {
   return (
     <Box onClick={onClick} {...arrowStyles} right="0">
-      <i className="fal fa-arrow-circle-right" />
+      <i className="fal fa-chevron-right" />
     </Box>
   );
 }
