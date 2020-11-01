@@ -13,6 +13,7 @@ import {
 } from '@chakra-ui/core';
 import Masonry from 'react-masonry-css';
 import { mix, rgba } from 'polished';
+import { useMedia } from 'react-use';
 
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
@@ -22,6 +23,7 @@ import SlideIn from '../../components/slide-in';
 
 const Explore = () => {
   const theme = useTheme();
+  const isWide = useMedia('(min-width: 480px)');
 
   return (
     <Box
@@ -69,6 +71,7 @@ const Explore = () => {
             fontWeight="600"
             lineHeight="1.2"
             letterSpacing="tight"
+            mt="8"
             mb="16"
           >
             Tap on your Card below to find out more.
@@ -76,7 +79,7 @@ const Explore = () => {
         </SlideIn>
       </Container>
 
-      <Container maxW="5xl" textAlign="center">
+      <Container maxW="5xl" textAlign="center" pos="relative" zIndex="100">
         <Masonry
           breakpointCols={{
             default: 2,
@@ -166,7 +169,12 @@ const Explore = () => {
                       )}, 0 0 1px 3px ${rgba('#fff', 0.2)}`,
                       overflow: 'hidden',
                       position: 'relative',
-                      zIndex: 10
+                      zIndex: 10,
+                      width:
+                        !isWide && card.vertical
+                          ? 'calc(100% * (54 / 86))'
+                          : '100%',
+                      margin: '0 auto'
                     }}
                   >
                     <AspectRatio ratio={card.vertical ? 54 / 86 : 86 / 54}>

@@ -15,6 +15,7 @@ import { rgba } from 'polished';
 import Plx from 'react-plx';
 import Slider from 'react-slick';
 
+import { useMedia } from 'react-use';
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 import SlideIn from '../../components/slide-in';
@@ -71,6 +72,7 @@ const screenshots = [
 
 const Mighty = () => {
   const theme = useTheme();
+  const isWide = useMedia('(min-width: 480px)');
 
   return (
     <Box
@@ -252,10 +254,14 @@ const Mighty = () => {
                 position="relative"
                 zIndex="10"
                 transition="all 0.8s var(--ease-out-expo)"
-                _hover={{
-                  transform: 'scale(1.02)',
-                  img: { transform: 'translateY(-60px)' }
-                }}
+                _hover={
+                  isWide && {
+                    transform: 'scale(1.02)',
+                    img: {
+                      transform: 'translateY(-60px)'
+                    }
+                  }
+                }
               >
                 <Box pt="10" px="8" minH={['150px', , '220px']}>
                   <Heading fontSize={['3xl']} lineHeight="1.1">

@@ -64,6 +64,7 @@ const Hero = () => {
             w={['full', , 1 / 2]}
             p={8}
             textAlign={['center', , 'left']}
+            mt={['-8rem', , 0]}
             // className="rellax"
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-5"
@@ -75,7 +76,7 @@ const Hero = () => {
                 mb="12"
                 letterSpacing="-0.02em"
               >
-                Congratulations on getting your new UOB&nbsp;Credit&nbsp;Card
+                Congratulations on getting your new UOB Credit&nbsp;Card
               </Heading>
             </Fade>
 
@@ -123,7 +124,12 @@ const Hero = () => {
         </Flex>
       </Container>
 
-      <Box pos="absolute" bottom="8" left="50%" transform="translateX(-50%)">
+      <Box
+        pos="absolute"
+        bottom={[32, , 8]}
+        left="50%"
+        transform="translateX(-50%)"
+      >
         <Fade>
           <Flex justify={['center', , 'flex-start']}>
             <Flex
@@ -162,11 +168,11 @@ const Hero = () => {
 
               <Box
                 fontSize="2rem"
-                animation="mousewheel 1.5s linear infinite running"
+                animation="mousewheel 1.5s linear reverse infinite running"
                 mb="4"
                 pos="relative"
               >
-                <i className="fal fa-chevron-down" />
+                <i className="fal fa-chevron-up" />
               </Box>
 
               <Text
@@ -176,7 +182,7 @@ const Hero = () => {
                 fontWeight="800"
                 lineHeight="1"
               >
-                {detectMobile.isMobile() ? 'Swipe' : 'Scroll'} down
+                {detectMobile.isMobile() ? 'Swipe' : 'Scroll'} up
               </Text>
             </Flex>
           </Flex>

@@ -56,7 +56,7 @@ const ContactTerms = () => {
                 wrap="wrap"
                 fontSize="md"
                 justify="space-between"
-                maxW="18rem"
+                maxW="14rem"
                 lineHeight="1.5"
               >
                 <Text as="span">Kuala Lumpur</Text>

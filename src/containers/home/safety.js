@@ -60,7 +60,7 @@ const Safety = () => {
             </Heading>
           </Fade>
 
-          <Fade triggerOnce delay={200}>
+          <Fade triggerOnce>
             <Heading
               fontSize={['lg', , '2xl']}
               fontWeight="200"
@@ -72,7 +72,7 @@ const Safety = () => {
             </Heading>
           </Fade>
 
-          <Fade triggerOnce delay={400}>
+          <Fade triggerOnce>
             <Text
               fontSize={['lg', , '2xl']}
               fontWeight="600"
@@ -91,13 +91,7 @@ const Safety = () => {
             textAlign="left"
           >
             <Box>
-              <Fade
-                triggerOnce
-                duration={600}
-                delay={800}
-                cascade
-                damping={0.2}
-              >
+              <Fade triggerOnce duration={600}>
                 <svg
                   id="Capa_1"
                   xmlns="http://www.w3.org/2000/svg"
@@ -158,13 +152,7 @@ const Safety = () => {
               </Fade>
             </Box>
             <Box>
-              <Fade
-                triggerOnce
-                duration={600}
-                delay={1100}
-                cascade
-                damping={0.2}
-              >
+              <Fade triggerOnce duration={600}>
                 <svg
                   id="Capa_1"
                   viewBox="0 0 511.38 511.38"
@@ -204,13 +192,7 @@ const Safety = () => {
               </Fade>
             </Box>
             <Box>
-              <Fade
-                triggerOnce
-                duration={600}
-                delay={1400}
-                cascade
-                damping={0.2}
-              >
+              <Fade triggerOnce duration={600}>
                 <svg
                   viewBox="0 0 511.262 511.262"
                   xmlns="http://www.w3.org/2000/svg"
