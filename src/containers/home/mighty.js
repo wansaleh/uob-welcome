@@ -54,16 +54,21 @@ const screenshots = [
   },
   {
     id: 6,
+    title: 'Mighty Insights',
+    desc: 'Simplifies the banking experience by giving more meaning to numbers.'
+  },
+  {
+    id: 7,
     title: 'Bank',
     desc: 'Manage your accounts and transactions on the go.'
   },
   {
-    id: 7,
+    id: 8,
     title: 'Pay',
     desc: 'Make payments and transfers in just a few steps.'
   },
   {
-    id: 8,
+    id: 9,
     title: 'Lifestyle',
     desc:
       'Exclusive deals, dining reviews and rewards redemption anytime, anywhere.'
