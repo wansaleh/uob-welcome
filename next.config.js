@@ -1,6 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const withFonts = require('next-fonts');
-const withOptimizedImages = require('next-optimized-images');
+const withImages = require('next-optimized-images');
 const withTM = require('next-transpile-modules')(['tailwindcss']);
 
 const useBasePath =
@@ -11,28 +11,40 @@ const useBasePath =
       }
     : {};
 
-module.exports = withPlugins([[withTM], [withOptimizedImages], [withFonts]], {
-  ...useBasePath,
-  webpack: (config) => {
-    // Fixes npm packages that depend on `fs` module
-    config.node = {
-      fs: 'empty'
-    };
-
-    const originalEntry = config.entry;
-    config.entry = async () => {
-      const entries = await originalEntry();
-
-      if (
-        entries['main.js'] &&
-        !entries['main.js'].includes('./client/polyfills.js')
-      ) {
-        entries['main.js'].unshift('./client/polyfills.js');
+module.exports = withPlugins(
+  [
+    [withTM],
+    [
+      withImages,
+      {
+        inlineImageLimit: -1
       }
+    ],
+    [withFonts]
+  ],
+  {
+    ...useBasePath,
+    webpack: (config) => {
+      // Fixes npm packages that depend on `fs` module
+      config.node = {
+        fs: 'empty'
+      };
 
-      return entries;
-    };
+      const originalEntry = config.entry;
+      config.entry = async () => {
+        const entries = await originalEntry();
 
-    return config;
+        if (
+          entries['main.js'] &&
+          !entries['main.js'].includes('./client/polyfills.js')
+        ) {
+          entries['main.js'].unshift('./client/polyfills.js');
+        }
+
+        return entries;
+      };
+
+      return config;
+    }
   }
-});
+);
