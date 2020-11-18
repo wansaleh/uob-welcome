@@ -12,7 +12,7 @@ import {
   UnorderedList,
   useTheme,
   Wrap
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 import Router from 'next/router';
 import { lighten } from 'polished';
@@ -26,11 +26,11 @@ const ContactTerms = () => {
     <Box
       color="#fff"
       bg={`linear-gradient(to bottom, ${theme.colors.brand[700]}, ${theme.colors.brand[900]})`}
-      py={[4, , 20]}
+      pt={[4, , 20]}
     >
       <Container pt="16" pb="16" textAlign="left" lineHeight="1.3">
         <SimpleGrid columns={[1, , 3]} spacing={10}>
-          <Fade>
+          <Fade triggerOnce>
             <Box py="4">
               <Box
                 fontSize="4xl"
@@ -49,23 +49,44 @@ const ContactTerms = () => {
                 Contact Centre
               </Heading>
               <Text fontSize="lg" mb="4" maxW="xs">
-                If you need further assistance, don&apos;t hesitate to call one
-                of our UOB&nbsp;Contact&nbsp;Centres.
+                If you need further assistance, please call one of our 24-hour
+                UOB&nbsp;Contact&nbsp;Centres.
               </Text>
-              <Text fontSize="md">
-                Kuala Lumpur <b>03-26128 121</b>
-                <br />
-                Penang <b>04-2401 121</b>
-                <br />
-                Johor Bahru <b>07-2881 121</b>
-                <br />
-                Kuching <b>082-287 121</b>
-                <br />
-                Kota Kinabalu <b>088-477 121</b>
-              </Text>
+              <Flex
+                wrap="wrap"
+                fontSize="md"
+                justify="space-between"
+                maxW="14rem"
+                lineHeight="1.5"
+              >
+                <Text as="span">Kuala Lumpur</Text>
+                <Text as="b" w="12ch">
+                  +603 26128 121
+                </Text>
+                <Box className="break" />
+                <Text as="span">Penang</Text>
+                <Text as="b" w="12ch">
+                  +604 2401 121
+                </Text>
+                <Box className="break" />
+                <Text as="span">Johor Bahru</Text>
+                <Text as="b" w="12ch">
+                  +607 2881 121
+                </Text>
+                <Box className="break" />
+                <Text as="span">Kuching</Text>
+                <Text as="b" w="12ch">
+                  +6082 287 121
+                </Text>
+                <Box className="break" />
+                <Text as="span">Kota Kinabalu</Text>
+                <Text as="b" w="12ch">
+                  +6088 477 121
+                </Text>
+              </Flex>
             </Box>
           </Fade>
-          <Fade delay={300}>
+          <Fade triggerOnce delay={300}>
             <Box py="4">
               <Box
                 fontSize="4xl"
@@ -91,9 +112,11 @@ const ContactTerms = () => {
                 colorScheme="brand"
                 size="lg"
                 mt="8"
+                _hover={{ bg: 'brandAlt.500' }}
                 onClick={() =>
                   Router.push(
-                    'https://www.uob.com.my/web-resources/personal/pdf/personal/fees/visamaster-tnc.pdf'
+                    'https://www.uob.com.my/personal/cards/credit-cards-terms.page'
+                    // 'https://www.uob.com.my/web-resources/personal/pdf/personal/fees/visamaster-tnc.pdf'
                   )
                 }
               >
@@ -101,7 +124,7 @@ const ContactTerms = () => {
               </Button>
             </Box>
           </Fade>
-          <Fade delay={600}>
+          <Fade triggerOnce delay={600}>
             <Box py="4">
               <Box
                 fontSize="4xl"
@@ -117,7 +140,7 @@ const ContactTerms = () => {
                 letterSpacing="tight"
                 lineHeight="1"
               >
-                Terms &amp; Conditions
+                Terms and Conditions
               </Heading>
               <Text fontSize="lg" mb="4" maxW="xs">
                 For the full UOB Credit Card Terms and Conditions, click here.
@@ -128,13 +151,14 @@ const ContactTerms = () => {
                 colorScheme="brand"
                 size="lg"
                 mt="8"
+                _hover={{ bg: 'brandAlt.500' }}
                 onClick={() =>
                   Router.push(
                     'https://www.uob.com.my/personal/cards/credit-cards-terms.page'
                   )
                 }
               >
-                Read Terms &amp; Conditions
+                Read Terms and Conditions
               </Button>
             </Box>
           </Fade>

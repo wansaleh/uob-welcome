@@ -1,6 +1,6 @@
 import React from 'react';
 import Reveal from 'react-awesome-reveal';
-import { keyframes } from '@emotion/core';
+import { keyframes } from '@emotion/react';
 
 const customAnimation = keyframes`
   0% {
@@ -18,6 +18,7 @@ export default function SlideIn({ children, ...props }) {
   return (
     <Reveal
       keyframes={customAnimation}
+      duration={500}
       css={{
         animationTimingFunction: 'var(--ease-out-quart) !important'
       }}

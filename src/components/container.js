@@ -1,4 +1,4 @@
-import { Box, useTheme } from '@chakra-ui/core';
+import { Box, useTheme } from '@chakra-ui/react';
 
 const Container = ({ children, ...props }) => {
   const theme = useTheme();

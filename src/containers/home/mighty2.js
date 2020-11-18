@@ -15,7 +15,6 @@ import { rgba } from 'polished';
 import Plx from 'react-plx';
 import Slider from 'react-slick';
 
-import { useMedia } from 'react-use';
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
 import SlideIn from '../../components/slide-in';
@@ -23,15 +22,10 @@ import { cardsSlickSettings } from '../../components/slick';
 
 const screenshots = [
   {
-    id: 6,
-    title: 'Mighty Insights',
-    desc: 'Simplifies the banking experience by giving more meaning to numbers.'
-  },
-  {
     id: 1,
     title: 'Account Activity',
     desc:
-      'Leave the hard work to us. We’ll alert you on new transactional activities and trends to safeguard your account.'
+      'Leave the hard work to us. We’ll alert you on transactional activities, trends, and any unusual occurrences to safeguard your account.'
   },
   {
     id: 2,
@@ -55,20 +49,20 @@ const screenshots = [
     id: 5,
     title: 'Personalised',
     desc:
-      'Uniquely presented based on your usual spending habits and financial transactions, evolving as you grow with us.'
+      'Uniquely presented based on your usual spending habits and financial transactions, evolving as you growth with us.'
   },
   {
-    id: 7,
+    id: 6,
     title: 'Bank',
     desc: 'Manage your accounts and transactions on the go.'
   },
   {
-    id: 8,
+    id: 7,
     title: 'Pay',
     desc: 'Make payments and transfers in just a few steps.'
   },
   {
-    id: 9,
+    id: 8,
     title: 'Lifestyle',
     desc:
       'Exclusive deals, dining reviews and rewards redemption anytime, anywhere.'
@@ -77,7 +71,6 @@ const screenshots = [
 
 const Mighty = () => {
   const theme = useTheme();
-  const isWide = useMedia('(min-width: 480px)');
 
   return (
     <Box
@@ -251,28 +244,26 @@ const Mighty = () => {
         <Slider {...cardsSlickSettings}>
           {screenshots.map((screenshot, i) => (
             <Box key={screenshot.id} py="4" px="6">
-              <Box
-                bg="linear-gradient(to bottom right, #1E6BD7, #0A4CA9)"
-                borderRadius="clamp(0.5rem, 3vw, 3rem)"
-                boxShadow="var(--shadow-card)"
-                overflow="hidden"
-                position="relative"
-                zIndex="10"
-                transition="all 0.8s var(--ease-out-expo)"
-                _hover={
-                  isWide && {
-                    transform: 'scale(1.02)',
-                    img: {
-                      transform: 'translateY(-60px)'
-                    }
-                  }
-                }
+              <TiltCard
+                tiltMaxAngleX={0}
+                tiltMaxAngleY={3}
+                // glareEnable
+                // glareMaxOpacity={0.2}
+                css={{
+                  background:
+                    'linear-gradient(to bottom right, #1E6BD7, #0A4CA9)',
+                  borderRadius: 'clamp(0.5rem, 3vw, 3rem)',
+                  boxShadow: 'var(--shadow-card)',
+                  overflow: 'hidden',
+                  position: 'relative',
+                  zIndex: 10
+                }}
               >
-                <Box pt="10" px="8" minH={['150px', , '220px']}>
-                  <Heading fontSize={['3xl']} lineHeight="1.1">
+                <Box pt="10" px="8" minH="220px">
+                  <Heading fontSize="3xl" lineHeight="1.1">
                     {screenshot.title}
                   </Heading>
-                  <Text fontSize={['lg', , 'xl']} lineHeight="1.2" mt="4">
+                  <Text fontSize="xl" lineHeight="1.2" mt="4">
                     {screenshot.desc}
                   </Text>
                 </Box>
@@ -283,9 +274,8 @@ const Mighty = () => {
                   maxW="initial"
                   mx="-15%"
                   mb="-112px"
-                  transition="all 0.8s var(--ease-out-expo)"
                 />
-              </Box>
+              </TiltCard>
             </Box>
           ))}
         </Slider>

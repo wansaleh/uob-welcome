@@ -1,9 +1,9 @@
 /* eslint-disable no-sparse-arrays */
-import { Box, Flex } from '@chakra-ui/core';
+import { Box, Flex } from '@chakra-ui/react';
 // import NextLink from 'next/link';
 
 import Logo from '../images/logo-blue';
-import Seal from '../images/sealmark-blue';
+import Seal from '../images/rby-bottom';
 import mq from '../styles/mq';
 import Container from './container';
 
@@ -14,21 +14,21 @@ const Header = ({ basic = false, ...props }) => {
       // pos={['relative', , 'absolute']}
       pos="absolute"
       w="100%"
-      h={['4rem', '5rem', '6rem']}
-      py={[5, 6, 8]}
+      // h={['4rem', '5rem', '6rem']}
+      py="5"
       zIndex="1000"
       // bg={['white', , 'transparent']}
       // className="rellax"
       // data-rellax-speed="-10"
       {...props}
     >
-      <Container h="100%">
-        <Flex alignItems="center" position="relative" zIndex="10" h="100%">
-          <Box h="100%">
+      <Container>
+        <Flex alignItems="center" position="relative" zIndex="10">
+          <Box>
             <span className="invisible">UOB</span>
             <Logo
               css={mq({
-                height: '100%',
+                height: '1.75rem',
                 '.uob-blue': {
                   fill: basic ? '#00377b' : '#fff'
                 }
@@ -36,11 +36,11 @@ const Header = ({ basic = false, ...props }) => {
             />
           </Box>
           <Box flex="1" />
-          <Box h="100%">
+          <Box>
             <span className="invisible">Right By You</span>
             <Seal
               css={mq({
-                height: '100%',
+                height: '2.5rem',
                 '.uob-blue': { fill: basic ? '#00377b' : '#fff' }
               })}
             />

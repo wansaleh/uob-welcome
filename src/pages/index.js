@@ -1,7 +1,7 @@
 /* eslint-disable no-new */
-import { Box } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/react';
 import { view } from '@risingstack/react-easy-state';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 // import Rellax from 'rellax';
 
 import Head from '../components/head';
@@ -13,13 +13,14 @@ import Activate from '../containers/home/activate';
 import Footer from '../components/footer';
 import Safety from '../containers/home/safety';
 import ContactTerms from '../containers/home/contact-terms';
-import SmoothScroll from '../smoothscroll';
+import Privileges from '../containers/home/privileges';
+// import SmoothScroll from '../smoothscroll';
 
 const Home = () => {
-  useEffect(() => {
-    // new Rellax('.rellax');
-    SmoothScroll();
-  }, []);
+  // useEffect(() => {
+  //   // new Rellax('.rellax');
+  //   SmoothScroll();
+  // }, []);
 
   return (
     <Box bg="#fff">
@@ -30,8 +31,9 @@ const Home = () => {
       <Hero />
       <Explore />
       <Mighty />
-      <Activate />
+      <Privileges />
       <Safety />
+      <Activate />
       <ContactTerms />
 
       <Footer />

@@ -9,7 +9,7 @@ import {
   Link,
   SimpleGrid,
   useTheme
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
@@ -29,7 +29,7 @@ const Activate = () => {
       bg="#fff"
       // bg={`linear-gradient(to bottom, ${theme.colors.brand[500]}, #000)`}
       color="#000"
-      pt={['6rem', , '12rem']}
+      py={['6rem', , '12rem']}
       pos="relative"
       zIndex="10"
       overflow="hidden"
@@ -86,6 +86,7 @@ const Activate = () => {
               // borderWidth="2px"
               p="2px"
               h="initial"
+              _hover={{ bg: 'brandAlt.500' }}
             >
               <Box p="0.6em 1em 0.4em">Create PIN</Box>
             </Button>
