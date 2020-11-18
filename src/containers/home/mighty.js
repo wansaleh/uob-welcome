@@ -10,7 +10,7 @@ import {
   Text,
   useTheme,
   VisuallyHidden
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import { rgba } from 'polished';
 import Plx from 'react-plx';
 import Slider from 'react-slick';
@@ -23,10 +23,15 @@ import { cardsSlickSettings } from '../../components/slick';
 
 const screenshots = [
   {
+    id: 6,
+    title: 'Mighty Insights',
+    desc: 'Simplifies the banking experience by giving more meaning to numbers.'
+  },
+  {
     id: 1,
     title: 'Account Activity',
     desc:
-      'Leave the hard work to us. We’ll alert you on transactional activities, trends, and any unusual occurrences to safeguard your account.'
+      'Leave the hard work to us. We’ll alert you on new transactional activities and trends to safeguard your account.'
   },
   {
     id: 2,
@@ -50,12 +55,7 @@ const screenshots = [
     id: 5,
     title: 'Personalised',
     desc:
-      'Uniquely presented based on your usual spending habits and financial transactions, evolving as you growth with us.'
-  },
-  {
-    id: 6,
-    title: 'Mighty Insights',
-    desc: 'Simplifies the banking experience by giving more meaning to numbers.'
+      'Uniquely presented based on your usual spending habits and financial transactions, evolving as you grow with us.'
   },
   {
     id: 7,

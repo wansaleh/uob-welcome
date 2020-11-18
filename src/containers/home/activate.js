@@ -9,7 +9,7 @@ import {
   Link,
   SimpleGrid,
   useTheme
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';

@@ -8,7 +8,7 @@ import {
   Image,
   Text,
   useTheme
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import { view } from '@risingstack/react-easy-state';
 import { mix, rgba } from 'polished';
 import useMobileDetect from 'use-mobile-detect-hook';
@@ -64,14 +64,14 @@ const Hero = () => {
             w={['full', , 1 / 2]}
             p={8}
             textAlign={['center', , 'left']}
-            mt={['-8rem', , 0]}
+            mt={[0]}
             // className="rellax"
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-5"
           >
             <Fade>
               <Heading
-                fontSize={['5xl', , '6xl']}
+                fontSize={['4xl', '5xl', '6xl']}
                 lineHeight="0.95"
                 mb="12"
                 letterSpacing="-0.02em"
@@ -83,7 +83,7 @@ const Hero = () => {
             <Fade>
               <Heading
                 as="h2"
-                fontSize={['2xl', , '3xl']}
+                fontSize={['xl', '2xl', '3xl']}
                 fontWeight="200"
                 lineHeight="1.2"
                 letterSpacing="tight"
@@ -94,7 +94,7 @@ const Hero = () => {
               </Heading>
               <Heading
                 as="h2"
-                fontSize={['2xl', , '3xl']}
+                fontSize={['xl', '2xl', '3xl']}
                 fontWeight="200"
                 lineHeight="1.2"
                 letterSpacing="tight"
@@ -126,7 +126,7 @@ const Hero = () => {
 
       <Box
         pos="absolute"
-        bottom={[32, , 8]}
+        bottom={[16, , 8]}
         left="50%"
         transform="translateX(-50%)"
       >

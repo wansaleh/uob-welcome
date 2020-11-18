@@ -10,7 +10,7 @@ import {
   Text,
   useTheme,
   VisuallyHidden
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import { rgba } from 'polished';
 import Plx from 'react-plx';
 import Slider from 'react-slick';

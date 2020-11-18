@@ -1,6 +1,6 @@
 import Plx from 'react-plx';
 import { useMedia } from 'react-use';
-import { Box } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/react';
 
 const ScrollIn = ({ offset = 0, children, ...props }) => {
   const isWide = useMedia('(min-width: 480px)');

@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
-import { Box } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/react';
 import { view } from '@risingstack/react-easy-state';
 // import { useEffect } from 'react';
 // import Rellax from 'rellax';

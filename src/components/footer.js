@@ -6,7 +6,10 @@ import {
   Text,
   Link,
   Flex,
-  useTheme
+  useTheme,
+  ListItem,
+  List,
+  chakra
   // Modal,
   // useDisclosure,
   // ModalOverlay,
@@ -16,12 +19,15 @@ import {
   // ModalBody,
   // ModalFooter,
   // Button
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { useRef } from 'react';
+// import { useRef } from 'react';
 import Container from './container';
-import { tncLink } from '../config';
+// import { tncLink } from '../config';
 // import TermsContent from '../containers/tnc/content';
+import Seal from '../images/rby-bottom';
+
+const CSeal = chakra(Seal);
 
 const links = [
   {
@@ -92,37 +98,50 @@ const Footer = ({ ...props }) => {
       color="gray.200"
       minH="5rem"
       position="relative"
-      py={[10, , 16]}
+      textAlign="center"
+      py={[10, , 10]}
     >
       <Container position="relative" zIndex="10">
-        <Text fontSize="sm" opacity="0.5" maxW="2xl" lineHeight="1.3">
+        <Box>
+          <CSeal h="24" mx="auto" mb="10" />
+        </Box>
+
+        <Text fontSize="sm" opacity="0.5" maxW="2xl" mx="auto" lineHeight="1.3">
           Terms and conditions apply. Offers are only valid for payment made
           using UOB Cards. Promotions are not valid in conjunction with other
           promotions, offers, privileges, vouchers, loyalty program, privilege
           card(s) and mutually exclusive.
         </Text>
 
-        <Text fontSize="md" fontWeight="700" mt="4" lineHeight="1.3">
+        <Text
+          fontSize="md"
+          fontWeight="700"
+          maxW="2xl"
+          mx="auto"
+          mt="4"
+          lineHeight="1.3"
+        >
           Copyright &copy; 2020 United Overseas Bank (Malaysia) Bhd
           (199301017069 (271809-K)). All rights reserved.
         </Text>
 
-        <Flex flexWrap="wrap" justify="space-between">
-          <Flex
-            as="ul"
+        <Flex flexWrap="wrap" justify="center">
+          <List
+            d="flex"
+            justifyContent="center"
             flexWrap="wrap"
             fontSize="md"
             lineHeight="1.2"
-            mt="4"
+            mt="8"
             mx="-0.5rem"
             mr="4"
           >
             {links.map((link, i) => (
-              <Box key={i} as="li">
+              <ListItem key={i}>
                 <Link href={link.link} px="2">
                   {link.title}
                 </Link>
-              </Box>
+              </ListItem>
             ))}
             {links2.map((link, i) => (
               <Box key={i} as="li">
@@ -131,18 +150,18 @@ const Footer = ({ ...props }) => {
                     href={link.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    px="2"
+                    p="2"
                   >
                     {link.title}
                   </Link>
                 ) : (
                   <NextLink href={link.link} passHref>
-                    <Link px="2">{link.title}</Link>
+                    <Link p="2">{link.title}</Link>
                   </NextLink>
                 )}
               </Box>
             ))}
-          </Flex>
+          </List>
         </Flex>
       </Container>
 

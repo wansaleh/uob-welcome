@@ -1,8 +1,12 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ColorModeScript } from '@chakra-ui/core';
+import { ColorModeScript } from '@chakra-ui/react';
 
 class MyDocument extends Document {
+  static getInitialProps(ctx) {
+    return Document.getInitialProps(ctx);
+  }
+
   render() {
     return (
       <Html lang="en">
@@ -35,7 +39,7 @@ class MyDocument extends Document {
           )}
         </Head>
         <body>
-          <ColorModeScript initialValue="light" />
+          <ColorModeScript initialColorMode="light" />
           <Main />
           <NextScript />
 

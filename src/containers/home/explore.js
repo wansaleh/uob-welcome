@@ -10,7 +10,7 @@ import {
   Link,
   Text,
   useTheme
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 import Masonry from 'react-masonry-css';
 import { mix, rgba } from 'polished';
 import { useMedia } from 'react-use';
@@ -45,7 +45,7 @@ const Explore = () => {
             color="#85B1FF"
             textShadow={`0 0 60px ${rgba(theme.colors.brand[500], 0.9)}`}
           >
-            Explore your UOB Card
+            Explore your UOB Cards
           </Heading>
         </SlideIn>
 
@@ -74,7 +74,7 @@ const Explore = () => {
             mt="8"
             mb="16"
           >
-            Tap on your Card below to find out more.
+            Tap on your Cards below to find out more.
           </Heading>
         </SlideIn>
       </Container>
@@ -107,12 +107,13 @@ const Explore = () => {
                   display="block"
                   _hover={{
                     '.card-title': {
-                      transform: 'translateY(0)'
+                      transform: 'translateY(0)',
+                      opacity: 1
                     }
                   }}
                 >
                   <Flex
-                    mb={[2, , 4]}
+                    mb="5"
                     px="4"
                     lineHeight="1"
                     justify="space-between"
@@ -120,15 +121,18 @@ const Explore = () => {
                     fontSize={['md', 'xl']}
                     pos="relative"
                     zIndex="0"
+                    w={card.vertical ? 'calc(100% * (54 / 86))' : '100%'}
+                    mx="auto"
+                    transform={['translateY(0)', 'translateY(100px)']}
+                    transition="all 0.7s var(--ease-out-expo)"
+                    opacity="0"
+                    className="card-title"
                   >
                     <Text
                       fontWeight="300"
                       color="inherit"
                       pos="relative"
                       zIndex="100"
-                      transform={['translateY(0)', 'translateY(100px)']}
-                      transition="all 0.5s var(--ease-in-out-expo)"
-                      className="card-title"
                     >
                       <Text as="span" fontWeight="800">
                         UOB
@@ -137,9 +141,6 @@ const Explore = () => {
                     </Text>
 
                     <Box
-                      className="card-title"
-                      transform={['translateY(0)', 'translateY(100px)']}
-                      transition="all 0.5s var(--ease-in-out-expo)"
                       dangerouslySetInnerHTML={{
                         __html: require(`../../images/${card.type}.svg?include`)
                       }}
@@ -147,7 +148,7 @@ const Explore = () => {
                       mt="-1"
                       css={{
                         svg: {
-                          height: '1.25em'
+                          height: '1.1em'
                         }
                       }}
                     />
@@ -170,14 +171,14 @@ const Explore = () => {
                       overflow: 'hidden',
                       position: 'relative',
                       zIndex: 10,
-                      width:
-                        !isWide && card.vertical
-                          ? 'calc(100% * (54 / 86))'
-                          : '100%',
+                      width: card.vertical ? 'calc(100% * (54 / 86))' : '100%',
                       margin: '0 auto'
                     }}
                   >
-                    <AspectRatio ratio={card.vertical ? 54 / 86 : 86 / 54}>
+                    <AspectRatio
+                      ratio={card.vertical ? 54 / 86 : 86 / 54}
+                      w="full"
+                    >
                       <Box>
                         <AspectRatio
                           ratio={86 / 54}

@@ -1,5 +1,5 @@
 /* eslint-disable no-sparse-arrays */
-import { Box } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/react';
 
 export const slickSettings = {
   arrows: true,

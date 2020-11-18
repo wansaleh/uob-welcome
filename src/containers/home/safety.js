@@ -10,7 +10,7 @@ import {
   UnorderedList,
   useTheme,
   Wrap
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
@@ -67,7 +67,7 @@ const Safety = () => {
               lineHeight="1.2"
               mb="4"
             >
-              Your UOB Credit Card may be the gateway to a myriad of
+              Your UOB Credit Cards may be the gateway to a myriad of
               conveniences, but it can be subjected to scams and theft.
             </Heading>
           </Fade>
@@ -79,7 +79,7 @@ const Safety = () => {
               mb="16"
               lineHeight="1.2"
             >
-              To prevent this, safeguard your UOB Card and PIN at all times.
+              To prevent this, safeguard your UOB Cards and PIN at all times.
             </Text>
           </Fade>
 

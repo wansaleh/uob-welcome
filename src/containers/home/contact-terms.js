@@ -12,7 +12,7 @@ import {
   UnorderedList,
   useTheme,
   Wrap
-} from '@chakra-ui/core';
+} from '@chakra-ui/react';
 
 import Router from 'next/router';
 import { lighten } from 'polished';
@@ -26,7 +26,7 @@ const ContactTerms = () => {
     <Box
       color="#fff"
       bg={`linear-gradient(to bottom, ${theme.colors.brand[700]}, ${theme.colors.brand[900]})`}
-      py={[4, , 20]}
+      pt={[4, , 20]}
     >
       <Container pt="16" pb="16" textAlign="left" lineHeight="1.3">
         <SimpleGrid columns={[1, , 3]} spacing={10}>
@@ -140,7 +140,7 @@ const ContactTerms = () => {
                 letterSpacing="tight"
                 lineHeight="1"
               >
-                Terms &amp; Conditions
+                Terms and Conditions
               </Heading>
               <Text fontSize="lg" mb="4" maxW="xs">
                 For the full UOB Credit Card Terms and Conditions, click here.
@@ -158,7 +158,7 @@ const ContactTerms = () => {
                   )
                 }
               >
-                Read Terms &amp; Conditions
+                Read Terms and Conditions
               </Button>
             </Box>
           </Fade>
