@@ -8,6 +8,7 @@ import {
   Heading,
   Link,
   SimpleGrid,
+  Text,
   useTheme
 } from '@chakra-ui/react';
 
@@ -59,13 +60,14 @@ const Activate = () => {
             fontSize={['2xl', , '3xl']}
             fontWeight="200"
             lineHeight="1.2"
-            mb="8"
+            mb="2"
           >
             Create your 6-digit PIN to start using your Card.
-            <br />
+          </Heading>
+          <Text mb="8" fontSize="xl" lineHeight="1.2" opacity="0.5">
             For more info on your PIN and to activate your Card, visit{' '}
             <Link href="https://uob.my/pin">UOB.my/pin</Link>
-          </Heading>
+          </Text>
         </SlideIn>
 
         <SlideIn delay={400}>

@@ -19,7 +19,7 @@ const Safety = () => {
   const theme = useTheme();
 
   return (
-    <Box id="safety" pos="relative" bg="#fff">
+    <Box id="safety" pos="relative" bg="#fff" textAlign={['center', , 'left']}>
       <Container maxW="5xl" mt="32" pos="relative" zIndex="10">
         <Box
           bg="linear-gradient(to bottom, #1E6BD7, #0A4CA9)"
@@ -88,7 +88,7 @@ const Safety = () => {
             spacing={10}
             maxW="5xl"
             mx="auto"
-            textAlign="left"
+            css={{ svg: { display: 'inline-block' } }}
           >
             <Box>
               <Fade triggerOnce duration={600}>

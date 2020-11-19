@@ -99,7 +99,8 @@ const Footer = ({ ...props }) => {
       minH="5rem"
       position="relative"
       textAlign="center"
-      py={[10, , 10]}
+      pt={[10, , 10]}
+      pb="20"
     >
       <Container position="relative" zIndex="10">
         <Box>
@@ -130,15 +131,14 @@ const Footer = ({ ...props }) => {
             d="flex"
             justifyContent="center"
             flexWrap="wrap"
-            fontSize="md"
+            fontSize={['sm', 'md']}
             lineHeight="1.2"
             mt="8"
             mx="-0.5rem"
-            mr="4"
           >
             {links.map((link, i) => (
               <ListItem key={i}>
-                <Link href={link.link} px="2">
+                <Link href={link.link} px="2" py="1" d="inline-block">
                   {link.title}
                 </Link>
               </ListItem>
@@ -150,13 +150,17 @@ const Footer = ({ ...props }) => {
                     href={link.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    p="2"
+                    px="2"
+                    py="1"
+                    d="inline-block"
                   >
                     {link.title}
                   </Link>
                 ) : (
                   <NextLink href={link.link} passHref>
-                    <Link p="2">{link.title}</Link>
+                    <Link px="2" py="1" d="inline-block">
+                      {link.title}
+                    </Link>
                   </NextLink>
                 )}
               </Box>

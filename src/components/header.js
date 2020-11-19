@@ -15,7 +15,7 @@ const Header = ({ basic = false, ...props }) => {
       pos="absolute"
       w="100%"
       // h={['4rem', '5rem', '6rem']}
-      py="5"
+      py="8"
       zIndex="1000"
       // bg={['white', , 'transparent']}
       // className="rellax"
@@ -36,7 +36,7 @@ const Header = ({ basic = false, ...props }) => {
             />
           </Box>
           <Box flex="1" />
-          <Box>
+          {/* <Box>
             <span className="invisible">Right By You</span>
             <Seal
               css={mq({
@@ -44,7 +44,7 @@ const Header = ({ basic = false, ...props }) => {
                 '.uob-blue': { fill: basic ? '#00377b' : '#fff' }
               })}
             />
-          </Box>
+          </Box> */}
         </Flex>
       </Container>
     </Box>

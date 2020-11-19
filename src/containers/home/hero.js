@@ -64,7 +64,7 @@ const Hero = () => {
             w={['full', , 1 / 2]}
             p={8}
             textAlign={['center', , 'left']}
-            mt={[0]}
+            mt="-4rem"
             // className="rellax"
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-5"
@@ -126,7 +126,7 @@ const Hero = () => {
 
       <Box
         pos="absolute"
-        bottom={[16, , 8]}
+        bottom={[32, , 8]}
         left="50%"
         transform="translateX(-50%)"
       >

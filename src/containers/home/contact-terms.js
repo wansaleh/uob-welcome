@@ -27,8 +27,14 @@ const ContactTerms = () => {
       color="#fff"
       bg={`linear-gradient(to bottom, ${theme.colors.brand[700]}, ${theme.colors.brand[900]})`}
       pt={[4, , 20]}
+      textAlign="center"
     >
-      <Container pt="16" pb="16" textAlign="left" lineHeight="1.3">
+      <Container
+        pt="16"
+        pb="16"
+        // textAlign="left"
+        lineHeight="1.3"
+      >
         <SimpleGrid columns={[1, , 3]} spacing={10}>
           <Fade triggerOnce>
             <Box py="4">
@@ -48,7 +54,7 @@ const ContactTerms = () => {
               >
                 Contact Centre
               </Heading>
-              <Text fontSize="lg" mb="4" maxW="xs">
+              <Text fontSize="lg" mb="4" maxW="xs" mx="auto">
                 If you need further assistance, please call one of our 24-hour
                 UOB&nbsp;Contact&nbsp;Centres.
               </Text>
@@ -57,6 +63,7 @@ const ContactTerms = () => {
                 fontSize="md"
                 justify="space-between"
                 maxW="14rem"
+                mx="auto"
                 lineHeight="1.5"
               >
                 <Text as="span">Kuala Lumpur</Text>
@@ -104,7 +111,7 @@ const ContactTerms = () => {
               >
                 Cardmember Agreement
               </Heading>
-              <Text fontSize="lg" mb="4" maxW="xs">
+              <Text fontSize="lg" mb="4" maxW="xs" mx="auto">
                 Read the full UOB Visa/Mastercard Cardmember Agreement.
               </Text>
               <Button
@@ -142,7 +149,7 @@ const ContactTerms = () => {
               >
                 Terms and Conditions
               </Heading>
-              <Text fontSize="lg" mb="4" maxW="xs">
+              <Text fontSize="lg" mb="4" maxW="xs" mx="auto">
                 For the full UOB Credit Card Terms and Conditions, click here.
               </Text>
 

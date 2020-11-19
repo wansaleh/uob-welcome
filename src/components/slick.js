@@ -57,7 +57,7 @@ const arrowStyles = {
   bottom: '50%',
   fontSize: '3rem',
   zIndex: '100',
-  mx: [4, , , , -8],
+  mx: [2, , , , -8],
   cursor: 'pointer',
   transition: 'all 0.2s ease',
   _hover: { opacity: 0.7 }

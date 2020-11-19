@@ -29,6 +29,7 @@ const Privileges = () => {
       bg="#fff"
       color="#000"
       pb={['2rem', , '4rem']}
+      textAlign={['center', , 'left']}
     >
       <Container maxW="7xl">
         <SimpleGrid columns={[1, , 2]} spacing="16" alignItems="flex-end">
