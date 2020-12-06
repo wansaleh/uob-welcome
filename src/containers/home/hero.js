@@ -166,73 +166,62 @@ const Hero = () => {
               )} */}
 
               {detectMobile.isMobile() ? (
-                <>
-                  <Box
-                    fontSize="2rem"
-                    animation="mousewheel 1.5s linear reverse infinite running"
-                    mb="4"
-                    pos="relative"
+                <Text
+                  mt="3"
+                  // opacity="0.75"
+                  fontSize="sm"
+                  fontWeight="800"
+                  lineHeight="1"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="4rem"
+                    height="4rem"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    css={{
+                      position: 'relative',
+                      top: '-16px',
+                      animation:
+                        'mousewheel 1.5s linear reverse infinite running'
+                    }}
                   >
-                    <Box
-                      as="svg"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="18 15 12 9 6 15" />
-                    </Box>
-                  </Box>
-
-                  <Text
-                    mt="3"
-                    // opacity="0.75"
-                    fontSize="sm"
-                    fontWeight="800"
-                    lineHeight="1"
-                  >
-                    Swipe up
-                  </Text>
-                </>
+                    <polyline points="18 15 12 9 6 15" />
+                  </svg>
+                  Swipe up
+                </Text>
               ) : (
-                <>
-                  <Box
-                    fontSize="2rem"
-                    animation="mousewheel 1.5s linear infinite running"
-                    mb="4"
-                    pos="relative"
+                <Text
+                  mt="3"
+                  // opacity="0.75"
+                  fontSize="sm"
+                  fontWeight="800"
+                  lineHeight="1"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="4rem"
+                    height="4rem"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    css={{
+                      position: 'relative',
+                      top: '-16px',
+                      animation: 'mousewheel 1.5s linear infinite running'
+                    }}
                   >
-                    <Box
-                      as="svg"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </Box>
-                  </Box>
-
-                  <Text
-                    mt="3"
-                    // opacity="0.75"
-                    fontSize="sm"
-                    fontWeight="800"
-                    lineHeight="1"
-                  >
-                    Scroll down
-                  </Text>
-                </>
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
+                  Scroll down
+                </Text>
               )}
             </Flex>
           </Flex>

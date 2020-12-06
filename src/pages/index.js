@@ -23,7 +23,7 @@ const Home = () => {
   // }, []);
 
   return (
-    <Box bg="#fff">
+    <Box bg="#fff" maxW="100vw" overflowX="hidden">
       <Head title="UOB Cardmembers Welcome" />
 
       <Header />
