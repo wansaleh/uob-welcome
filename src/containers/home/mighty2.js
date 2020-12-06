@@ -1,5 +1,4 @@
 /* eslint-disable no-sparse-arrays */
-import React from 'react';
 import {
   Box,
   Flex,
@@ -12,13 +11,14 @@ import {
   VisuallyHidden
 } from '@chakra-ui/react';
 import { rgba } from 'polished';
+import React from 'react';
 import Plx from 'react-plx';
 import Slider from 'react-slick';
 
 import Container from '../../components/container';
-import TiltCard from '../../components/tilt-card';
-import SlideIn from '../../components/slide-in';
 import { cardsSlickSettings } from '../../components/slick';
+import SlideIn from '../../components/slide-in';
+import TiltCard from '../../components/tilt-card';
 
 const screenshots = [
   {

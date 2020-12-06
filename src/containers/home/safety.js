@@ -1,5 +1,4 @@
 /* eslint-disable no-sparse-arrays */
-import React from 'react';
 import {
   Box,
   Heading,
@@ -11,8 +10,9 @@ import {
   useTheme,
   Wrap
 } from '@chakra-ui/react';
-
+import React from 'react';
 import { Fade } from 'react-awesome-reveal';
+
 import Container from '../../components/container';
 
 const Safety = () => {

@@ -1,5 +1,4 @@
 /* eslint-disable no-sparse-arrays */
-import React from 'react';
 import {
   AspectRatio,
   Box,
@@ -11,8 +10,9 @@ import {
   Text,
   useTheme
 } from '@chakra-ui/react';
-
+import React from 'react';
 import { Fade } from 'react-awesome-reveal';
+
 import Container from '../../components/container';
 import SlideIn from '../../components/slide-in';
 // import Safety from './safety';
@@ -125,7 +125,25 @@ const Activate = () => {
                       alignItems: 'center'
                     }}
                   >
-                    <i className="fas fa-asterisk" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 32 32"
+                      fill="currentColor"
+                      width="1em"
+                      height="1em"
+                    >
+                      <path d="M 17.699219 17 L 23.898438 25.398438 L 21.5 27 L 16 18.300781 L 10.5 27 L 8.199219 25.398438 L 14.398438 17 L 5.101563 14.601563 L 6 12 L 15.101563 15.199219 L 14.5 5 L 17.5 5 L 17 15.199219 L 26 12 L 26.800781 14.699219 Z" />
+                    </svg>
+                    {/* <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      width="1.5em"
+                      height="1.5em"
+                    >
+                      <path d="M18.562,14.63379,14.00031,12,18.562,9.36621a1.00016,1.00016,0,0,0-1-1.73242L13,10.26776V5a1,1,0,0,0-2,0v5.26776l-4.562-2.634a1.00016,1.00016,0,0,0-1,1.73242L9.99969,12,5.438,14.63379a1.00016,1.00016,0,0,0,1,1.73242L11,13.73224V19a1,1,0,0,0,2,0V13.73224l4.562,2.634a1.00016,1.00016,0,0,0,1-1.73242Z" />
+                    </svg> */}
+                    {/* <i className="fas fa-asterisk" /> */}
                     {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       x="0"

@@ -3,13 +3,13 @@
 /* eslint-disable no-sparse-arrays */
 import {
   Box,
-  Text,
-  Link,
+  chakra,
   Flex,
-  useTheme,
-  ListItem,
+  Link,
   List,
-  chakra
+  ListItem,
+  Text,
+  useTheme
   // Modal,
   // useDisclosure,
   // ModalOverlay,
@@ -21,11 +21,12 @@ import {
   // Button
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
-// import { useRef } from 'react';
-import Container from './container';
+
 // import { tncLink } from '../config';
 // import TermsContent from '../containers/tnc/content';
 import Seal from '../images/rby-bottom';
+// import { useRef } from 'react';
+import Container from './container';
 
 const CSeal = chakra(Seal);
 
@@ -104,7 +105,7 @@ const Footer = ({ ...props }) => {
     >
       <Container position="relative" zIndex="10">
         <Box>
-          <CSeal h="24" mx="auto" mb="10" />
+          <CSeal h="16" mx="auto" mb="10" />
         </Box>
 
         <Text fontSize="sm" opacity="0.5" maxW="2xl" mx="auto" lineHeight="1.3">

@@ -1,5 +1,4 @@
 /* eslint-disable no-sparse-arrays */
-import React from 'react';
 import {
   AspectRatio,
   Box,
@@ -11,8 +10,9 @@ import {
   SimpleGrid,
   useTheme
 } from '@chakra-ui/react';
-
+import React from 'react';
 import { Fade } from 'react-awesome-reveal';
+
 import Container from '../../components/container';
 import SlideIn from '../../components/slide-in';
 import TiltCard from '../../components/tilt-card';

@@ -1,5 +1,4 @@
 /* eslint-disable no-sparse-arrays */
-import React, { useEffect, useState } from 'react';
 import {
   AspectRatio,
   Box,
@@ -11,12 +10,13 @@ import {
 } from '@chakra-ui/react';
 import { view } from '@risingstack/react-easy-state';
 import { mix, rgba } from 'polished';
-import useMobileDetect from 'use-mobile-detect-hook';
-import { useInterval, useMedia } from 'react-use';
+import React, { useEffect, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
+import { useInterval, useMedia } from 'react-use';
+import useMobileDetect from 'use-mobile-detect-hook';
+
 import Container from '../../components/container';
 import TiltCard from '../../components/tilt-card';
-
 import cards from './cards.json';
 
 const cardImages = cards.map((card) => card.image);
@@ -28,7 +28,7 @@ const cardColors = cards.map((card) => card.color);
 
 const Hero = () => {
   // const theme = useTheme();
-  const [cardIndex, setCardIndex] = useState(0);
+  const [cardIndex, setCardIndex] = useState(4);
   const isWide = useMedia('(min-width: 480px)');
   const detectMobile = useMobileDetect();
 
@@ -36,9 +36,9 @@ const Hero = () => {
     confettiInit();
   }, []);
 
-  useInterval(() => {
-    setCardIndex(cardIndex + 1);
-  }, 5000);
+  // useInterval(() => {
+  //   setCardIndex(cardIndex + 1);
+  // }, 5000);
 
   return (
     <Flex
@@ -59,20 +59,19 @@ const Hero = () => {
       // transform={store.showHero ? 'translateY(0)' : 'translateY(-100%)'}
     >
       <Container h="100%" pos="relative" zIndex="1">
-        <Flex h="100%" align="center" wrap="wrap" mx="-8">
+        <Flex h="100%" align="center" wrap="wrap" mx="-8" mt="-8rem">
           <Box
             w={['full', , 1 / 2]}
             p={8}
             textAlign={['center', , 'left']}
-            mt="-4rem"
             // className="rellax"
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-5"
           >
             <Fade>
               <Heading
-                fontSize={['4xl', '5xl', '6xl']}
-                lineHeight="0.95"
+                fontSize={['5xl', '5xl', '6xl']}
+                lineHeight="1.1"
                 mb="12"
                 letterSpacing="-0.02em"
               >
@@ -83,7 +82,7 @@ const Hero = () => {
             <Fade>
               <Heading
                 as="h2"
-                fontSize={['xl', '2xl', '3xl']}
+                fontSize={['2xl', '2xl', '3xl']}
                 fontWeight="200"
                 lineHeight="1.2"
                 letterSpacing="tight"
@@ -94,7 +93,7 @@ const Hero = () => {
               </Heading>
               <Heading
                 as="h2"
-                fontSize={['xl', '2xl', '3xl']}
+                fontSize={['2xl', '2xl', '3xl']}
                 fontWeight="200"
                 lineHeight="1.2"
                 letterSpacing="tight"
@@ -166,24 +165,75 @@ const Hero = () => {
                 </AspectRatio>
               )} */}
 
-              <Box
-                fontSize="2rem"
-                animation="mousewheel 1.5s linear reverse infinite running"
-                mb="4"
-                pos="relative"
-              >
-                <i className="fal fa-chevron-up" />
-              </Box>
+              {detectMobile.isMobile() ? (
+                <>
+                  <Box
+                    fontSize="2rem"
+                    animation="mousewheel 1.5s linear reverse infinite running"
+                    mb="4"
+                    pos="relative"
+                  >
+                    <Box
+                      as="svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="18 15 12 9 6 15" />
+                    </Box>
+                  </Box>
 
-              <Text
-                mt="3"
-                opacity="0.35"
-                fontSize="sm"
-                fontWeight="800"
-                lineHeight="1"
-              >
-                {detectMobile.isMobile() ? 'Swipe' : 'Scroll'} up
-              </Text>
+                  <Text
+                    mt="3"
+                    // opacity="0.75"
+                    fontSize="sm"
+                    fontWeight="800"
+                    lineHeight="1"
+                  >
+                    Swipe up
+                  </Text>
+                </>
+              ) : (
+                <>
+                  <Box
+                    fontSize="2rem"
+                    animation="mousewheel 1.5s linear infinite running"
+                    mb="4"
+                    pos="relative"
+                  >
+                    <Box
+                      as="svg"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </Box>
+                  </Box>
+
+                  <Text
+                    mt="3"
+                    // opacity="0.75"
+                    fontSize="sm"
+                    fontWeight="800"
+                    lineHeight="1"
+                  >
+                    Scroll down
+                  </Text>
+                </>
+              )}
             </Flex>
           </Flex>
         </Fade>

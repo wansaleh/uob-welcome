@@ -1,30 +1,21 @@
 module.exports = {
   root: true,
-  env: {
-    browser: true,
-    node: true
-  },
+  env: { es6: true },
   extends: ['airbnb', 'prettier', 'prettier/react'],
   parser: 'babel-eslint',
-  parserOptions: {
-    ecmaFeatures: {
-      legacyDecorators: true
-    }
-  },
+  plugins: ['simple-import-sort'],
   globals: {
     graphql: false,
-    tw: true,
-    Glider: true
-  },
-  settings: {
-    react: {
-      version: 'detect'
-    }
+    // tw: true,
+    preval: true,
+    window: true,
+    document: true
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 2 : 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'array-callback-return': 0,
+    'arrow-body-style': 0,
     'arrow-parens': 1,
     camelcase: 0,
     'class-methods-use-this': 0,
@@ -34,7 +25,7 @@ module.exports = {
     'import/no-dynamic-require': 0,
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
-    // 'indent': 0,
+    indent: 0,
     'jsx-a11y/click-events-have-key-events': 0,
     'jsx-a11y/href-no-hash': 0,
     'jsx-a11y/label-has-for': 0,
@@ -43,6 +34,7 @@ module.exports = {
     'lines-between-class-members': 0,
     'no-empty': 0,
     'no-param-reassign': 0,
+    'no-sparse-arrays': 0,
     'no-underscore-dangle': 0,
     'no-use-before-define': 0,
     'no-useless-concat': 0,
@@ -80,6 +72,10 @@ module.exports = {
       {
         allowTaggedTemplates: true
       }
-    ]
+    ],
+    // 'sort-imports': 'off',
+    // 'import/order': 'off',
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error'
   }
 };
