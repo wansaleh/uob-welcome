@@ -65,7 +65,7 @@ const Hero = () => {
           align="center"
           wrap="wrap"
           mx="-8"
-          mt="-3rem"
+          mt="-6rem"
         >
           <Box
             // w={['full', , 1 / 2]}
@@ -80,7 +80,7 @@ const Hero = () => {
           >
             <Fade>
               <Heading
-                fontSize={['5xl', '5xl', '6xl']}
+                fontSize={['2.5rem', '5xl', '6xl']}
                 lineHeight="1"
                 mb="12"
                 letterSpacing="-0.02em"
@@ -92,7 +92,7 @@ const Hero = () => {
             <Fade>
               <Heading
                 as="h2"
-                fontSize={['2xl', '2xl', '3xl']}
+                fontSize={['1.35rem', '2xl', '3xl']}
                 fontWeight="200"
                 lineHeight="1.2"
                 letterSpacing="tight"
@@ -103,7 +103,7 @@ const Hero = () => {
               </Heading>
               <Heading
                 as="h2"
-                fontSize={['2xl', '2xl', '3xl']}
+                fontSize={['1.35rem', '2xl', '3xl']}
                 fontWeight="200"
                 lineHeight="1.2"
                 letterSpacing="tight"
@@ -136,7 +136,7 @@ const Hero = () => {
       <Box
         pos="absolute"
         // bottom={[32, , 8]}
-        bottom="10"
+        bottom={[32, , 8]}
         left="50%"
         transform="translateX(-50%)"
       >
