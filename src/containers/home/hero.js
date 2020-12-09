@@ -12,7 +12,7 @@ import { view } from '@risingstack/react-easy-state';
 import { mix, rgba } from 'polished';
 import React, { useEffect, useState } from 'react';
 import { Fade } from 'react-awesome-reveal';
-import { useInterval, useMedia } from 'react-use';
+// import { useInterval, useMedia } from 'react-use';
 import useMobileDetect from 'use-mobile-detect-hook';
 
 import Container from '../../components/container';
@@ -28,8 +28,8 @@ const cardColors = cards.map((card) => card.color);
 
 const Hero = () => {
   // const theme = useTheme();
-  const [cardIndex, setCardIndex] = useState(4);
-  const isWide = useMedia('(min-width: 480px)');
+  // const [cardIndex, setCardIndex] = useState(5);
+  // const isWide = useMedia('(min-width: 480px)');
   const detectMobile = useMobileDetect();
 
   useEffect(() => {
@@ -59,11 +59,21 @@ const Hero = () => {
       // transform={store.showHero ? 'translateY(0)' : 'translateY(-100%)'}
     >
       <Container h="100%" pos="relative" zIndex="1">
-        <Flex h="100%" align="center" wrap="wrap" mx="-8" mt="-8rem">
+        <Flex
+          h="100%"
+          justify="center"
+          align="center"
+          wrap="wrap"
+          mx="-8"
+          mt="-3rem"
+        >
           <Box
-            w={['full', , 1 / 2]}
+            // w={['full', , 1 / 2]}
+            w="full"
+            maxW="4xl"
             p={8}
-            textAlign={['center', , 'left']}
+            // textAlign={['center', , 'left']}
+            textAlign="center"
             // className="rellax"
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-5"
@@ -71,7 +81,7 @@ const Hero = () => {
             <Fade>
               <Heading
                 fontSize={['5xl', '5xl', '6xl']}
-                lineHeight="1.1"
+                lineHeight="1"
                 mb="12"
                 letterSpacing="-0.02em"
               >
@@ -103,7 +113,7 @@ const Hero = () => {
             </Fade>
           </Box>
 
-          {isWide && (
+          {/* {isWide && (
             <Box
               w={['full', , 1 / 2]}
               px="12"
@@ -119,13 +129,14 @@ const Hero = () => {
                 </Box>
               </Fade>
             </Box>
-          )}
+          )} */}
         </Flex>
       </Container>
 
       <Box
         pos="absolute"
-        bottom={[32, , 8]}
+        // bottom={[32, , 8]}
+        bottom="10"
         left="50%"
         transform="translateX(-50%)"
       >
@@ -192,7 +203,7 @@ const Hero = () => {
                   >
                     <polyline points="18 15 12 9 6 15" />
                   </svg>
-                  Swipe up
+                  {/* Swipe up */}
                 </Text>
               ) : (
                 <Text
@@ -220,7 +231,7 @@ const Hero = () => {
                   >
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
-                  Scroll down
+                  {/* Scroll down */}
                 </Text>
               )}
             </Flex>
