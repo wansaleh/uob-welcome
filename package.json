@@ -1,16 +1,22 @@
 {
   "name": "next-start",
+  "config": {
+    "remote_ssh": "serverpilot@45.76.149.138",
+    "remote_dir": "/srv/users/serverpilot/apps/uobwelcome/public"
+  },
   "scripts": {
     "dev": "next -p 3009",
     "build": "next build",
     "start": "next start",
-    "deploy": "git add . && git commit -m 'Updates.' && git push origin master"
+    "deploy": "git add . && git commit -m 'Updates.' && git push origin master",
+    "upload": "rsync --progress -e \"ssh $npm_package_config_remote_ssh\" -rlpt --compress --omit-dir-times --exclude .git --exclude .DS_Store --exclude dist --exclude node_modules --delete ./cybersale :$npm_package_config_remote_dir",
+    "export": "USE_BASEPATH=true next build && next export -o cybersale && zip -r cybersale.zip cybersale && npm run upload"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.1",
     "@chakra-ui/media-query": "^1.0.1",
-    "@chakra-ui/react": "^1.0.2",
-    "@chakra-ui/theme": "^1.2.0",
+    "@chakra-ui/react": "^1.0.3",
+    "@chakra-ui/theme": "^1.2.1",
     "@emotion/babel-preset-css-prop": "^11.0.0",
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
@@ -25,7 +31,7 @@
     "imagemin-mozjpeg": "^9.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
-    "intersection-observer": "^0.11.0",
+    "intersection-observer": "^0.12.0",
     "lqip-loader": "^2.2.1",
     "next": "^10.0.3",
     "next-compose-plugins": "^2.2.1",
@@ -48,7 +54,7 @@
     "use-mobile-detect-hook": "^1.0.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
     "@babel/plugin-transform-arrow-functions": "^7.12.1",
     "@ky-is/tailwind-color-palette": "^1.0.0",
@@ -63,7 +69,7 @@
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-simple-import-sort": "^6.0.1",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "next-transpile-modules": "^6.0.0",
     "prettier": "^2.2.1",
     "tailwind.macro": "^1.0.0-alpha.10"
