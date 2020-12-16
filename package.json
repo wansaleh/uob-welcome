@@ -9,8 +9,8 @@
     "build": "next build",
     "start": "next start",
     "deploy": "git add . && git commit -m 'Updates.' && git push origin master",
-    "upload": "rsync --progress -e \"ssh $npm_package_config_remote_ssh\" -rlpt --compress --omit-dir-times --exclude .git --exclude .DS_Store --exclude dist --exclude node_modules --delete ./uobwelcome :$npm_package_config_remote_dir",
-    "export": "USE_BASEPATH=true next build && next export -o uobwelcome && zip -r uobwelcome.zip uobwelcome && npm run upload"
+    "upload": "rsync --progress -e \"ssh $npm_package_config_remote_ssh\" -rlpt --compress --omit-dir-times --exclude .git --exclude .DS_Store --exclude dist --exclude node_modules --delete ./cardswelcome :$npm_package_config_remote_dir",
+    "export": "USE_BASEPATH=true next build && next export -o cardswelcome && zip -r cardswelcome.zip cardswelcome && npm run upload"
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.1",
