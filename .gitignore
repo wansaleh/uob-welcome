@@ -10,6 +10,8 @@
 /build
 /dist
 /.next
+/welcome
+/uobwelcome
 
 # misc
 .DS_Store

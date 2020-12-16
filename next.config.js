@@ -6,8 +6,8 @@ const withTM = require('next-transpile-modules')(['tailwindcss']);
 const useBasePath =
   process.env.USE_BASEPATH === 'true'
     ? {
-        basePath: '/cardwelcome',
-        assetPrefix: '/cardwelcome'
+        basePath: '/uobwelcome',
+        assetPrefix: '/uobwelcome'
       }
     : {};
 
