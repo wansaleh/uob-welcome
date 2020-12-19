@@ -1,6 +1,7 @@
 /* eslint-disable no-sparse-arrays */
 import {
   Box,
+  Flex,
   Heading,
   List,
   ListItem,
@@ -11,9 +12,10 @@ import {
   Wrap
 } from '@chakra-ui/react';
 import React from 'react';
-import { Fade } from 'react-awesome-reveal';
 
+// import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
+import MyFade from '../../components/my-fade';
 
 const Safety = () => {
   const theme = useTheme();
@@ -29,7 +31,7 @@ const Safety = () => {
           borderRadius="1rem"
           boxShadow="0 0 20px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1)"
         >
-          <Fade triggerOnce>
+          <MyFade triggerOnce>
             <Heading
               maxW="4xl"
               fontSize={['4xl', , '5xl']}
@@ -58,9 +60,9 @@ const Safety = () => {
                 <line x1="12" y1="8" x2="12.01" y2="8" />
               </Box>
             </Heading>
-          </Fade>
+          </MyFade>
 
-          <Fade triggerOnce>
+          <MyFade triggerOnce>
             <Heading
               fontSize={['lg', , '2xl']}
               fontWeight="200"
@@ -70,9 +72,9 @@ const Safety = () => {
               Your UOB Credit Cards may be the gateway to a myriad of
               conveniences, but it can be subjected to scams and theft.
             </Heading>
-          </Fade>
+          </MyFade>
 
-          <Fade triggerOnce>
+          <MyFade triggerOnce>
             <Text
               fontSize={['lg', , '2xl']}
               fontWeight="600"
@@ -81,22 +83,22 @@ const Safety = () => {
             >
               To prevent this, safeguard your UOB Cards and PIN at all times.
             </Text>
-          </Fade>
+          </MyFade>
 
-          <SimpleGrid
-            columns={[1, , 3]}
-            spacing={10}
+          <Flex
             maxW="5xl"
-            mx="auto"
+            mx="-4"
+            wrap="wrap"
             css={{ svg: { display: 'inline-block' } }}
           >
-            <Box>
-              <Fade triggerOnce duration={600}>
+            <Box px="4" py="8" w={['full', , 1 / 3]}>
+              <MyFade triggerOnce duration={600}>
                 <svg
                   id="Capa_1"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
-                  css={{ height: '4rem' }}
+                  width="4rem"
+                  height="4rem"
                 >
                   <path
                     d="M434.5 290.25s-66.54 74.4-66.54 112.044 29.16 77.956 66.54 77.956c28.94 0 70-4.425 70-44.253 0-44.531-25.66-69.187-70-145.747M77.5 290.25c-44.34 76.56-70 101.216-70 145.747 0 39.829 41.06 44.253 70 44.253 37.38 0 66.54-40.311 66.54-77.956S77.5 290.25 77.5 290.25"
@@ -149,15 +151,17 @@ const Safety = () => {
                   Do not fall victim to phone scam. Never transfer money to any
                   unknown party. Do not divulge OTP details to anyone.
                 </Text>
-              </Fade>
+              </MyFade>
             </Box>
-            <Box>
-              <Fade triggerOnce duration={600}>
+
+            <Box px="4" py="8" w={['full', , 1 / 3]}>
+              <MyFade triggerOnce duration={600}>
                 <svg
                   id="Capa_1"
                   viewBox="0 0 511.38 511.38"
                   xmlns="http://www.w3.org/2000/svg"
-                  css={{ height: '4rem' }}
+                  width="4rem"
+                  height="4rem"
                 >
                   <path
                     d="M479.604 481.918H31.64c-13.368 0-24.205-10.837-24.205-24.205V351.204c0-13.368 10.837-24.205 24.205-24.205h447.964c13.368 0 24.205 10.837 24.205 24.205v106.509c.001 13.368-10.836 24.205-24.205 24.205z"
@@ -189,14 +193,16 @@ const Safety = () => {
                   passport, driving license or contact numbers when choosing a
                   PIN.
                 </Text>
-              </Fade>
+              </MyFade>
             </Box>
-            <Box>
-              <Fade triggerOnce duration={600}>
+
+            <Box px="4" py="8" w={['full', , 1 / 3]}>
+              <MyFade triggerOnce duration={600}>
                 <svg
                   viewBox="0 0 511.262 511.262"
                   xmlns="http://www.w3.org/2000/svg"
-                  css={{ height: '4rem' }}
+                  width="4rem"
+                  height="4rem"
                 >
                   <path
                     d="M215.034 489.211V441.42c0-11.871-9.599-21.508-21.47-21.554l-74.58-.292c-12.782-.05-23.681-9.271-25.849-21.868l-12.691-73.767H52.471a6.15 6.15 0 01-6.15-6.15c0-23.513 6.578-46.556 18.99-66.526l9.101-14.643a11.115 11.115 0 001.642-6.723l-3.416-44.206C65.211 89.581 141.195 7.499 237.591 7.499c117.757 0 202.185 113.562 168.262 226.328l-34.465 114.569v140.045c0 7.954-6.423 14.415-14.376 14.463l-127.429.769c-8.021.049-14.549-6.44-14.549-14.462z"
@@ -234,9 +240,9 @@ const Safety = () => {
                   Never write down your PIN on anything that is kept in close
                   proximity with your card, including the back of your card.
                 </Text>
-              </Fade>
+              </MyFade>
             </Box>
-          </SimpleGrid>
+          </Flex>
         </Box>
       </Container>
 

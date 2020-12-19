@@ -3,7 +3,7 @@ import { string } from 'prop-types';
 
 const defaultDescription =
   'Welcome to the UOB family, we are delighted that you’ve joined us. An abundance of perks, benefits, and privileges await you.';
-const defaultOGURL = 'https://uob.com.my/cardwelcome';
+const defaultOGURL = 'https://uob.com.my/cardswelcome';
 const defaultOGImage = '';
 
 const Head = (props) => (

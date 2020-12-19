@@ -17,6 +17,7 @@ import { useMedia } from 'react-use';
 import Container from '../../components/container';
 import { cardsSlickSettings } from '../../components/slick';
 import SlideIn from '../../components/slide-in';
+import mq from '../../styles/mq';
 
 const screenshots = [
   {
@@ -185,13 +186,15 @@ const Mighty = () => {
               borderWidth="1px"
               mb={[4, , 0]}
             >
-              <Image
-                pos="relative"
+              <img
                 src={require('../../images/mighty/icon.png')}
                 alt=""
-                d="block"
-                w={['6rem']}
-                h={['6rem']}
+                css={{
+                  position: 'relative',
+                  display: 'block',
+                  width: '6rem',
+                  height: '6rem'
+                }}
               />
             </Box>
           </SlideIn>
@@ -199,45 +202,42 @@ const Mighty = () => {
           <SlideIn delay={200}>
             <Link href="https://apps.apple.com/my/app/uob-mighty-malaysia/id1239716055">
               <VisuallyHidden>App Store</VisuallyHidden>
-              <Box
-                dangerouslySetInnerHTML={{
-                  // eslint-disable-next-line import/no-unresolved
-                  __html: require('../../images/mighty/appstore.svg?include')
-                }}
-                d="block"
-                h={['2rem', , '3rem']}
-                css={{ svg: { height: '100%' } }}
-                mx={[1, , 2]}
+              <img
+                src={require('../../images/mighty/appstore.svg')}
+                alt=""
+                css={mq({
+                  height: ['2rem', , '3rem'],
+                  margin: '0 0.25rem',
+                  display: 'block'
+                })}
               />
             </Link>
           </SlideIn>
           <SlideIn delay={400}>
             <Link href="https://play.google.com/store/apps/details?id=com.uob.mightymy&hl=en">
               <VisuallyHidden>Google Play</VisuallyHidden>
-              <Box
-                dangerouslySetInnerHTML={{
-                  // eslint-disable-next-line import/no-unresolved
-                  __html: require('../../images/mighty/googleplay.svg?include')
-                }}
-                d="block"
-                h={['2rem', , '3rem']}
-                css={{ svg: { height: '100%' } }}
-                mx={[1, , 2]}
+              <img
+                src={require('../../images/mighty/googleplay.svg')}
+                alt=""
+                css={mq({
+                  height: ['2rem', , '3rem'],
+                  margin: '0 0.25rem',
+                  display: 'block'
+                })}
               />
             </Link>
           </SlideIn>
           <SlideIn delay={600}>
             <Link href="https://appgallery.huawei.com/#/app/C101978121">
               <VisuallyHidden>AppGallery</VisuallyHidden>
-              <Box
-                dangerouslySetInnerHTML={{
-                  // eslint-disable-next-line import/no-unresolved
-                  __html: require('../../images/mighty/appgallery.svg?include')
-                }}
-                d="block"
-                h={['2rem', , '3rem']}
-                css={{ svg: { height: '100%' } }}
-                mx={[1, , 2]}
+              <img
+                src={require('../../images/mighty/appgallery.svg')}
+                alt=""
+                css={mq({
+                  height: ['2rem', , '3rem'],
+                  margin: '0 0.25rem',
+                  display: 'block'
+                })}
               />
             </Link>
           </SlideIn>
@@ -273,14 +273,15 @@ const Mighty = () => {
                     {screenshot.desc}
                   </Text>
                 </Box>
-                <Image
+                <img
                   src={require(`../../images/mighty/${screenshot.id}.png`)}
                   alt=""
-                  w="130%"
-                  maxW="initial"
-                  mx="-15%"
-                  mb="-112px"
-                  transition="all 0.8s cubic-bezier(0.19, 1, 0.22, 1)"
+                  css={{
+                    width: '100%',
+                    maxWidth: 'initial',
+                    margin: '0 0 -112px',
+                    transition: 'all 0.8s cubic-bezier(0.19, 1, 0.22, 1)'
+                  }}
                 />
               </Box>
             </Box>
@@ -312,7 +313,7 @@ const Mighty = () => {
               d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z"
             />
           </defs>
-          <g className="parallax">
+          <g className="wave-parallax">
             <use xlinkHref="#gentle-wave" x="48" fill="rgba(255,255,255,0.7" />
             <use
               xlinkHref="#gentle-wave"
@@ -328,37 +329,6 @@ const Mighty = () => {
             />
             <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
           </g>
-
-          <style jsx>{`
-            .parallax > use {
-              animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5)
-                infinite;
-            }
-            .parallax > use:nth-child(1) {
-              animation-delay: -2s;
-              animation-duration: 7s;
-            }
-            .parallax > use:nth-child(2) {
-              animation-delay: -3s;
-              animation-duration: 10s;
-            }
-            .parallax > use:nth-child(3) {
-              animation-delay: -4s;
-              animation-duration: 13s;
-            }
-            .parallax > use:nth-child(4) {
-              animation-delay: -5s;
-              animation-duration: 20s;
-            }
-            @keyframes move-forever {
-              0% {
-                transform: translate3d(-90px, 0, 0);
-              }
-              100% {
-                transform: translate3d(85px, 0, 0);
-              }
-            }
-          `}</style>
         </svg>
       </Box>
     </Box>

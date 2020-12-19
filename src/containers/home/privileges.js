@@ -11,9 +11,10 @@ import {
   useTheme
 } from '@chakra-ui/react';
 import React from 'react';
-import { Fade } from 'react-awesome-reveal';
 
+// import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
+import MyFade from '../../components/my-fade';
 import SlideIn from '../../components/slide-in';
 import TiltCard from '../../components/tilt-card';
 // import Safety from './safety';
@@ -32,21 +33,23 @@ const Privileges = () => {
       textAlign={['center', , 'left']}
     >
       <Container maxW="7xl">
-        <SimpleGrid columns={[1, , 2]} spacing="16" alignItems="flex-end">
-          <Box>
-            <Fade triggerOnce>
+        <Flex wrap="wrap" mx="-8" alignItems="flex-end">
+          <Box px="8" py="4" w={['full', , 1 / 2]}>
+            <MyFade triggerOnce>
               <TiltCard scale={1.015}>
-                <Image
+                <img
                   src={require('../../images/privileges.jpg')}
                   alt=""
-                  borderRadius="lg"
-                  boxShadow="0 8px 30px rgba(0, 0, 0, 0.12)"
+                  css={{
+                    borderRadius: '0.5em',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)'
+                  }}
                 />
               </TiltCard>
-            </Fade>
+            </MyFade>
           </Box>
 
-          <Box>
+          <Box px="8" py="4" w={['full', , 1 / 2]}>
             <SlideIn triggerOnce delay={0}>
               <Heading
                 maxW="4xl"
@@ -86,25 +89,27 @@ const Privileges = () => {
               </Button>
             </SlideIn>
           </Box>
-        </SimpleGrid>
+        </Flex>
       </Container>
 
       <Container maxW="7xl" mt="24">
-        <SimpleGrid columns={[1, , 2]} spacing="16" alignItems="flex-end">
-          <Box>
-            <Fade triggerOnce>
+        <Flex wrap="wrap" mx="-8" alignItems="flex-end">
+          <Box px="8" py="4" w={['full', , 1 / 2]}>
+            <MyFade triggerOnce>
               <TiltCard scale={1.015}>
-                <Image
+                <img
                   src={require('../../images/features.jpg')}
                   alt=""
-                  borderRadius="lg"
-                  boxShadow="0 8px 30px rgba(0, 0, 0, 0.12)"
+                  css={{
+                    borderRadius: '0.5em',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)'
+                  }}
                 />
               </TiltCard>
-            </Fade>
+            </MyFade>
           </Box>
 
-          <Box>
+          <Box px="8" py="4" w={['full', , 1 / 2]}>
             <SlideIn triggerOnce delay={0}>
               <Heading
                 maxW="4xl"
@@ -144,7 +149,7 @@ const Privileges = () => {
               </Button>
             </SlideIn>
           </Box>
-        </SimpleGrid>
+        </Flex>
       </Container>
     </Box>
   );

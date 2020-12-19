@@ -1,6 +1,6 @@
-import React from 'react';
-import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ColorModeScript } from '@chakra-ui/react';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
+import React from 'react';
 
 class MyDocument extends Document {
   static getInitialProps(ctx) {
@@ -19,6 +19,17 @@ class MyDocument extends Document {
             src="https://kit.fontawesome.com/5b84ae3710.js"
             crossOrigin="anonymous"
           />
+
+          <style>{`
+            @keyframes move-forever {
+              0% {
+                transform: translate3d(-90px, 0, 0);
+              }
+              100% {
+                transform: translate3d(85px, 0, 0);
+              }
+            }
+          `}</style>
 
           {process.env.NODE_ENV === 'production' && (
             <>
@@ -39,7 +50,7 @@ class MyDocument extends Document {
           )}
         </Head>
         <body>
-          <ColorModeScript initialColorMode="light" />
+          {/* <ColorModeScript initialColorMode="light" /> */}
           <Main />
           <NextScript />
 

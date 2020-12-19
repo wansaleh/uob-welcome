@@ -1,10 +1,10 @@
 /* eslint-disable no-sparse-arrays */
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
-import { Fade } from 'react-awesome-reveal';
-import useMobileDetect from 'use-mobile-detect-hook';
 
+// import { Fade } from 'react-awesome-reveal';
 import Container from '../../components/container';
+import MyFade from '../../components/my-fade';
 // import TiltCard from '../../components/tilt-card';
 // import cards from './cards.json';
 
@@ -16,11 +16,6 @@ import Container from '../../components/container';
 // }
 
 const Hero = () => {
-  // const theme = useTheme();
-  // const [cardIndex, setCardIndex] = useState(5);
-  // const isWide = useMedia('(min-width: 480px)');
-  const detectMobile = useMobileDetect();
-
   useEffect(() => {
     confettiInit();
   }, []);
@@ -39,6 +34,7 @@ const Hero = () => {
       right="0"
       bottom="0"
       minH="100vh"
+      h="1px"
       bg="#000"
       color="#fff"
       py="6rem"
@@ -46,6 +42,15 @@ const Hero = () => {
       overflow="hidden"
       // transition="all 1s ease"
       // transform={store.showHero ? 'translateY(0)' : 'translateY(-100%)'}
+      // css={
+      //   isIE && {
+      //     ':after': {
+      //       content: "''",
+      //       minHeight: 'inherit',
+      //       fontSize: 0
+      //     }
+      //   }
+      // }
     >
       <Container h="100%" pos="relative" zIndex="1">
         <Flex
@@ -54,7 +59,7 @@ const Hero = () => {
           align="center"
           wrap="wrap"
           mx="-8"
-          mt="-6rem"
+          mt={['-6rem', , 0]}
         >
           <Box
             // w={['full', , 1 / 2]}
@@ -67,7 +72,7 @@ const Hero = () => {
             // data-rellax-percentage="0.5"
             // data-rellax-speed="-5"
           >
-            <Fade>
+            <MyFade>
               <Heading
                 fontSize={['2.5rem', '5xl', '6xl']}
                 lineHeight="1"
@@ -76,9 +81,9 @@ const Hero = () => {
               >
                 Congratulations on getting your new UOB Credit&nbsp;Card
               </Heading>
-            </Fade>
+            </MyFade>
 
-            <Fade>
+            <MyFade>
               <Heading
                 as="h2"
                 fontSize={['1.35rem', '2xl', '3xl']}
@@ -99,26 +104,8 @@ const Hero = () => {
               >
                 An abundance of perks, benefits, and privileges await&nbsp;you.
               </Heading>
-            </Fade>
+            </MyFade>
           </Box>
-
-          {/* {isWide && (
-            <Box
-              w={['full', , 1 / 2]}
-              px="12"
-              py="16"
-              textAlign="center"
-              // className="rellax"
-              // data-rellax-percentage="0.5"
-              // data-rellax-speed="-6"
-            >
-              <Fade duration={3000} delay={0} triggerOnce>
-                <Box>
-                  <CardCrossfade cardIndex={cardIndex} />
-                </Box>
-              </Fade>
-            </Box>
-          )} */}
         </Flex>
       </Container>
 
@@ -129,7 +116,7 @@ const Hero = () => {
         left="50%"
         transform="translateX(-50%)"
       >
-        <Fade>
+        <MyFade>
           <Flex justify={['center', , 'flex-start']}>
             <Flex
               mt="10"
@@ -164,68 +151,65 @@ const Hero = () => {
                   </Box>
                 </AspectRatio>
               )} */}
-
-              {detectMobile.isMobile() ? (
-                <Text
-                  mt="3"
-                  // opacity="0.75"
-                  fontSize="sm"
-                  fontWeight="800"
-                  lineHeight="1"
+              <Text
+                mt="3"
+                // opacity="0.75"
+                fontSize="sm"
+                fontWeight="800"
+                lineHeight="1"
+                d={['block', , 'none']}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="4rem"
+                  height="4rem"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  css={{
+                    position: 'relative',
+                    top: '-16px',
+                    animation: 'mousewheel 1.5s linear reverse infinite running'
+                  }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4rem"
-                    height="4rem"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    css={{
-                      position: 'relative',
-                      top: '-16px',
-                      animation:
-                        'mousewheel 1.5s linear reverse infinite running'
-                    }}
-                  >
-                    <polyline points="18 15 12 9 6 15" />
-                  </svg>
-                  {/* Swipe up */}
-                </Text>
-              ) : (
-                <Text
-                  mt="3"
-                  // opacity="0.75"
-                  fontSize="sm"
-                  fontWeight="800"
-                  lineHeight="1"
+                  <polyline points="18 15 12 9 6 15" />
+                </svg>
+                {/* Swipe up */}
+              </Text>
+              <Text
+                mt="3"
+                // opacity="0.75"
+                fontSize="sm"
+                fontWeight="800"
+                lineHeight="1"
+                d={['none', , 'block']}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="4rem"
+                  height="4rem"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  css={{
+                    position: 'relative',
+                    top: '-16px',
+                    animation: 'mousewheel 1.5s linear infinite running'
+                  }}
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="4rem"
-                    height="4rem"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    css={{
-                      position: 'relative',
-                      top: '-16px',
-                      animation: 'mousewheel 1.5s linear infinite running'
-                    }}
-                  >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                  {/* Scroll down */}
-                </Text>
-              )}
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+                {/* Scroll down */}
+              </Text>
             </Flex>
           </Flex>
-        </Fade>
+        </MyFade>
       </Box>
 
       <Box
