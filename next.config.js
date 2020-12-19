@@ -4,7 +4,8 @@ const withImages = require('next-optimized-images');
 const withTM = require('next-transpile-modules')([
   'tailwindcss',
   'react-masonry-css',
-  'canvas-confetti'
+  'canvas-confetti',
+  'use-mobile-detect-hook'
 ]);
 
 const useBasePath =
