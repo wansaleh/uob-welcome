@@ -2,7 +2,6 @@
 import {
   AspectRatio,
   Box,
-  Button,
   Flex,
   Heading,
   Image,
@@ -20,6 +19,7 @@ import Container from '../../components/container';
 import ScrollIn from '../../components/scroll-in';
 import SlideIn from '../../components/slide-in';
 import TiltCard from '../../components/tilt-card';
+import mq from '../../styles/mq';
 import cards from './cards.json';
 
 const Explore = () => {
@@ -126,9 +126,6 @@ const Explore = () => {
                     zIndex="0"
                     w={card.vertical ? 'calc(100% * (54 / 86))' : '100%'}
                     mx="auto"
-                    // transform={['translateY(0)', 'translateY(100px)']}
-                    // transition="all 0.7s var(--ease-out-expo)"
-                    // opacity="0"
                     className="card-title"
                   >
                     <Text
@@ -181,10 +178,8 @@ const Explore = () => {
                   <TiltCard
                     glareEnable
                     glareMaxOpacity={0.2}
-                    css={{
-                      borderRadius: card.vertical
-                        ? 'clamp(1rem, 6vw, 2rem)'
-                        : 'clamp(0.75rem, 1.5vw, 1.5rem)',
+                    css={mq({
+                      borderRadius: ['1rem', , '1.5rem'],
                       boxShadow: `0 3px 0 0 ${rgba(
                         mix(0.9, '#000', card.color),
                         0.35
@@ -197,7 +192,7 @@ const Explore = () => {
                       zIndex: 10,
                       width: card.vertical ? 'calc(100% * (54 / 86))' : '100%',
                       margin: '0 auto'
-                    }}
+                    })}
                   >
                     <AspectRatio
                       ratio={card.vertical ? 54 / 86 : 86 / 54}

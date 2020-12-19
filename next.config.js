@@ -1,7 +1,11 @@
 const withPlugins = require('next-compose-plugins');
 const withFonts = require('next-fonts');
 const withImages = require('next-optimized-images');
-const withTM = require('next-transpile-modules')(['tailwindcss']);
+const withTM = require('next-transpile-modules')([
+  'tailwindcss',
+  'react-masonry-css',
+  'canvas-confetti'
+]);
 
 const useBasePath =
   process.env.USE_BASEPATH === 'true'

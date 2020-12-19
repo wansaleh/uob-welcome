@@ -1,22 +1,9 @@
+import React from 'react';
 import Tilt from 'react-parallax-tilt';
-import { useEffect, useRef } from 'react';
 
 const TiltCard = ({ children, ...props }) => {
-  const ref = useRef();
-
   return (
-    <div
-      ref={ref}
-      // style={{ '--image-x': `${imgX}px`, '--image-y': `${imgY}px` }}
-      css={{
-        '.moveimage': {
-          transition: 'transform 4s cubic-bezier(.03,.98,.52,.99)'
-        },
-        ':hover .moveimage': {
-          transform: 'scale(1.1) translate(var(--image-x), var(--image-y))'
-        }
-      }}
-    >
+    <div>
       <Tilt
         className="tilt-card"
         // onMove={onMove}

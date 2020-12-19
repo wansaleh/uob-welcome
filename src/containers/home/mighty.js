@@ -5,12 +5,10 @@ import {
   Heading,
   Image,
   Link,
-  SimpleGrid,
   Text,
   useTheme,
   VisuallyHidden
 } from '@chakra-ui/react';
-import { rgba } from 'polished';
 import React from 'react';
 import Plx from 'react-plx';
 import Slider from 'react-slick';
@@ -19,7 +17,6 @@ import { useMedia } from 'react-use';
 import Container from '../../components/container';
 import { cardsSlickSettings } from '../../components/slick';
 import SlideIn from '../../components/slide-in';
-import TiltCard from '../../components/tilt-card';
 
 const screenshots = [
   {
@@ -253,12 +250,12 @@ const Mighty = () => {
             <Box key={screenshot.id} py="4" px="6">
               <Box
                 bg="linear-gradient(to bottom right, #1E6BD7, #0A4CA9)"
-                borderRadius="clamp(0.5rem, 3vw, 3rem)"
-                boxShadow="var(--shadow-card)"
+                borderRadius={['2rem', , '3rem']}
+                boxShadow="0 0 20px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1)"
                 overflow="hidden"
                 position="relative"
                 zIndex="10"
-                transition="all 0.8s var(--ease-out-expo)"
+                transition="all 0.8s cubic-bezier(0.19, 1, 0.22, 1)"
                 _hover={
                   isWide && {
                     transform: 'scale(1.02)',
@@ -283,7 +280,7 @@ const Mighty = () => {
                   maxW="initial"
                   mx="-15%"
                   mb="-112px"
-                  transition="all 0.8s var(--ease-out-expo)"
+                  transition="all 0.8s cubic-bezier(0.19, 1, 0.22, 1)"
                 />
               </Box>
             </Box>

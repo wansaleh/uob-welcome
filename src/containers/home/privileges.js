@@ -40,7 +40,7 @@ const Privileges = () => {
                   src={require('../../images/privileges.jpg')}
                   alt=""
                   borderRadius="lg"
-                  boxShadow="var(--shadow-medium)"
+                  boxShadow="0 8px 30px rgba(0, 0, 0, 0.12)"
                 />
               </TiltCard>
             </Fade>
@@ -98,7 +98,7 @@ const Privileges = () => {
                   src={require('../../images/features.jpg')}
                   alt=""
                   borderRadius="lg"
-                  boxShadow="var(--shadow-medium)"
+                  boxShadow="0 8px 30px rgba(0, 0, 0, 0.12)"
                 />
               </TiltCard>
             </Fade>

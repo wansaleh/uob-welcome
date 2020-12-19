@@ -13,14 +13,11 @@
     "export": "USE_BASEPATH=true next build && next export -o cardswelcome && zip -r cardswelcome.zip cardswelcome && npm run upload"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.1",
-    "@chakra-ui/media-query": "^1.0.1",
     "@chakra-ui/react": "^1.0.3",
     "@chakra-ui/theme": "^1.2.1",
     "@emotion/babel-preset-css-prop": "^11.0.0",
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
-    "@risingstack/react-easy-state": "^6.3.0",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "babel-plugin-inline-react-svg": "^1.1.2",

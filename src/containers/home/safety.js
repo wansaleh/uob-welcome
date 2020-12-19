@@ -27,7 +27,7 @@ const Safety = () => {
           p={[8, , 16]}
           py={16}
           borderRadius="1rem"
-          boxShadow="var(--shadow-card)"
+          boxShadow="0 0 20px rgba(0, 0, 0, 0.1), 0 3px 10px rgba(0, 0, 0, 0.1)"
         >
           <Fade triggerOnce>
             <Heading

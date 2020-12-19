@@ -1,26 +1,15 @@
 /* eslint-disable no-sparse-arrays */
-import {
-  AspectRatio,
-  Box,
-  Flex,
-  Heading,
-  Image,
-  Text,
-  useTheme
-} from '@chakra-ui/react';
-import { view } from '@risingstack/react-easy-state';
-import { mix, rgba } from 'polished';
-import React, { useEffect, useState } from 'react';
+import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import React, { useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
-// import { useInterval, useMedia } from 'react-use';
 import useMobileDetect from 'use-mobile-detect-hook';
 
 import Container from '../../components/container';
-import TiltCard from '../../components/tilt-card';
-import cards from './cards.json';
+// import TiltCard from '../../components/tilt-card';
+// import cards from './cards.json';
 
-const cardImages = cards.map((card) => card.image);
-const cardColors = cards.map((card) => card.color);
+// const cardImages = cards.map((card) => card.image);
+// const cardColors = cards.map((card) => card.color);
 
 // function randomInRange(min, max) {
 //   return Math.random() * (max - min) + min;
@@ -266,7 +255,7 @@ const Hero = () => {
   );
 };
 
-export default view(Hero);
+export default Hero;
 
 const confettiInit = () => {
   const wrapper = document.getElementById('confetti-wrapper');
@@ -298,52 +287,52 @@ const confettiInit = () => {
   }
 };
 
-const CardCrossfade = ({ cardIndex }) => {
-  return (
-    <TiltCard
-      tiltMaxAngleX={5}
-      tiltMaxAngleY={5}
-      trackOnWindow
-      glareEnable
-      glareMaxOpacity={0.4}
-      css={{
-        borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
-        boxShadow: `0 0 2px 3px ${rgba(
-          mix(0.9, '#000', cardColors[cardIndex % 7]),
-          0.25
-        )}, 0 2px 200px ${rgba(
-          cardColors[cardIndex % 7],
-          0.25
-        )}, 0 2px 56px ${rgba(cardColors[cardIndex % 7], 0.25)}`,
-        overflow: 'hidden'
-      }}
-    >
-      <AspectRatio ratio={86 / 54}>
-        <Box>
-          {cardImages.map((image, i) => (
-            <Image
-              key={i}
-              userSelect="none"
-              pointerEvents="none"
-              src={require(`../../images/cards/${image}`)}
-              alt=""
-              pos="absolute"
-              inset="0"
-              w="100%"
-              h="100%"
-              objectFit="cover"
-              // zIndex={cardIndex % cardImages.length === i ? 10 : 0}
-              opacity={cardIndex % cardImages.length === i ? 1 : 0}
-              transition="all 0.8s ease"
-              // transform={
-              //   cardIndex % cardImages.length === i
-              //     ? 'translateY(0)'
-              //     : 'translateY(200%)'
-              // }
-            />
-          ))}
-        </Box>
-      </AspectRatio>
-    </TiltCard>
-  );
-};
+// const CardCrossfade = ({ cardIndex }) => {
+//   return (
+//     <TiltCard
+//       tiltMaxAngleX={5}
+//       tiltMaxAngleY={5}
+//       trackOnWindow
+//       glareEnable
+//       glareMaxOpacity={0.4}
+//       css={{
+//         borderRadius: 'clamp(0.75rem, 1.5vw, 1.5rem)',
+//         boxShadow: `0 0 2px 3px ${rgba(
+//           mix(0.9, '#000', cardColors[cardIndex % 7]),
+//           0.25
+//         )}, 0 2px 200px ${rgba(
+//           cardColors[cardIndex % 7],
+//           0.25
+//         )}, 0 2px 56px ${rgba(cardColors[cardIndex % 7], 0.25)}`,
+//         overflow: 'hidden'
+//       }}
+//     >
+//       <AspectRatio ratio={86 / 54}>
+//         <Box>
+//           {cardImages.map((image, i) => (
+//             <Image
+//               key={i}
+//               userSelect="none"
+//               pointerEvents="none"
+//               src={require(`../../images/cards/${image}`)}
+//               alt=""
+//               pos="absolute"
+//               inset="0"
+//               w="100%"
+//               h="100%"
+//               objectFit="cover"
+//               // zIndex={cardIndex % cardImages.length === i ? 10 : 0}
+//               opacity={cardIndex % cardImages.length === i ? 1 : 0}
+//               transition="all 0.8s ease"
+//               // transform={
+//               //   cardIndex % cardImages.length === i
+//               //     ? 'translateY(0)'
+//               //     : 'translateY(200%)'
+//               // }
+//             />
+//           ))}
+//         </Box>
+//       </AspectRatio>
+//     </TiltCard>
+//   );
+// };
