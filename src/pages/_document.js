@@ -61,6 +61,8 @@ class MyDocument extends Document {
               }}
             />
           )}
+
+          {/* <script src="./confetti.js" /> */}
         </body>
       </Html>
     );

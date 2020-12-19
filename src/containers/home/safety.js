@@ -50,6 +50,7 @@ const Safety = () => {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 fill="none"
+                w="1em"
                 h="1em"
                 // color="brand.600"
                 mt="-2"
