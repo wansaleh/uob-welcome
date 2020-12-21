@@ -1,4 +1,4 @@
-import { ColorModeScript } from '@chakra-ui/react';
+// import { ColorModeScript } from '@chakra-ui/react';
 import Document, { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
@@ -15,10 +15,10 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
             rel="stylesheet"
           />
-          <script
+          {/* <script
             src="https://kit.fontawesome.com/5b84ae3710.js"
             crossOrigin="anonymous"
-          />
+          /> */}
 
           <style>{`
             @keyframes move-forever {
