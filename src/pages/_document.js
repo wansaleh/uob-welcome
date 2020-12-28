@@ -43,7 +43,11 @@ class MyDocument extends Document {
 
               <script
                 dangerouslySetInnerHTML={{
-                  __html: `!function(e,t,a,n,g){e[n]=e[n]||[],e[n].push({"gtm.start":(new Date).getTime(),event:"gtm.js"});var m=t.getElementsByTagName(a)[0],r=t.createElement(a);r.async=!0,r.src="https://www.googletagmanager.com/gtm.js?id=GTM-TV94J8",m.parentNode.insertBefore(r,m)}(window,document,"script","datalayer");`
+                  __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                  })(window,document,'script','dataLayer','GTM-TV94J8');`
                 }}
               />
             </>
@@ -51,6 +55,17 @@ class MyDocument extends Document {
         </Head>
         <body>
           {/* <ColorModeScript initialColorMode="light" /> */}
+
+          <noscript>
+            <iframe
+              title="gtm-noscript"
+              src="//www.googletagmanager.com/ns.html?id=GTM-TV94J8"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            />
+          </noscript>
+
           <Main />
           <NextScript />
 

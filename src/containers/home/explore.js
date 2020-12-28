@@ -191,7 +191,7 @@ const Explore = () => {
                           }
                         >
                           <img
-                            alt=""
+                            alt={`UOB ${card.name}`}
                             src={require(`../../images/cards/${card.image}`)}
                             css={{
                               position: 'absolute',
