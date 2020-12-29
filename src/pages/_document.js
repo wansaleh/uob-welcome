@@ -11,10 +11,10 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link
+          {/* <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
             rel="stylesheet"
-          />
+          /> */}
           {/* <script
             src="https://kit.fontawesome.com/5b84ae3710.js"
             crossOrigin="anonymous"
