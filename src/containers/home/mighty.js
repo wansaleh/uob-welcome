@@ -188,7 +188,7 @@ const Mighty = () => {
             >
               <img
                 src={require('../../images/mighty/icon.png')}
-                alt=""
+                alt="UOB Mighty Malaysia App"
                 css={{
                   position: 'relative',
                   display: 'block',
@@ -204,7 +204,7 @@ const Mighty = () => {
               <VisuallyHidden>App Store</VisuallyHidden>
               <img
                 src={require('../../images/mighty/appstore.svg')}
-                alt=""
+                alt="Download on the App Store"
                 css={mq({
                   height: ['2rem', , '3rem'],
                   margin: '0 0.25rem',
@@ -218,7 +218,7 @@ const Mighty = () => {
               <VisuallyHidden>Google Play</VisuallyHidden>
               <img
                 src={require('../../images/mighty/googleplay.svg')}
-                alt=""
+                alt="Get It On Google Play"
                 css={mq({
                   height: ['2rem', , '3rem'],
                   margin: '0 0.25rem',
@@ -232,7 +232,7 @@ const Mighty = () => {
               <VisuallyHidden>AppGallery</VisuallyHidden>
               <img
                 src={require('../../images/mighty/appgallery.svg')}
-                alt=""
+                alt="Explore It On AppGallery"
                 css={mq({
                   height: ['2rem', , '3rem'],
                   margin: '0 0.25rem',
@@ -275,7 +275,7 @@ const Mighty = () => {
                 </Box>
                 <img
                   src={require(`../../images/mighty/${screenshot.id}.png`)}
-                  alt=""
+                  alt={screenshot.title}
                   css={{
                     width: '100%',
                     maxWidth: 'initial',

@@ -39,7 +39,7 @@ const Privileges = () => {
               <TiltCard scale={1.015}>
                 <img
                   src={require('../../images/privileges.jpg')}
-                  alt=""
+                  alt="Privileges"
                   css={{
                     borderRadius: '0.5em',
                     boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)'
@@ -99,7 +99,7 @@ const Privileges = () => {
               <TiltCard scale={1.015}>
                 <img
                   src={require('../../images/features.jpg')}
-                  alt=""
+                  alt="Features"
                   css={{
                     borderRadius: '0.5em',
                     boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)'
