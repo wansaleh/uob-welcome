@@ -20,16 +20,7 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           /> */}
 
-          <style>{`
-            @keyframes move-forever {
-              0% {
-                transform: translate3d(-90px, 0, 0);
-              }
-              100% {
-                transform: translate3d(85px, 0, 0);
-              }
-            }
-          `}</style>
+          <style>{`@keyframes move-forever { 0% { transform: translate3d(-90px, 0, 0); } 100% { transform: translate3d(85px, 0, 0); } }`}</style>
 
           {process.env.NODE_ENV === 'production' && (
             <>

@@ -16,6 +16,7 @@ import { isIE } from 'react-device-detect';
 import { useInView } from 'react-hook-inview';
 
 import Container from '../../components/container';
+import MyFade from '../../components/my-fade';
 // import MyFade from '../../components/my-fade';
 import SlideIn from '../../components/slide-in';
 // import Safety from './safety';
@@ -115,10 +116,10 @@ const Activate = () => {
                 color="brand.500"
               >
                 <Flex justify="center" align="center">
-                  <Box
+                  <MyFade
                     // direction="up"
-                    // delay={num * 250}
-                    // duration={100}
+                    delay={num * 250}
+                    duration={250}
                     css={{
                       width: '100%',
                       height: '100%',
@@ -142,7 +143,7 @@ const Activate = () => {
                     >
                       <path d="M 17.699219 17 L 23.898438 25.398438 L 21.5 27 L 16 18.300781 L 10.5 27 L 8.199219 25.398438 L 14.398438 17 L 5.101563 14.601563 L 6 12 L 15.101563 15.199219 L 14.5 5 L 17.5 5 L 17 15.199219 L 26 12 L 26.800781 14.699219 Z" />
                     </svg>
-                  </Box>
+                  </MyFade>
                 </Flex>
               </AspectRatio>
             </Box>

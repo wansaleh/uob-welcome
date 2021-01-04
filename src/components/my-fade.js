@@ -1,5 +1,10 @@
 import { Box } from '@chakra-ui/react';
+import { Fade } from 'react-awesome-reveal';
 
 export default function MyFade({ children, triggerOnce, ...props }) {
-  return <Box {...props}>{children}</Box>;
+  return (
+    <Fade triggerOnce {...props}>
+      {children}
+    </Fade>
+  );
 }
